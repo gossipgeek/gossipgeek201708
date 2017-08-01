@@ -7,6 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import <AVOSCloud/AVOSCloud.h>
+
+
+
+#define APP_ID @"NvYIsxK8CR8DPgETCjsW8bTH-gzGzoHsz"
+#define APP_KEY @"gkz35mRTqTE2aqwp7dEr5uEE"
 
 @interface AppDelegate ()
 
@@ -17,6 +23,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [AVOSCloud setApplicationId:APP_ID clientKey:APP_KEY];
     return YES;
 }
 
