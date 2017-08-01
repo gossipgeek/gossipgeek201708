@@ -1,0 +1,509 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BF0F36EE1F305B34009CA6BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0F36ED1F305B34009CA6BA /* main.m */; };
+		BF0F36F11F305B34009CA6BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0F36F01F305B34009CA6BA /* AppDelegate.m */; };
+		BF0F36F71F305B34009CA6BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0F36F51F305B34009CA6BA /* Main.storyboard */; };
+		BF0F36F91F305B34009CA6BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF0F36F81F305B34009CA6BA /* Assets.xcassets */; };
+		BF0F36FC1F305B34009CA6BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0F36FA1F305B34009CA6BA /* LaunchScreen.storyboard */; };
+		BF0F37071F305B34009CA6BA /* GossipGeekTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0F37061F305B34009CA6BA /* GossipGeekTests.m */; };
+		BF0F37461F305E8D009CA6BA /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0F37451F305E8D009CA6BA /* AVOSCloud.framework */; };
+		BF0F37491F305ED7009CA6BA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0F37481F305ED7009CA6BA /* libz.tbd */; };
+		BF0F374B1F305F05009CA6BA /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0F374A1F305F05009CA6BA /* libc++.tbd */; };
+		BF0F374D1F305F0F009CA6BA /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0F374C1F305F0F009CA6BA /* libicucore.tbd */; };
+		BF0F374F1F305F19009CA6BA /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0F374E1F305F19009CA6BA /* libsqlite3.tbd */; };
+		BF0F37511F305F21009CA6BA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0F37501F305F21009CA6BA /* SystemConfiguration.framework */; };
+		BF0F37531F305F2C009CA6BA /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0F37521F305F2C009CA6BA /* MobileCoreServices.framework */; };
+		BF0F37551F305F35009CA6BA /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0F37541F305F35009CA6BA /* CoreTelephony.framework */; };
+		BF0F37571F305F46009CA6BA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0F37561F305F46009CA6BA /* CoreLocation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BF0F37031F305B34009CA6BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF0F36E11F305B34009CA6BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF0F36E81F305B34009CA6BA;
+			remoteInfo = GossipGeek;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BF0F36E91F305B34009CA6BA /* GossipGeek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GossipGeek.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF0F36ED1F305B34009CA6BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BF0F36EF1F305B34009CA6BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BF0F36F01F305B34009CA6BA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BF0F36F61F305B34009CA6BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BF0F36F81F305B34009CA6BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BF0F36FB1F305B34009CA6BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BF0F36FD1F305B34009CA6BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF0F37021F305B34009CA6BA /* GossipGeekTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GossipGeekTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF0F37061F305B34009CA6BA /* GossipGeekTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GossipGeekTests.m; sourceTree = "<group>"; };
+		BF0F37081F305B34009CA6BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF0F37451F305E8D009CA6BA /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloud.framework; sourceTree = "<group>"; };
+		BF0F37481F305ED7009CA6BA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		BF0F374A1F305F05009CA6BA /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		BF0F374C1F305F0F009CA6BA /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		BF0F374E1F305F19009CA6BA /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		BF0F37501F305F21009CA6BA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		BF0F37521F305F2C009CA6BA /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		BF0F37541F305F35009CA6BA /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		BF0F37561F305F46009CA6BA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF0F36E61F305B34009CA6BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF0F37571F305F46009CA6BA /* CoreLocation.framework in Frameworks */,
+				BF0F37551F305F35009CA6BA /* CoreTelephony.framework in Frameworks */,
+				BF0F37531F305F2C009CA6BA /* MobileCoreServices.framework in Frameworks */,
+				BF0F37511F305F21009CA6BA /* SystemConfiguration.framework in Frameworks */,
+				BF0F374F1F305F19009CA6BA /* libsqlite3.tbd in Frameworks */,
+				BF0F374D1F305F0F009CA6BA /* libicucore.tbd in Frameworks */,
+				BF0F374B1F305F05009CA6BA /* libc++.tbd in Frameworks */,
+				BF0F37491F305ED7009CA6BA /* libz.tbd in Frameworks */,
+				BF0F37461F305E8D009CA6BA /* AVOSCloud.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF0F36FF1F305B34009CA6BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BF0F36E01F305B34009CA6BA = {
+			isa = PBXGroup;
+			children = (
+				BF0F36EB1F305B34009CA6BA /* GossipGeek */,
+				BF0F37051F305B34009CA6BA /* GossipGeekTests */,
+				BF0F36EA1F305B34009CA6BA /* Products */,
+				BF0F37471F305ED7009CA6BA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BF0F36EA1F305B34009CA6BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF0F36E91F305B34009CA6BA /* GossipGeek.app */,
+				BF0F37021F305B34009CA6BA /* GossipGeekTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF0F36EB1F305B34009CA6BA /* GossipGeek */ = {
+			isa = PBXGroup;
+			children = (
+				BF0F375B1F305FD2009CA6BA /* ViewModel */,
+				BF0F375A1F305FA6009CA6BA /* ViewController */,
+				BF0F37591F305F9E009CA6BA /* Model */,
+				BF0F37581F305F93009CA6BA /* Request */,
+				BF0F36EF1F305B34009CA6BA /* AppDelegate.h */,
+				BF0F36F01F305B34009CA6BA /* AppDelegate.m */,
+				BF0F36F51F305B34009CA6BA /* Main.storyboard */,
+				BF0F36EC1F305B34009CA6BA /* Supporting Files */,
+			);
+			path = GossipGeek;
+			sourceTree = "<group>";
+		};
+		BF0F36EC1F305B34009CA6BA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BF0F36F81F305B34009CA6BA /* Assets.xcassets */,
+				BF0F36FA1F305B34009CA6BA /* LaunchScreen.storyboard */,
+				BF0F36FD1F305B34009CA6BA /* Info.plist */,
+				BF0F36ED1F305B34009CA6BA /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BF0F37051F305B34009CA6BA /* GossipGeekTests */ = {
+			isa = PBXGroup;
+			children = (
+				BF0F37061F305B34009CA6BA /* GossipGeekTests.m */,
+				BF0F37081F305B34009CA6BA /* Info.plist */,
+			);
+			path = GossipGeekTests;
+			sourceTree = "<group>";
+		};
+		BF0F37471F305ED7009CA6BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF0F37561F305F46009CA6BA /* CoreLocation.framework */,
+				BF0F37541F305F35009CA6BA /* CoreTelephony.framework */,
+				BF0F37521F305F2C009CA6BA /* MobileCoreServices.framework */,
+				BF0F37501F305F21009CA6BA /* SystemConfiguration.framework */,
+				BF0F374E1F305F19009CA6BA /* libsqlite3.tbd */,
+				BF0F374C1F305F0F009CA6BA /* libicucore.tbd */,
+				BF0F374A1F305F05009CA6BA /* libc++.tbd */,
+				BF0F37451F305E8D009CA6BA /* AVOSCloud.framework */,
+				BF0F37481F305ED7009CA6BA /* libz.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF0F37581F305F93009CA6BA /* Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Request;
+			sourceTree = "<group>";
+		};
+		BF0F37591F305F9E009CA6BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		BF0F375A1F305FA6009CA6BA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		BF0F375B1F305FD2009CA6BA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BF0F36E81F305B34009CA6BA /* GossipGeek */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF0F370B1F305B34009CA6BA /* Build configuration list for PBXNativeTarget "GossipGeek" */;
+			buildPhases = (
+				BF0F36E51F305B34009CA6BA /* Sources */,
+				BF0F36E61F305B34009CA6BA /* Frameworks */,
+				BF0F36E71F305B34009CA6BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GossipGeek;
+			productName = GossipGeek;
+			productReference = BF0F36E91F305B34009CA6BA /* GossipGeek.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BF0F37011F305B34009CA6BA /* GossipGeekTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF0F370E1F305B34009CA6BA /* Build configuration list for PBXNativeTarget "GossipGeekTests" */;
+			buildPhases = (
+				BF0F36FE1F305B34009CA6BA /* Sources */,
+				BF0F36FF1F305B34009CA6BA /* Frameworks */,
+				BF0F37001F305B34009CA6BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF0F37041F305B34009CA6BA /* PBXTargetDependency */,
+			);
+			name = GossipGeekTests;
+			productName = GossipGeekTests;
+			productReference = BF0F37021F305B34009CA6BA /* GossipGeekTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BF0F36E11F305B34009CA6BA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "cozhang ";
+				TargetAttributes = {
+					BF0F36E81F305B34009CA6BA = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					BF0F37011F305B34009CA6BA = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BF0F36E81F305B34009CA6BA;
+					};
+				};
+			};
+			buildConfigurationList = BF0F36E41F305B34009CA6BA /* Build configuration list for PBXProject "GossipGeek" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BF0F36E01F305B34009CA6BA;
+			productRefGroup = BF0F36EA1F305B34009CA6BA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BF0F36E81F305B34009CA6BA /* GossipGeek */,
+				BF0F37011F305B34009CA6BA /* GossipGeekTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BF0F36E71F305B34009CA6BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF0F36FC1F305B34009CA6BA /* LaunchScreen.storyboard in Resources */,
+				BF0F36F91F305B34009CA6BA /* Assets.xcassets in Resources */,
+				BF0F36F71F305B34009CA6BA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF0F37001F305B34009CA6BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BF0F36E51F305B34009CA6BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF0F36F11F305B34009CA6BA /* AppDelegate.m in Sources */,
+				BF0F36EE1F305B34009CA6BA /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF0F36FE1F305B34009CA6BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF0F37071F305B34009CA6BA /* GossipGeekTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BF0F37041F305B34009CA6BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF0F36E81F305B34009CA6BA /* GossipGeek */;
+			targetProxy = BF0F37031F305B34009CA6BA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BF0F36F51F305B34009CA6BA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF0F36F61F305B34009CA6BA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BF0F36FA1F305B34009CA6BA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF0F36FB1F305B34009CA6BA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BF0F37091F305B34009CA6BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BF0F370A1F305B34009CA6BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BF0F370C1F305B34009CA6BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = GossipGeek/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LIBTOOLFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tw.GossipGeek;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BF0F370D1F305B34009CA6BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = GossipGeek/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LIBTOOLFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tw.GossipGeek;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BF0F370F1F305B34009CA6BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GossipGeekTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tw.GossipGeekTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GossipGeek.app/GossipGeek";
+			};
+			name = Debug;
+		};
+		BF0F37101F305B34009CA6BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GossipGeekTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tw.GossipGeekTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GossipGeek.app/GossipGeek";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BF0F36E41F305B34009CA6BA /* Build configuration list for PBXProject "GossipGeek" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF0F37091F305B34009CA6BA /* Debug */,
+				BF0F370A1F305B34009CA6BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF0F370B1F305B34009CA6BA /* Build configuration list for PBXNativeTarget "GossipGeek" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF0F370C1F305B34009CA6BA /* Debug */,
+				BF0F370D1F305B34009CA6BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BF0F370E1F305B34009CA6BA /* Build configuration list for PBXNativeTarget "GossipGeekTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF0F370F1F305B34009CA6BA /* Debug */,
+				BF0F37101F305B34009CA6BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BF0F36E11F305B34009CA6BA /* Project object */;
+}
