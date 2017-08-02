@@ -18,9 +18,8 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
+    
     [AVOSCloud setApplicationId:APP_ID clientKey:APP_KEY];
     //开启 SDK 的调试日志（debug log）,方便追踪问题。调试日志开启后，SDK 会把网络请求、错误消息等信息输出到 IDE 的日志窗口
     [AVOSCloud setAllLogsEnabled:YES];
@@ -29,30 +28,24 @@
     return YES;
 }
 
-
 - (void)applicationWillResignActive:(UIApplication *)application {
-  
+    
 }
-
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-   
+    
 }
-
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-  
+    
 }
-
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-  
+    
 }
-
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-  
+    
 }
-
 
 @end
