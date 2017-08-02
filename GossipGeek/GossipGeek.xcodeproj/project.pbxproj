@@ -24,6 +24,8 @@
 		BF0F37551F305F35009CA6BA /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0F37541F305F35009CA6BA /* CoreTelephony.framework */; };
 		BF0F37571F305F46009CA6BA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0F37561F305F46009CA6BA /* CoreLocation.framework */; };
 		F6FF54BF1F308FE700179B14 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FF54BE1F308FE700179B14 /* SignInViewController.m */; };
+		BF0F375E1F30E1E1009CA6BA /* MagazineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0F375D1F30E1E1009CA6BA /* MagazineViewController.m */; };
+		BF0F37621F3160ED009CA6BA /* MagazineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0F37611F3160ED009CA6BA /* MagazineTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,10 @@
 		BF0F37561F305F46009CA6BA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F6FF54BD1F308FE700179B14 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		F6FF54BE1F308FE700179B14 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
+		BF0F375C1F30E1E1009CA6BA /* MagazineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagazineViewController.h; sourceTree = "<group>"; };
+		BF0F375D1F30E1E1009CA6BA /* MagazineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagazineViewController.m; sourceTree = "<group>"; };
+		BF0F37601F3160ED009CA6BA /* MagazineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagazineTableViewCell.h; sourceTree = "<group>"; };
+		BF0F37611F3160ED009CA6BA /* MagazineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagazineTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,7 @@
 		BF0F36EB1F305B34009CA6BA /* GossipGeek */ = {
 			isa = PBXGroup;
 			children = (
+				BF0F375F1F3160AE009CA6BA /* Cell */,
 				BF0F375B1F305FD2009CA6BA /* ViewModel */,
 				BF0F375A1F305FA6009CA6BA /* ViewController */,
 				BF0F37591F305F9E009CA6BA /* Model */,
@@ -180,6 +187,8 @@
 			children = (
 				F6FF54BD1F308FE700179B14 /* SignInViewController.h */,
 				F6FF54BE1F308FE700179B14 /* SignInViewController.m */,
+				BF0F375C1F30E1E1009CA6BA /* MagazineViewController.h */,
+				BF0F375D1F30E1E1009CA6BA /* MagazineViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -189,6 +198,15 @@
 			children = (
 			);
 			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		BF0F375F1F3160AE009CA6BA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BF0F37601F3160ED009CA6BA /* MagazineTableViewCell.h */,
+				BF0F37611F3160ED009CA6BA /* MagazineTableViewCell.m */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +329,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF0F375E1F30E1E1009CA6BA /* MagazineViewController.m in Sources */,
+				BF0F37621F3160ED009CA6BA /* MagazineTableViewCell.m in Sources */,
 				BF0F36F11F305B34009CA6BA /* AppDelegate.m in Sources */,
 				F6FF54BF1F308FE700179B14 /* SignInViewController.m in Sources */,
 				BF0F36EE1F305B34009CA6BA /* main.m in Sources */,

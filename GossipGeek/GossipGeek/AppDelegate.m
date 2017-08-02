@@ -11,7 +11,6 @@
 
 #define APP_ID @"NvYIsxK8CR8DPgETCjsW8bTH-gzGzoHsz"
 #define APP_KEY @"0hfEA0BynwXUi2Couw2gPnks"
-
 @interface AppDelegate ()
 
 @end
@@ -25,6 +24,7 @@
     [AVOSCloud setAllLogsEnabled:YES];
     //跟踪统计应用的打开情况
     [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+
     return YES;
 }
 
