@@ -9,10 +9,8 @@
 #import "AppDelegate.h"
 #import <AVOSCloud/AVOSCloud.h>
 
-
-
 #define APP_ID @"NvYIsxK8CR8DPgETCjsW8bTH-gzGzoHsz"
-#define APP_KEY @"gkz35mRTqTE2aqwp7dEr5uEE"
+#define APP_KEY @"0hfEA0BynwXUi2Couw2gPnks"
 
 @interface AppDelegate ()
 
@@ -23,7 +21,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    // 使用美国站点需要增加以下代码：
+    //[AVOSCloud setServiceRegion:AVServiceRegionUS];
+    
     [AVOSCloud setApplicationId:APP_ID clientKey:APP_KEY];
+    //开启 SDK 的调试日志（debug log）,方便追踪问题。调试日志开启后，SDK 会把网络请求、错误消息等信息输出到 IDE 的日志窗口
+    [AVOSCloud setAllLogsEnabled:YES];
+    //跟踪统计应用的打开情况
+    [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     return YES;
 }
 

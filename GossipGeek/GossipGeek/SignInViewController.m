@@ -7,6 +7,7 @@
 //
 
 #import "SignInViewController.h"
+#import <AVOSCloud/AVOSCloud.h>
 
 @interface SignInViewController ()
 
@@ -17,6 +18,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    /* 测试
+    AVObject *user = [AVObject objectWithClassName:@"userTest"];
+    [user setObject:@"fcliang@thoughtworks.com"    forKey:@"email"];
+    [user setObject:@"admin" forKey:@"userName"];
+    [user setObject:@"admin" forKey:@"password"];
+    [user save];
+     */
+
+  
 }
 
 - (void)didReceiveMemoryWarning {
