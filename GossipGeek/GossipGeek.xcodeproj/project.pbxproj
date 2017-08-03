@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE4EE0301F32BA7B00A6AA85 /* GGDemoSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4EE02F1F32BA7B00A6AA85 /* GGDemoSpecs.m */; };
+		BE4EE0321F32BB1200A6AA85 /* Kiwi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4EE02B1F31DB2800A6AA85 /* Kiwi.framework */; };
 		BF0F36EE1F305B34009CA6BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0F36ED1F305B34009CA6BA /* main.m */; };
 		BF0F36F11F305B34009CA6BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0F36F01F305B34009CA6BA /* AppDelegate.m */; };
 		BF0F36F71F305B34009CA6BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0F36F51F305B34009CA6BA /* Main.storyboard */; };
 		BF0F36F91F305B34009CA6BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF0F36F81F305B34009CA6BA /* Assets.xcassets */; };
 		BF0F36FC1F305B34009CA6BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0F36FA1F305B34009CA6BA /* LaunchScreen.storyboard */; };
-		BF0F37071F305B34009CA6BA /* GossipGeekTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0F37061F305B34009CA6BA /* GossipGeekTests.m */; };
 		BF0F37461F305E8D009CA6BA /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0F37451F305E8D009CA6BA /* AVOSCloud.framework */; };
 		BF0F37491F305ED7009CA6BA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0F37481F305ED7009CA6BA /* libz.tbd */; };
 		BF0F374B1F305F05009CA6BA /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0F374A1F305F05009CA6BA /* libc++.tbd */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE4EE02B1F31DB2800A6AA85 /* Kiwi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kiwi.framework; path = Carthage/Build/iOS/Kiwi.framework; sourceTree = "<group>"; };
+		BE4EE02F1F32BA7B00A6AA85 /* GGDemoSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGDemoSpecs.m; sourceTree = "<group>"; };
 		BF0F36E91F305B34009CA6BA /* GossipGeek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GossipGeek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF0F36ED1F305B34009CA6BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BF0F36EF1F305B34009CA6BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -45,7 +48,6 @@
 		BF0F36FB1F305B34009CA6BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF0F36FD1F305B34009CA6BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF0F37021F305B34009CA6BA /* GossipGeekTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GossipGeekTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF0F37061F305B34009CA6BA /* GossipGeekTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GossipGeekTests.m; sourceTree = "<group>"; };
 		BF0F37081F305B34009CA6BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF0F37451F305E8D009CA6BA /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloud.framework; sourceTree = "<group>"; };
 		BF0F37481F305ED7009CA6BA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -81,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE4EE0321F32BB1200A6AA85 /* Kiwi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +93,7 @@
 		BF0F36E01F305B34009CA6BA = {
 			isa = PBXGroup;
 			children = (
+				BE4EE02B1F31DB2800A6AA85 /* Kiwi.framework */,
 				BF0F36EB1F305B34009CA6BA /* GossipGeek */,
 				BF0F37051F305B34009CA6BA /* GossipGeekTests */,
 				BF0F36EA1F305B34009CA6BA /* Products */,
@@ -135,7 +139,7 @@
 		BF0F37051F305B34009CA6BA /* GossipGeekTests */ = {
 			isa = PBXGroup;
 			children = (
-				BF0F37061F305B34009CA6BA /* GossipGeekTests.m */,
+				BE4EE02F1F32BA7B00A6AA85 /* GGDemoSpecs.m */,
 				BF0F37081F305B34009CA6BA /* Info.plist */,
 			);
 			path = GossipGeekTests;
@@ -214,6 +218,7 @@
 				BF0F36FE1F305B34009CA6BA /* Sources */,
 				BF0F36FF1F305B34009CA6BA /* Frameworks */,
 				BF0F37001F305B34009CA6BA /* Resources */,
+				BE4EE0331F32C0ED00A6AA85 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -284,6 +289,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BE4EE0331F32C0ED00A6AA85 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Kiwi.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BF0F36E51F305B34009CA6BA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -299,7 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF0F37071F305B34009CA6BA /* GossipGeekTests.m in Sources */,
+				BE4EE0301F32BA7B00A6AA85 /* GGDemoSpecs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +454,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = GossipGeek/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -448,6 +471,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = GossipGeek/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -461,8 +485,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = GossipGeekTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tw.GossipGeekTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GossipGeek.app/GossipGeek";
@@ -473,8 +501,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = GossipGeekTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tw.GossipGeekTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GossipGeek.app/GossipGeek";
