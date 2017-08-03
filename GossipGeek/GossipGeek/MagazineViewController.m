@@ -8,6 +8,8 @@
 
 #import "MagazineViewController.h"
 #import "MagazineTableViewCell.h"
+#import "MJRefresh/MJRefresh.h"
+//#import "MJRefresh/Custom/Header/MJRefreshNormalHeader.h"
 #import "Magazine.h"
 #import <AVOSCloud/AVOSCloud.h>
 @interface MagazineViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -28,14 +30,16 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self getDataFromNetWork];
+  //  [self getDataFromNetWork];
 
 }
 
 -(void)initMagazineTableView {
     self.magazineTableView.delegate = self;
     self.magazineTableView.dataSource = self;
-    self.magazineTableView.tableHeaderView = [[UIView alloc]initWithFrame:(CGRectZero)];
+    MJRefreshNormalHeader *mjHeader = [[MJRefreshNormalHeader alloc] init];
+    [mjHeader setRefreshingTarget:self refreshingAction:@selector(getDataFromNetWork)];
+    self.magazineTableView.mj_header = mjHeader;
     self.magazineTableView.tableFooterView = [[UIView alloc]initWithFrame:(CGRectZero)];
 }
 
@@ -57,6 +61,7 @@
 }
 
 -(void)changeMagazineModels {
+    [self.magazineModels removeAllObjects];
     for (int i = 0; i < self.magazineAVObjects.count; i++) {
         Magazine *magazine = [[Magazine alloc]init];
         AVObject *avobjec = self.magazineAVObjects[i];
@@ -71,6 +76,7 @@
             if (!error) {
                 magazine.image = [UIImage imageWithData:data];
                 [self.magazineModels addObject:magazine];
+                [self.magazineTableView.mj_header endRefreshing];
                 [self.magazineTableView reloadData];
             }
         }];
