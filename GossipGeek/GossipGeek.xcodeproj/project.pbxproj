@@ -22,6 +22,7 @@
 		BF0F37531F305F2C009CA6BA /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0F37521F305F2C009CA6BA /* MobileCoreServices.framework */; };
 		BF0F37551F305F35009CA6BA /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0F37541F305F35009CA6BA /* CoreTelephony.framework */; };
 		BF0F37571F305F46009CA6BA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0F37561F305F46009CA6BA /* CoreLocation.framework */; };
+		F6FF54BF1F308FE700179B14 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FF54BE1F308FE700179B14 /* SignInViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		BF0F37521F305F2C009CA6BA /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		BF0F37541F305F35009CA6BA /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		BF0F37561F305F46009CA6BA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F6FF54BD1F308FE700179B14 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
+		F6FF54BE1F308FE700179B14 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +174,8 @@
 		BF0F375A1F305FA6009CA6BA /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F6FF54BD1F308FE700179B14 /* SignInViewController.h */,
+				F6FF54BE1F308FE700179B14 /* SignInViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -285,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF0F36F11F305B34009CA6BA /* AppDelegate.m in Sources */,
+				F6FF54BF1F308FE700179B14 /* SignInViewController.m in Sources */,
 				BF0F36EE1F305B34009CA6BA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -494,6 +500,7 @@
 				BF0F370D1F305B34009CA6BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BF0F370E1F305B34009CA6BA /* Build configuration list for PBXNativeTarget "GossipGeekTests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +509,7 @@
 				BF0F37101F305B34009CA6BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
