@@ -14,6 +14,8 @@
     [super awakeFromNib];
     // Initialization code
     self.contantLabel.numberOfLines = 3;
+    self.logoImageView.layer.borderWidth = 1.0;
+    self.logoImageView.layer.borderColor = [UIColor colorWithRed:0.90 green:0.90 blue:0.90 alpha:1.00].CGColor;
 }
 
 

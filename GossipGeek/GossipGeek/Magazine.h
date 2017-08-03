@@ -12,7 +12,7 @@
 @property(strong, nonatomic) NSString *content;
 @property(strong, nonatomic) NSString *time;
 @property(strong, nonatomic) NSString *zanNumber;
-@property(strong, nonatomic) NSString *URL;
+@property(strong, nonatomic) NSString *url;
 @property(strong, nonatomic) UIImage *image;
 
 @end
