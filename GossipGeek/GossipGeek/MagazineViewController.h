@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MagazineViewController : UIViewController
-
+-(void)initMagazineTableView;
+-(void)getDataFromNetWork;
+-(void)changeMagazineModels;
 @end
