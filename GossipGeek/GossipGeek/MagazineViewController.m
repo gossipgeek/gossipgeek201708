@@ -63,7 +63,7 @@
         magazine.title = [avobjec objectForKey:@"title"];
         magazine.content = [avobjec objectForKey:@"content"];
         magazine.time = [avobjec objectForKey:@"time"];
-        magazine.URL = [avobjec objectForKey:@"URL"];
+        magazine.url = [avobjec objectForKey:@"URL"];
         magazine.zanNumber = [NSString stringWithFormat:@"共%@人点赞",[avobjec objectForKey:@"zannumber"]];
         AVFile *file = [avobjec objectForKey:@"image"];
         [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
@@ -73,13 +73,8 @@
                 [self.magazineModels addObject:magazine];
                 [self.magazineTableView reloadData];
             }
-            
         }];
     }
-    
-    
-    
-
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -91,15 +86,12 @@
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MagazineTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"magezineCell"];
-  //  AVObject *magazine = self.magazineAVObjects[indexPath.row];
-    
+    MagazineTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"magezineCell"];    
     cell.titleLabel.text = self.magazineModels[indexPath.row].title;
     cell.contantLabel.text = self.magazineModels[indexPath.row].content;
     cell.timeLabel.text = self.magazineModels[indexPath.row].time;
     cell.zanNumberLabel.text = self.magazineModels[indexPath.row].zanNumber;
     cell.logoImageView.image = self.magazineModels[indexPath.row].image;
-
     return cell;
 }
 

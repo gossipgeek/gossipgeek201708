@@ -51,7 +51,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="317.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_4240.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="asQ-Et-nwP">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="asQ-Et-nwP">
                                                     <rect key="frame" x="10" y="10" width="355" height="190.5"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dkl-vb-d8c">
@@ -295,7 +295,4 @@
             <point key="canvasLocation" x="-252" y="19"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="IMG_4240.JPG" width="3264" height="2448"/>
-    </resources>
 </document>
