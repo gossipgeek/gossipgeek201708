@@ -26,6 +26,8 @@
 		F6FF54BF1F308FE700179B14 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FF54BE1F308FE700179B14 /* SignInViewController.m */; };
 		BF0F375E1F30E1E1009CA6BA /* MagazineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0F375D1F30E1E1009CA6BA /* MagazineViewController.m */; };
 		BF0F37621F3160ED009CA6BA /* MagazineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0F37611F3160ED009CA6BA /* MagazineTableViewCell.m */; };
+		BF0F37651F31D672009CA6BA /* Magazine.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0F37641F31D672009CA6BA /* Magazine.m */; };
+		BF0F37671F31DD7B009CA6BA /* IMG_4240.JPG in Resources */ = {isa = PBXBuildFile; fileRef = BF0F37661F31DD7B009CA6BA /* IMG_4240.JPG */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,9 @@
 		BF0F375D1F30E1E1009CA6BA /* MagazineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagazineViewController.m; sourceTree = "<group>"; };
 		BF0F37601F3160ED009CA6BA /* MagazineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagazineTableViewCell.h; sourceTree = "<group>"; };
 		BF0F37611F3160ED009CA6BA /* MagazineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagazineTableViewCell.m; sourceTree = "<group>"; };
+		BF0F37631F31D672009CA6BA /* Magazine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Magazine.h; sourceTree = "<group>"; };
+		BF0F37641F31D672009CA6BA /* Magazine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Magazine.m; sourceTree = "<group>"; };
+		BF0F37661F31DD7B009CA6BA /* IMG_4240.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_4240.JPG; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +140,7 @@
 		BF0F36EC1F305B34009CA6BA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BF0F37661F31DD7B009CA6BA /* IMG_4240.JPG */,
 				BF0F36F81F305B34009CA6BA /* Assets.xcassets */,
 				BF0F36FA1F305B34009CA6BA /* LaunchScreen.storyboard */,
 				BF0F36FD1F305B34009CA6BA /* Info.plist */,
@@ -178,6 +184,8 @@
 		BF0F37591F305F9E009CA6BA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BF0F37631F31D672009CA6BA /* Magazine.h */,
+				BF0F37641F31D672009CA6BA /* Magazine.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -293,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF0F36FC1F305B34009CA6BA /* LaunchScreen.storyboard in Resources */,
+				BF0F37671F31DD7B009CA6BA /* IMG_4240.JPG in Resources */,
 				BF0F36F91F305B34009CA6BA /* Assets.xcassets in Resources */,
 				BF0F36F71F305B34009CA6BA /* Main.storyboard in Resources */,
 			);
@@ -329,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF0F37651F31D672009CA6BA /* Magazine.m in Sources */,
 				BF0F375E1F30E1E1009CA6BA /* MagazineViewController.m in Sources */,
 				BF0F37621F3160ED009CA6BA /* MagazineTableViewCell.m in Sources */,
 				BF0F36F11F305B34009CA6BA /* AppDelegate.m in Sources */,
