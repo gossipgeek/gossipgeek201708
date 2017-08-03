@@ -10,6 +10,6 @@
 
 @interface MagazineViewController : UIViewController
 -(void)initMagazineTableView;
--(void)getDataFromNetWork;
--(void)changeMagazineModels;
+-(void)pullDownSetupData;
+
 @end
