@@ -18,7 +18,8 @@
     return self;
 }
 
--(void)getDataFromNetWork:(void (^)())block {
+-(void)getDataFromNetWork:(void (^)(NSError* error))block {
+    [self.magazines removeAllObjects];
     AVQuery *query = [AVQuery queryWithClassName:@"Magazine"];
     [query orderByDescending:@"createdAt"];
     [query includeKey:@"content"];
@@ -30,13 +31,12 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             [self avobjectToMagazineModel:objects];
-            block();
         }
+        block(error);
     }];
 }
 
--(void)avobjectToMagazineModel:(NSArray *)magazineAVObjects {
-    [self.magazines removeAllObjects];
+-(void)avobjectToMagazineModel:(NSArray *)magazineAVObjects {   
     for (int i = 0; i < magazineAVObjects.count; i++) {
         Magazine *magazine = [[Magazine alloc]init];
         AVObject *avobjec = magazineAVObjects[i];

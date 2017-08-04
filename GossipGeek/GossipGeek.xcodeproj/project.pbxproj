@@ -51,6 +51,10 @@
 		BF0F37AA1F32D916009CA6BA /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0F37971F32D916009CA6BA /* UIView+MJExtension.m */; };
 		BF0F37AF1F32DEE6009CA6BA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF0F37B11F32DEE6009CA6BA /* Localizable.strings */; };
 		BF0F37B61F32FC36009CA6BA /* MagazineViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0F37B51F32FC36009CA6BA /* MagazineViewModel.m */; };
+		BF0F37B91F332629009CA6BA /* networkError.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BF0F37B81F332629009CA6BA /* networkError.jpeg */; };
+		BF0F37BB1F341035009CA6BA /* defaultImage.JPG in Resources */ = {isa = PBXBuildFile; fileRef = BF0F37BA1F341035009CA6BA /* defaultImage.JPG */; };
+		BF0F37C71F345CFA009CA6BA /* ErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0F37C61F345CFA009CA6BA /* ErrorView.m */; };
+		BF0F37C91F3467B4009CA6BA /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BF0F37C81F3467B4009CA6BA /* default.jpg */; };
 		F6FF54BF1F308FE700179B14 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FF54BE1F308FE700179B14 /* SignInViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -158,6 +162,11 @@
 		BF0F37B31F32DEEB009CA6BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BF0F37B41F32FC36009CA6BA /* MagazineViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagazineViewModel.h; sourceTree = "<group>"; };
 		BF0F37B51F32FC36009CA6BA /* MagazineViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagazineViewModel.m; sourceTree = "<group>"; };
+		BF0F37B81F332629009CA6BA /* networkError.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = networkError.jpeg; sourceTree = "<group>"; };
+		BF0F37BA1F341035009CA6BA /* defaultImage.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = defaultImage.JPG; sourceTree = "<group>"; };
+		BF0F37C51F345CFA009CA6BA /* ErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorView.h; sourceTree = "<group>"; };
+		BF0F37C61F345CFA009CA6BA /* ErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorView.m; sourceTree = "<group>"; };
+		BF0F37C81F3467B4009CA6BA /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
 		F6FF54BD1F308FE700179B14 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		F6FF54BE1F308FE700179B14 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -216,6 +225,7 @@
 		BF0F36EB1F305B34009CA6BA /* GossipGeek */ = {
 			isa = PBXGroup;
 			children = (
+				BF0F37C41F345CCE009CA6BA /* View */,
 				BF0F37B71F330757009CA6BA /* Vender */,
 				BF0F375F1F3160AE009CA6BA /* Cell */,
 				BF0F375B1F305FD2009CA6BA /* ViewModel */,
@@ -233,6 +243,9 @@
 		BF0F36EC1F305B34009CA6BA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BF0F37C81F3467B4009CA6BA /* default.jpg */,
+				BF0F37BA1F341035009CA6BA /* defaultImage.JPG */,
+				BF0F37B81F332629009CA6BA /* networkError.jpeg */,
 				BF0F36F81F305B34009CA6BA /* Assets.xcassets */,
 				BF0F36FA1F305B34009CA6BA /* LaunchScreen.storyboard */,
 				BF0F36FD1F305B34009CA6BA /* Info.plist */,
@@ -418,6 +431,15 @@
 			name = Vender;
 			sourceTree = "<group>";
 		};
+		BF0F37C41F345CCE009CA6BA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BF0F37C51F345CFA009CA6BA /* ErrorView.h */,
+				BF0F37C61F345CFA009CA6BA /* ErrorView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -504,8 +526,11 @@
 			files = (
 				BF0F36FC1F305B34009CA6BA /* LaunchScreen.storyboard in Resources */,
 				BF0F37AF1F32DEE6009CA6BA /* Localizable.strings in Resources */,
+				BF0F37C91F3467B4009CA6BA /* default.jpg in Resources */,
+				BF0F37B91F332629009CA6BA /* networkError.jpeg in Resources */,
 				BF0F36F91F305B34009CA6BA /* Assets.xcassets in Resources */,
 				BF0F36F71F305B34009CA6BA /* Main.storyboard in Resources */,
+				BF0F37BB1F341035009CA6BA /* defaultImage.JPG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,6 +570,7 @@
 				BF0F36EE1F305B34009CA6BA /* main.m in Sources */,
 				BF0F379B1F32D916009CA6BA /* MJRefreshFooter.m in Sources */,
 				BF0F37A61F32D916009CA6BA /* MJRefreshConst.m in Sources */,
+				BF0F37C71F345CFA009CA6BA /* ErrorView.m in Sources */,
 				BF0F37A91F32D916009CA6BA /* UIScrollView+MJRefresh.m in Sources */,
 				BF0F37A01F32D916009CA6BA /* MJRefreshBackGifFooter.m in Sources */,
 				BF0F379C1F32D916009CA6BA /* MJRefreshHeader.m in Sources */,
