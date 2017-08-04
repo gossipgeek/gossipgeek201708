@@ -5,6 +5,6 @@ before_install:
   - brew outdated carthage || brew upgrade carthage
 before_script:
   - cd GossipGeek
-  - carthage update --platform iOS
+  - carthage bootstrap
 
 script: xcodebuild test -scheme GossipGeek -destination 'platform=iOS Simulator,name=iPhone 6'
