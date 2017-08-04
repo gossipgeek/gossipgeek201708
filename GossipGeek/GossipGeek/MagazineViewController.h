@@ -11,5 +11,6 @@
 @interface MagazineViewController : UIViewController
 -(void)initMagazineTableView;
 -(void)pullDownSetupData;
-
+-(void)createErrorInfoUI;
+-(void)hiddenErrorInfoUI:(Boolean) flag;
 @end

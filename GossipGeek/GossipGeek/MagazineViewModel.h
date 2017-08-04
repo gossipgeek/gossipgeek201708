@@ -12,7 +12,7 @@
 @interface MagazineViewModel : NSObject
 @property(strong, nonatomic) NSMutableArray<Magazine*> *magazines;
 -(instancetype)init;
--(void)getDataFromNetWork:(void(^)())block;
+-(void)getDataFromNetWork:(void(^)(NSError* error))block;
 -(void)avobjectToMagazineModel:(NSArray*)magazineAVObjects;
 -(void)addMagezineModel:(Magazine*)magazine;
 -(void)userTimeSort;

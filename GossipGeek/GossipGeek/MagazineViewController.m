@@ -11,10 +11,14 @@
 #import "MJRefresh/MJRefresh.h"
 #import "MagazineViewModel.h"
 #import "Magazine.h"
+#import "ErrorView.h"
 #import <AVOSCloud/AVOSCloud.h>
-@interface MagazineViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface MagazineViewController ()<UITableViewDelegate,UITableViewDataSource,ErrorViewClickDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *magazineTableView;
 @property (strong, nonatomic) MagazineViewModel *magazineViewModel;
+//@property (strong, nonatomic) UILabel *errorLabel;
+//@property (strong, nonatomic) UIImageView *errorImageView;
+@property (strong, nonatomic) ErrorView *errorView;
 @end
 
 @implementation MagazineViewController
@@ -22,6 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self createErrorInfoUI];
     self.magazineViewModel = [[MagazineViewModel alloc]init];
     [self initMagazineTableView];
     self.automaticallyAdjustsScrollViewInsets = false;
@@ -29,13 +34,16 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-  //  [self pullDownSetupData];
+    [self pullDownSetupData];
 
 }
 
 -(void)initMagazineTableView {
     self.magazineTableView.delegate = self;
     self.magazineTableView.dataSource = self;
+    self.magazineTableView.rowHeight = UITableViewAutomaticDimension;
+    self.magazineTableView.estimatedRowHeight = 360;
+    self.magazineTableView.showsVerticalScrollIndicator = NO;
     MJRefreshNormalHeader *mjHeader = [[MJRefreshNormalHeader alloc] init];
     [mjHeader setRefreshingTarget:self refreshingAction:@selector(pullDownSetupData)];
     self.magazineTableView.mj_header = mjHeader;
@@ -43,12 +51,43 @@
 }
 
 -(void)pullDownSetupData {
-    [self.magazineViewModel getDataFromNetWork:^{
+    [self.magazineViewModel getDataFromNetWork:^(NSError *error) {
         [self.magazineTableView.mj_header endRefreshing];
         [self.magazineTableView reloadData];
+        if (error) {
+             [self hiddenErrorInfoUI:true];
+        }else {
+            [self hiddenErrorInfoUI:false];
+        }
     }];
 }
+-(void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+}
+-(void)hiddenErrorInfoUI:(Boolean)flag {
+    if (flag) {
+        self.errorView.hidden = false;
+    }else {
+        self.errorView.hidden = true;
+    }
+}
 
+-(void)createErrorInfoUI {
+    self.errorView = [[ErrorView alloc]init];
+    self.errorView.delegate = self;
+    self.errorView.hidden = true;
+    [self.view addSubview:self.errorView];
+    self.errorView.userInteractionEnabled = true;
+    self.errorView.translatesAutoresizingMaskIntoConstraints = false;
+    [[self.errorView leadingAnchor] constraintEqualToAnchor:self.view.leadingAnchor constant:0].active = true;
+    [[self.errorView trailingAnchor] constraintEqualToAnchor:self.view.trailingAnchor constant:0].active = true;
+    [[self.errorView heightAnchor] constraintEqualToAnchor:self.view.heightAnchor constant:0].active = true;
+    [[self.errorView centerYAnchor] constraintEqualToAnchor:self.view.centerYAnchor].active = true;
+}
+
+-(void)errorViewClickDelegate {
+    [self pullDownSetupData];
+}
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -66,11 +105,17 @@
     cell.timeLabel.text = currentMagazine.time;
     cell.zanNumberLabel.text = currentMagazine.zanNumber;
     
-    [currentMagazine.imageAvfile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-        if (!error) {
-            cell.logoImageView.image = [UIImage imageWithData:data];
-        }
-    }];
+    if (currentMagazine.imageAvfile == nil) {
+        cell.logoImageView.image = [UIImage imageNamed:@"default.jpg"];
+    }else {
+        [currentMagazine.imageAvfile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            if (!error) {
+                cell.logoImageView.image = [UIImage imageWithData:data];
+            }else {
+                cell.logoImageView.image = [UIImage imageNamed:@"default.jpg"];
+            }
+        }];
+    }
     return cell;
 }
 
@@ -79,14 +124,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
