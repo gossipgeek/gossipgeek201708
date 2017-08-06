@@ -18,6 +18,7 @@
 "titleSignIn"="登录";
 "titleForgotPassword"="忘记密码？";
 "titleSignUp"="注册";
+"titleActivity"="活动";
 "promptError"="错误";
 "promptGoEmailVerified"="请前往邮箱验证";
 "promptNetworkError"="网络开小差了";
@@ -26,5 +27,7 @@
 "promptSignInLimit"="登录失败次数超过限制，请稍候再试";
 "promptNotEmail"="邮箱格式不正确";
 "promptOnlyTWEmailEnable"="仅支持thoughtworks邮箱";
-"promptSignUpSucceeded" = "注册成功";
-"promptEmailAlreadyOccupied" = "此电子邮箱已被占用";
+"promptSignUpSucceeded"="注册成功";
+"promptEmailAlreadyOccupied"="此电子邮箱已被占用";
+"promptHaveNothingOfActivity"="还没有活动，您可以稍后点击图片查看";
+"promptNoMoreData"="没有更多数据";
