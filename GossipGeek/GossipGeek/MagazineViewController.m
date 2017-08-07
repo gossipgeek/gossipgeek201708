@@ -34,14 +34,14 @@
     self.automaticallyAdjustsScrollViewInsets = false;
 }
 
--(void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [MBProgressHUD showHUDAddedTo:self.tabBarController.view animated:true];
     [self pullDownSetupData];
-
+    
 }
 
--(void)initMagazineTableView {
+- (void)initMagazineTableView {
     self.magazineTableView.delegate = self;
     self.magazineTableView.dataSource = self;
     self.magazineTableView.rowHeight = UITableViewAutomaticDimension;
@@ -53,20 +53,20 @@
     self.magazineTableView.tableFooterView = [[UIView alloc]initWithFrame:(CGRectZero)];
 }
 
--(void)pullDownSetupData {
+- (void)pullDownSetupData {
     [self.magazineViewModel getDataFromNetWork:^(NSError *error) {
         [MBProgressHUD hideHUDForView:self.tabBarController.view animated:true];
         [self.magazineTableView.mj_header endRefreshing];
         [self.magazineTableView reloadData];
         if (error) {
-             [self hiddenErrorInfoUI:true];
+            [self hiddenErrorInfoUI:true];
         }else {
             [self hiddenErrorInfoUI:false];
         }
     }];
 }
 
--(void)hiddenErrorInfoUI:(Boolean)flag {
+- (void)hiddenErrorInfoUI:(Boolean)flag {
     if (flag) {
         self.errorView.hidden = false;
     }else {
@@ -74,7 +74,7 @@
     }
 }
 
--(void)createErrorInfoUI {
+- (void)createErrorInfoUI {
     self.errorView = [[ErrorView alloc]init];
     self.errorView.delegate = self;
     self.errorView.hidden = true;
@@ -87,20 +87,20 @@
     [[self.errorView centerYAnchor] constraintEqualToAnchor:self.view.centerYAnchor].active = true;
 }
 
--(void)errorViewClickDelegate {
+- (void)errorViewClickDelegate {
     [MBProgressHUD showHUDAddedTo:self.tabBarController.view animated:true];
     [self pullDownSetupData];
 }
 
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.magazineViewModel.magazines.count;
 }
 
--(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MagazineTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"magezineCell"];
     Magazine* currentMagazine = self.magazineViewModel.magazines[indexPath.row];
     cell.titleLabel.text = currentMagazine.title;
@@ -122,13 +122,13 @@
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Magazine* selectMagazine = self.magazineViewModel.magazines[indexPath.row];
     self.magazineDetailViewController.url = selectMagazine.url;
     self.magazineDetailViewController.tabBarController.tabBar.hidden = true;
 }
 
--(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier  isEqual: @"magazineSegue"]) {
         self.magazineDetailViewController = (MagazineDetailViewController*)[segue destinationViewController];
     }

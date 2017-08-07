@@ -16,5 +16,5 @@
 @property (strong, nonatomic) UIImageView *errorImageView;
 @property (weak, nonatomic) id<ErrorViewClickDelegate> delegate;
 - (instancetype)init;
--(void)viewClick;
+- (void)viewClick;
 @end

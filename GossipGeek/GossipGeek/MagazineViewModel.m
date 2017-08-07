@@ -9,7 +9,7 @@
 #import "MagazineViewModel.h"
 @implementation MagazineViewModel
 
--(instancetype)init {
+- (instancetype)init {
     self = [super init];
     if (self) {
         self.magazines = [[NSMutableArray alloc]init];
@@ -17,7 +17,7 @@
     return self;
 }
 
--(void)getDataFromNetWork:(void (^)(NSError* error))block {
+- (void)getDataFromNetWork:(void (^)(NSError* error))block {
     [self.magazines removeAllObjects];
     AVQuery *query = [AVQuery queryWithClassName:@"Magazine"];
     [query orderByDescending:@"createdAt"];
@@ -35,7 +35,7 @@
     }];
 }
 
--(void)avobjectToMagazineModel:(NSArray *)magazineAVObjects {   
+- (void)avobjectToMagazineModel:(NSArray *)magazineAVObjects {
     for (int i = 0; i < magazineAVObjects.count; i++) {
         Magazine *magazine = [[Magazine alloc]init];
         AVObject *avobjec = magazineAVObjects[i];
@@ -50,11 +50,11 @@
     [self userTimeSort];
 }
 
--(void)addMagezineModel:(Magazine *)magazine {
+- (void)addMagezineModel:(Magazine *)magazine {
     [self.magazines addObject:magazine];
 }
 
--(void)userTimeSort {
+- (void)userTimeSort {
     [self.magazines sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
         NSArray *obj1Times = [((Magazine*)obj1).time componentsSeparatedByString:@"-"];
         NSArray *obj2Times = [((Magazine*)obj2).time componentsSeparatedByString:@"-"];

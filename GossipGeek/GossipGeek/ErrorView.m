@@ -15,13 +15,10 @@
     if (self) {
         self.errorImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"networkError.jpeg"]];
         [self addSubview:self.errorImageView];
-        
         self.errorLabel = [[UILabel alloc]init];
         self.errorLabel.font = [UIFont systemFontOfSize:15];
         self.errorLabel.textColor = [UIColor grayColor];
         [self addSubview:self.errorLabel];
-        
-        
         UITapGestureRecognizer *tapGestuerRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(viewClick)];
         [self addGestureRecognizer:tapGestuerRecognizer];
     }
@@ -47,6 +44,6 @@
     [[self.errorImageView centerXAnchor] constraintEqualToAnchor:self.errorLabel.centerXAnchor].active = true;
     [[self.errorImageView widthAnchor] constraintEqualToAnchor:self.widthAnchor constant:-100].active = true;
     [[self.errorImageView heightAnchor] constraintEqualToAnchor:self.errorImageView.widthAnchor multiplier:0.8125 constant:0].active = true;
-
+    
 }
 @end

@@ -9,10 +9,7 @@
 #import "MagazineDetailViewController.h"
 
 @interface MagazineDetailViewController ()
-//@property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *goBack;
-
-
 @end
 
 @implementation MagazineDetailViewController
@@ -21,12 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.magazineWebView.backgroundColor = [UIColor clearColor];
-  //  [self.magazineWebView setOpaque:false];
-  //  [[[self.magazineWebView subviews] objectAtIndex:0] setBounds:true];
-//    self.toolBar.backgroundColor = [UIColor clearColor];
-//    self.toolBar.alpha = 0;
     [self updataWebview];
-    
     self.automaticallyAdjustsScrollViewInsets = false;
 }
 
