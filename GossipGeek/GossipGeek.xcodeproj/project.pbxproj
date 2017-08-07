@@ -51,6 +51,8 @@
 		BF0F37BB1F341035009CA6BA /* defaultImage.JPG in Resources */ = {isa = PBXBuildFile; fileRef = BF0F37BA1F341035009CA6BA /* defaultImage.JPG */; };
 		BF0F37C71F345CFA009CA6BA /* ErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0F37C61F345CFA009CA6BA /* ErrorView.m */; };
 		BF0F37C91F3467B4009CA6BA /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BF0F37C81F3467B4009CA6BA /* default.jpg */; };
+		BF0F37CC1F359751009CA6BA /* MagazineDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0F37CB1F359751009CA6BA /* MagazineDetailViewController.m */; };
+		BFEA1C891F36DBCA00316F9E /* MBProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BFEA1C881F36DBCA00316F9E /* MBProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F6FF54BF1F308FE700179B14 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FF54BE1F308FE700179B14 /* SignInViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +65,20 @@
 			remoteInfo = GossipGeek;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BF0F37D01F36D476009CA6BA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BFEA1C891F36DBCA00316F9E /* MBProgressHUD.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		BE4EE02B1F31DB2800A6AA85 /* Kiwi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kiwi.framework; path = Carthage/Build/iOS/Kiwi.framework; sourceTree = "<group>"; };
@@ -143,6 +159,9 @@
 		BF0F37C51F345CFA009CA6BA /* ErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorView.h; sourceTree = "<group>"; };
 		BF0F37C61F345CFA009CA6BA /* ErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorView.m; sourceTree = "<group>"; };
 		BF0F37C81F3467B4009CA6BA /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
+		BF0F37CA1F359751009CA6BA /* MagazineDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagazineDetailViewController.h; sourceTree = "<group>"; };
+		BF0F37CB1F359751009CA6BA /* MagazineDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagazineDetailViewController.m; sourceTree = "<group>"; };
+		BFEA1C881F36DBCA00316F9E /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
 		F6FF54BD1F308FE700179B14 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		F6FF54BE1F308FE700179B14 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -240,6 +259,7 @@
 		BF0F37471F305ED7009CA6BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BFEA1C881F36DBCA00316F9E /* MBProgressHUD.framework */,
 				BF0F37561F305F46009CA6BA /* CoreLocation.framework */,
 				BF0F37541F305F35009CA6BA /* CoreTelephony.framework */,
 				BF0F37521F305F2C009CA6BA /* MobileCoreServices.framework */,
@@ -276,6 +296,8 @@
 				F6FF54BE1F308FE700179B14 /* SignInViewController.m */,
 				BF0F375C1F30E1E1009CA6BA /* MagazineViewController.h */,
 				BF0F375D1F30E1E1009CA6BA /* MagazineViewController.m */,
+				BF0F37CA1F359751009CA6BA /* MagazineDetailViewController.h */,
+				BF0F37CB1F359751009CA6BA /* MagazineDetailViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -419,6 +441,8 @@
 				BF0F36E51F305B34009CA6BA /* Sources */,
 				BF0F36E61F305B34009CA6BA /* Frameworks */,
 				BF0F36E71F305B34009CA6BA /* Resources */,
+				BF0F37D01F36D476009CA6BA /* Embed Frameworks */,
+				BF0F37D11F36D69E009CA6BA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -526,6 +550,21 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
+		BF0F37D11F36D69E009CA6BA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/MBProgressHUD.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/MBProgressHUD.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/Carthage copy-frameworks";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -552,6 +591,7 @@
 				BF0F37991F32D916009CA6BA /* MJRefreshBackFooter.m in Sources */,
 				BF0F37AA1F32D916009CA6BA /* UIView+MJExtension.m in Sources */,
 				BF0F37A71F32D916009CA6BA /* NSBundle+MJRefresh.m in Sources */,
+				BF0F37CC1F359751009CA6BA /* MagazineDetailViewController.m in Sources */,
 				BF0F36EE1F305B34009CA6BA /* main.m in Sources */,
 				BF0F379B1F32D916009CA6BA /* MJRefreshFooter.m in Sources */,
 				BF0F37A61F32D916009CA6BA /* MJRefreshConst.m in Sources */,
