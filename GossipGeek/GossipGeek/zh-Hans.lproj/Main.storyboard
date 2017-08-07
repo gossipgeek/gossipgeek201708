@@ -4,8 +4,8 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,7 +14,7 @@
         <scene sceneID="epe-wO-GgG">
             <objects>
                 <navigationController id="Pmw-vT-kqE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="杂志" image="magazine-icon" selectedImage="magazine-icon" id="P8J-kk-3kQ"/>
+                    <tabBarItem key="tabBarItem" title="杂志" id="P8J-kk-3kQ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NGp-2k-d6H">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -27,10 +27,10 @@
             </objects>
             <point key="canvasLocation" x="-25" y="-675"/>
         </scene>
-        <!--杂志-->
+        <!--View Controller-->
         <scene sceneID="rvB-Xp-tmu">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="3Uz-lh-PKI" customClass="MagazineViewController" sceneMemberID="viewController">
+                <viewController id="3Uz-lh-PKI" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="R3X-oD-Hdy"/>
                         <viewControllerLayoutGuide type="bottom" id="NiV-KY-va6"/>
@@ -38,98 +38,9 @@
                     <view key="view" contentMode="scaleToFill" id="cv7-Yh-eAg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="348" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="gQv-a7-hCb">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="magezineCell" id="ocG-33-CIu" customClass="MagazineTableViewCell">
-                                        <rect key="frame" x="0.0" y="1" width="375" height="348"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ocG-33-CIu" id="WHw-Aq-868">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="347.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="asQ-Et-nwP">
-                                                    <rect key="frame" x="20" y="20" width="335" height="193"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="asQ-Et-nwP" secondAttribute="height" multiplier="71:41" id="pJG-Lp-ADw"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                            <integer key="value" value="1"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dkl-vb-d8c">
-                                                    <rect key="frame" x="20" y="233" width="335" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="contant" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVZ-19-4zt">
-                                                    <rect key="frame" x="20" y="278.5" width="335" height="14.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.59573805332183838" green="0.60361957550048828" blue="0.62433123588562012" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKw-rf-5zv">
-                                                    <rect key="frame" x="20" y="313" width="167.5" height="14.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" red="0.79599106311798096" green="0.79612869024276733" blue="0.79598242044448853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="likeNumber" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qR6-ru-v8h">
-                                                    <rect key="frame" x="187.5" y="313" width="167.5" height="14.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" red="0.79599106311798096" green="0.79612869024276733" blue="0.79598242044448853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Dkl-vb-d8c" firstAttribute="trailing" secondItem="asQ-Et-nwP" secondAttribute="trailing" id="53c-Gr-L19"/>
-                                                <constraint firstItem="asQ-Et-nwP" firstAttribute="top" secondItem="WHw-Aq-868" secondAttribute="top" constant="20" id="EgH-Lv-e4f"/>
-                                                <constraint firstItem="Dkl-vb-d8c" firstAttribute="top" secondItem="asQ-Et-nwP" secondAttribute="bottom" constant="20" id="Hgv-H5-IGt"/>
-                                                <constraint firstItem="wKw-rf-5zv" firstAttribute="leading" secondItem="asQ-Et-nwP" secondAttribute="leading" id="KJk-Yk-2jw"/>
-                                                <constraint firstItem="wKw-rf-5zv" firstAttribute="top" secondItem="oVZ-19-4zt" secondAttribute="bottom" constant="20" id="KVx-hk-b3o"/>
-                                                <constraint firstItem="qR6-ru-v8h" firstAttribute="leading" secondItem="wKw-rf-5zv" secondAttribute="trailing" id="Ng5-9L-5OA"/>
-                                                <constraint firstAttribute="trailing" secondItem="qR6-ru-v8h" secondAttribute="trailing" constant="20" id="Way-sf-Vn4"/>
-                                                <constraint firstItem="qR6-ru-v8h" firstAttribute="top" secondItem="oVZ-19-4zt" secondAttribute="bottom" constant="20" id="Ws2-pS-ezc"/>
-                                                <constraint firstItem="oVZ-19-4zt" firstAttribute="trailing" secondItem="asQ-Et-nwP" secondAttribute="trailing" id="Xtp-kJ-MAw"/>
-                                                <constraint firstItem="oVZ-19-4zt" firstAttribute="leading" secondItem="Dkl-vb-d8c" secondAttribute="leading" id="bKl-jG-miV"/>
-                                                <constraint firstItem="qR6-ru-v8h" firstAttribute="baseline" secondItem="wKw-rf-5zv" secondAttribute="baseline" id="bjp-lD-USG"/>
-                                                <constraint firstItem="oVZ-19-4zt" firstAttribute="top" secondItem="Dkl-vb-d8c" secondAttribute="bottom" constant="25" id="k6i-4X-NNx"/>
-                                                <constraint firstAttribute="bottom" secondItem="wKw-rf-5zv" secondAttribute="bottom" constant="20" id="lrM-Ie-oFm"/>
-                                                <constraint firstItem="wKw-rf-5zv" firstAttribute="width" secondItem="qR6-ru-v8h" secondAttribute="width" id="m2L-Qp-OCy"/>
-                                                <constraint firstItem="Dkl-vb-d8c" firstAttribute="leading" secondItem="asQ-Et-nwP" secondAttribute="leading" id="uM5-Lv-55i"/>
-                                                <constraint firstItem="asQ-Et-nwP" firstAttribute="leading" secondItem="WHw-Aq-868" secondAttribute="leading" constant="20" id="y3r-Ht-Pgf"/>
-                                                <constraint firstAttribute="trailing" secondItem="asQ-Et-nwP" secondAttribute="trailing" constant="20" id="zoo-a1-u2C"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <outlet property="contantLabel" destination="oVZ-19-4zt" id="Rae-0Y-yfb"/>
-                                            <outlet property="likeNumberLabel" destination="qR6-ru-v8h" id="Ji7-yf-XgI"/>
-                                            <outlet property="logoImageView" destination="asQ-Et-nwP" id="gRL-ny-mBP"/>
-                                            <outlet property="timeLabel" destination="wKw-rf-5zv" id="ddV-f9-qI4"/>
-                                            <outlet property="titleLabel" destination="Dkl-vb-d8c" id="89Q-5m-waL"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="gQv-a7-hCb" secondAttribute="trailing" id="CXD-gC-q4c"/>
-                            <constraint firstItem="gQv-a7-hCb" firstAttribute="top" secondItem="R3X-oD-Hdy" secondAttribute="bottom" id="UgA-dg-DoL"/>
-                            <constraint firstItem="NiV-KY-va6" firstAttribute="top" secondItem="gQv-a7-hCb" secondAttribute="bottom" id="gak-Cf-vWV"/>
-                            <constraint firstItem="gQv-a7-hCb" firstAttribute="leading" secondItem="cv7-Yh-eAg" secondAttribute="leading" id="nuP-34-GqH"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="杂志" id="cwn-pg-vfy"/>
-                    <connections>
-                        <outlet property="magazineTableView" destination="gQv-a7-hCb" id="hKB-mL-rXB"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="cwn-pg-vfy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o5X-Pl-1TG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -139,7 +50,7 @@
         <scene sceneID="g2G-DN-Ms5">
             <objects>
                 <navigationController id="OPf-sX-BVd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="爆料" image="gossip-icon.png" selectedImage="gossip-icon.png" id="BUr-VJ-e7q"/>
+                    <tabBarItem key="tabBarItem" title="爆料" id="BUr-VJ-e7q"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qVj-1Q-TlE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -175,7 +86,7 @@
         <scene sceneID="Z9u-V0-WUD">
             <objects>
                 <navigationController id="9pF-3f-MRS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="活动" image="active-icon" selectedImage="active-icon" id="581-0I-yTY"/>
+                    <tabBarItem key="tabBarItem" title="活动" id="581-0I-yTY"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="apN-md-NZ4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -248,7 +159,7 @@
         <scene sceneID="RWs-zs-5qZ">
             <objects>
                 <navigationController id="GMr-F1-BBK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="更多" image="userinfo-icon" selectedImage="userinfo-icon" id="jG1-B3-jYj"/>
+                    <tabBarItem key="tabBarItem" title="更多" id="jG1-B3-jYj"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OB0-Ez-qwJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -477,10 +388,4 @@
             <point key="canvasLocation" x="-414" y="138"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="active-icon" width="24" height="24"/>
-        <image name="gossip-icon.png" width="50" height="50"/>
-        <image name="magazine-icon" width="24" height="24"/>
-        <image name="userinfo-icon" width="28" height="28"/>
-    </resources>
 </document>
