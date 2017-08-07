@@ -56,6 +56,8 @@
 		BF0F37C71F345CFA009CA6BA /* ErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0F37C61F345CFA009CA6BA /* ErrorView.m */; };
 		BF0F37C91F3467B4009CA6BA /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BF0F37C81F3467B4009CA6BA /* default.jpg */; };
 		BF0F37CC1F359751009CA6BA /* MagazineDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0F37CB1F359751009CA6BA /* MagazineDetailViewController.m */; };
+		BF21F6C41F38742B00A64945 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF21F6C31F38742B00A64945 /* MBProgressHUD.framework */; };
+		BF21F6C51F38742B00A64945 /* MBProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF21F6C31F38742B00A64945 /* MBProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F6FF54BF1F308FE700179B14 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FF54BE1F308FE700179B14 /* SignInViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +81,17 @@
 				BE2FBCD41F37FEC000C80A5A /* Nimble.framework in CopyFiles */,
 				BE2FBCD51F37FEC000C80A5A /* Quick.framework in CopyFiles */,
 			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF21F6C61F38742C00A64945 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BF21F6C51F38742B00A64945 /* MBProgressHUD.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -169,6 +182,7 @@
 		BF0F37C81F3467B4009CA6BA /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
 		BF0F37CA1F359751009CA6BA /* MagazineDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagazineDetailViewController.h; sourceTree = "<group>"; };
 		BF0F37CB1F359751009CA6BA /* MagazineDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagazineDetailViewController.m; sourceTree = "<group>"; };
+		BF21F6C31F38742B00A64945 /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
 		F6FF54BD1F308FE700179B14 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		F6FF54BE1F308FE700179B14 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,6 +200,7 @@
 				BF0F374D1F305F0F009CA6BA /* libicucore.tbd in Frameworks */,
 				BF0F374B1F305F05009CA6BA /* libc++.tbd in Frameworks */,
 				BF0F37491F305ED7009CA6BA /* libz.tbd in Frameworks */,
+				BF21F6C41F38742B00A64945 /* MBProgressHUD.framework in Frameworks */,
 				BF0F37461F305E8D009CA6BA /* AVOSCloud.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,6 +220,7 @@
 		BF0F36E01F305B34009CA6BA = {
 			isa = PBXGroup;
 			children = (
+				BF21F6C31F38742B00A64945 /* MBProgressHUD.framework */,
 				BE2FBCD21F37FEC000C80A5A /* Nimble.framework */,
 				BE2FBCD31F37FEC000C80A5A /* Quick.framework */,
 				BF0F36EB1F305B34009CA6BA /* GossipGeek */,
@@ -453,6 +469,7 @@
 				BF0F36E51F305B34009CA6BA /* Sources */,
 				BF0F36E61F305B34009CA6BA /* Frameworks */,
 				BF0F36E71F305B34009CA6BA /* Resources */,
+				BF21F6C61F38742C00A64945 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
