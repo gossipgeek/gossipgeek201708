@@ -8,3 +8,8 @@ before_script:
   - carthage bootstrap --platform ios
 
 script: xcodebuild test -scheme GossipGeek -destination 'platform=iOS Simulator,name=iPhone 6'
+
+ notifications:
+  slack:
+    rooms:
+      - gg201708:9VilroUBvf9aFX7AfK9h6Q8d#travis
