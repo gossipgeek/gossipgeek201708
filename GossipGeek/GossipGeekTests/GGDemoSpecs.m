@@ -7,7 +7,11 @@
 //
 
 #import <XCTest/XCTest.h>
-#import <Kiwi/Kiwi.h>
+
+#define QUICK_DISABLE_SHORT_SYNTAX 1
+
+@import Quick;
+@import Nimble;
 
 @interface GGDemo : NSObject
 
@@ -28,45 +32,45 @@
 
 @end
 
-SPEC_BEGIN(GGDemoSpecs)
+QuickSpecBegin(GGDemoSpecs)
 
 describe(@"GGDemo Specs", ^{
     context(@"quoteStringWithString", ^{
         
         __block GGDemo *demo = nil;
         
-        beforeAll(^{
+        beforeEach(^{
             demo = [[GGDemo alloc] init];
         });
         
-        afterAll(^{
+        afterEach(^{
             demo = nil;
         });
         
         it(@"should be '\"abc\"' when the string is 'abc'", ^{
             NSString *string = @"abc";
-            [[[demo quoteStringWithString:string] should] equal:@"\"abc\""];
+            expect([demo quoteStringWithString:string]).to(equal(@"\"abc\""));
         });
         
         it(@"should be '\"1111\"' when the string is '1111'", ^{
             NSString *string = @"1111";
-            [[[demo quoteStringWithString:string] should] equal:@"\"1111\""];
+            expect([demo quoteStringWithString:string]).to(equal(@"\"1111\""));
         });
         
         it(@"should be '\"\"Hello World\"\"' when the string is '\"Hello World\"'", ^{
             NSString *string = @"\"Hello World\"";
-            [[[demo quoteStringWithString:string] should] equal:@"\"\"Hello World\"\""];
+            expect([demo quoteStringWithString:string]).to(equal(@"\"\"Hello World\"\""));
         });
         
         it(@"should be 'Empty String when' the string is nil", ^{
-            [[[demo quoteStringWithString:nil] should] equal:@"Empty String"];
+            expect([demo quoteStringWithString:nil]).to(equal(@"Empty String"));
         });
         
         it(@"should be 'Empty String when' the string is ''", ^{
-            [[[demo quoteStringWithString:@""] should] equal:@"Empty String"];
+            expect([demo quoteStringWithString:@""]).to(equal(@"Empty String"));
         });
         
     });
 });
 
-SPEC_END
+QuickSpecEnd

@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE2FBCCF1F37FDE600C80A5A /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE2FBCCD1F37FDE600C80A5A /* Nimble.framework */; };
+		BE2FBCD01F37FDE600C80A5A /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE2FBCCE1F37FDE600C80A5A /* Quick.framework */; };
+		BE2FBCD41F37FEC000C80A5A /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BE2FBCD21F37FEC000C80A5A /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BE2FBCD51F37FEC000C80A5A /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BE2FBCD31F37FEC000C80A5A /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BE2FBCD81F38008700C80A5A /* SwiftSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2FBCD71F38008700C80A5A /* SwiftSpecs.swift */; };
 		BE4EE0301F32BA7B00A6AA85 /* GGDemoSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4EE02F1F32BA7B00A6AA85 /* GGDemoSpecs.m */; };
-		BE4EE0321F32BB1200A6AA85 /* Kiwi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4EE02B1F31DB2800A6AA85 /* Kiwi.framework */; };
 		BF0F36EE1F305B34009CA6BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0F36ED1F305B34009CA6BA /* main.m */; };
 		BF0F36F11F305B34009CA6BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0F36F01F305B34009CA6BA /* AppDelegate.m */; };
 		BF0F36F71F305B34009CA6BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0F36F51F305B34009CA6BA /* Main.storyboard */; };
@@ -36,7 +40,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		BE2FBCD11F37FE9E00C80A5A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BE2FBCD41F37FEC000C80A5A /* Nimble.framework in CopyFiles */,
+				BE2FBCD51F37FEC000C80A5A /* Quick.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		BE2FBCCD1F37FDE600C80A5A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		BE2FBCCE1F37FDE600C80A5A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		BE2FBCD21F37FEC000C80A5A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		BE2FBCD31F37FEC000C80A5A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		BE2FBCD61F38008600C80A5A /* GossipGeekTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GossipGeekTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		BE2FBCD71F38008700C80A5A /* SwiftSpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftSpecs.swift; sourceTree = "<group>"; };
 		BE4EE02B1F31DB2800A6AA85 /* Kiwi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kiwi.framework; path = Carthage/Build/iOS/Kiwi.framework; sourceTree = "<group>"; };
 		BE4EE02F1F32BA7B00A6AA85 /* GGDemoSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGDemoSpecs.m; sourceTree = "<group>"; };
 		BF0F36E91F305B34009CA6BA /* GossipGeek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GossipGeek.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,7 +107,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE4EE0321F32BB1200A6AA85 /* Kiwi.framework in Frameworks */,
+				BE2FBCCF1F37FDE600C80A5A /* Nimble.framework in Frameworks */,
+				BE2FBCD01F37FDE600C80A5A /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +118,8 @@
 		BF0F36E01F305B34009CA6BA = {
 			isa = PBXGroup;
 			children = (
+				BE2FBCD21F37FEC000C80A5A /* Nimble.framework */,
+				BE2FBCD31F37FEC000C80A5A /* Quick.framework */,
 				BE4EE02B1F31DB2800A6AA85 /* Kiwi.framework */,
 				BF0F36EB1F305B34009CA6BA /* GossipGeek */,
 				BF0F37051F305B34009CA6BA /* GossipGeekTests */,
@@ -141,6 +168,8 @@
 			children = (
 				BE4EE02F1F32BA7B00A6AA85 /* GGDemoSpecs.m */,
 				BF0F37081F305B34009CA6BA /* Info.plist */,
+				BE2FBCD71F38008700C80A5A /* SwiftSpecs.swift */,
+				BE2FBCD61F38008600C80A5A /* GossipGeekTests-Bridging-Header.h */,
 			);
 			path = GossipGeekTests;
 			sourceTree = "<group>";
@@ -148,6 +177,8 @@
 		BF0F37471F305ED7009CA6BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BE2FBCCD1F37FDE600C80A5A /* Nimble.framework */,
+				BE2FBCCE1F37FDE600C80A5A /* Quick.framework */,
 				BF0F37561F305F46009CA6BA /* CoreLocation.framework */,
 				BF0F37541F305F35009CA6BA /* CoreTelephony.framework */,
 				BF0F37521F305F2C009CA6BA /* MobileCoreServices.framework */,
@@ -218,7 +249,7 @@
 				BF0F36FE1F305B34009CA6BA /* Sources */,
 				BF0F36FF1F305B34009CA6BA /* Frameworks */,
 				BF0F37001F305B34009CA6BA /* Resources */,
-				BE4EE0331F32C0ED00A6AA85 /* ShellScript */,
+				BE2FBCD11F37FE9E00C80A5A /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -245,6 +276,7 @@
 					};
 					BF0F37011F305B34009CA6BA = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = BF0F36E81F305B34009CA6BA;
 					};
@@ -289,23 +321,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		BE4EE0331F32C0ED00A6AA85 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Kiwi.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		BF0F36E51F305B34009CA6BA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -321,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE2FBCD81F38008700C80A5A /* SwiftSpecs.swift in Sources */,
 				BE4EE0301F32BA7B00A6AA85 /* GGDemoSpecs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,6 +501,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -493,6 +510,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tw.GossipGeekTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GossipGeekTests/GossipGeekTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GossipGeek.app/GossipGeek";
 			};
 			name = Debug;
@@ -501,6 +521,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -509,6 +530,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tw.GossipGeekTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GossipGeekTests/GossipGeekTests-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GossipGeek.app/GossipGeek";
 			};
 			name = Release;

@@ -42,6 +42,7 @@ xcuserdata/
 # Carthage/Checkouts
 
 Carthage/Build
+GossipGeek/Carthage/Checkouts
 
 # fastlane
 #
@@ -61,4 +62,3 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
-GossipGeek/Carthage/Checkouts

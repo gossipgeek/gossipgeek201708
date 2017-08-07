@@ -1,1 +1,2 @@
-github "kiwi-bdd/Kiwi" "v2.4.0"
+github "Quick/Nimble" "v7.0.1"
+github "Quick/Quick" "v1.1.0"
