@@ -7,7 +7,6 @@
 //
 
 #import "MagazineViewModel.h"
-
 @implementation MagazineViewModel
 
 -(instancetype)init {

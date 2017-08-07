@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7DA-4L-get">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7DA-4L-get">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -108,6 +109,7 @@
                                             <outlet property="timeLabel" destination="wKw-rf-5zv" id="ddV-f9-qI4"/>
                                             <outlet property="titleLabel" destination="Dkl-vb-d8c" id="89Q-5m-waL"/>
                                             <outlet property="zanNumberLabel" destination="qR6-ru-v8h" id="2dP-H9-oax"/>
+                                            <segue destination="9Bm-Hs-rIA" kind="show" identifier="magazineSegue" id="nMA-Tg-iod"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -129,6 +131,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o5X-Pl-1TG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1645.5999999999999" y="-806.44677661169419"/>
+        </scene>
+        <!--杂志详情-->
+        <scene sceneID="2xR-af-fGM">
+            <objects>
+                <viewController storyboardIdentifier="magazineDetail" id="9Bm-Hs-rIA" customClass="MagazineDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eZJ-3y-ldX"/>
+                        <viewControllerLayoutGuide type="bottom" id="mqM-Dy-Kkd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ice-10-HSh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SyM-lA-9oU">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="SyM-lA-9oU" secondAttribute="trailing" id="87I-9c-g07"/>
+                            <constraint firstItem="SyM-lA-9oU" firstAttribute="top" secondItem="eZJ-3y-ldX" secondAttribute="bottom" id="B0v-IC-0qk"/>
+                            <constraint firstItem="mqM-Dy-Kkd" firstAttribute="top" secondItem="SyM-lA-9oU" secondAttribute="bottom" id="Qe9-Jx-Qat"/>
+                            <constraint firstItem="SyM-lA-9oU" firstAttribute="leading" secondItem="ice-10-HSh" secondAttribute="leading" id="aRR-8f-Ybt"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="杂志详情" id="2E3-mG-mdN">
+                        <leftBarButtonItems>
+                            <barButtonItem title="&lt;" id="8vk-S5-35e">
+                                <connections>
+                                    <action selector="goBackClick:" destination="9Bm-Hs-rIA" id="WT9-hP-2HQ"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="关闭" id="3D1-4h-UnD"/>
+                        </leftBarButtonItems>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="goBack" destination="8vk-S5-35e" id="7cV-Fk-Two"/>
+                        <outlet property="magazineWebView" destination="SyM-lA-9oU" id="0rg-p6-WpP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LyI-jj-47q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2412" y="-795.6521739130435"/>
         </scene>
         <!--爆料-->
         <scene sceneID="g2G-DN-Ms5">

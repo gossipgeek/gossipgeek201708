@@ -55,6 +55,7 @@
 		BF0F37BB1F341035009CA6BA /* defaultImage.JPG in Resources */ = {isa = PBXBuildFile; fileRef = BF0F37BA1F341035009CA6BA /* defaultImage.JPG */; };
 		BF0F37C71F345CFA009CA6BA /* ErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0F37C61F345CFA009CA6BA /* ErrorView.m */; };
 		BF0F37C91F3467B4009CA6BA /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BF0F37C81F3467B4009CA6BA /* default.jpg */; };
+		BF0F37CC1F359751009CA6BA /* MagazineDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0F37CB1F359751009CA6BA /* MagazineDetailViewController.m */; };
 		F6FF54BF1F308FE700179B14 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FF54BE1F308FE700179B14 /* SignInViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -89,7 +90,6 @@
 		BE2FBCD31F37FEC000C80A5A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		BE2FBCD61F38008600C80A5A /* GossipGeekTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GossipGeekTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		BE2FBCD71F38008700C80A5A /* SwiftSpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftSpecs.swift; sourceTree = "<group>"; };
-		BE4EE02B1F31DB2800A6AA85 /* Kiwi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kiwi.framework; path = Carthage/Build/iOS/Kiwi.framework; sourceTree = "<group>"; };
 		BE4EE02F1F32BA7B00A6AA85 /* GGDemoSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGDemoSpecs.m; sourceTree = "<group>"; };
 		BF0F36E91F305B34009CA6BA /* GossipGeek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GossipGeek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF0F36ED1F305B34009CA6BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -167,6 +167,8 @@
 		BF0F37C51F345CFA009CA6BA /* ErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorView.h; sourceTree = "<group>"; };
 		BF0F37C61F345CFA009CA6BA /* ErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorView.m; sourceTree = "<group>"; };
 		BF0F37C81F3467B4009CA6BA /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
+		BF0F37CA1F359751009CA6BA /* MagazineDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagazineDetailViewController.h; sourceTree = "<group>"; };
+		BF0F37CB1F359751009CA6BA /* MagazineDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagazineDetailViewController.m; sourceTree = "<group>"; };
 		F6FF54BD1F308FE700179B14 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		F6FF54BE1F308FE700179B14 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -205,7 +207,6 @@
 			children = (
 				BE2FBCD21F37FEC000C80A5A /* Nimble.framework */,
 				BE2FBCD31F37FEC000C80A5A /* Quick.framework */,
-				BE4EE02B1F31DB2800A6AA85 /* Kiwi.framework */,
 				BF0F36EB1F305B34009CA6BA /* GossipGeek */,
 				BF0F37051F305B34009CA6BA /* GossipGeekTests */,
 				BF0F36EA1F305B34009CA6BA /* Products */,
@@ -307,6 +308,8 @@
 				F6FF54BE1F308FE700179B14 /* SignInViewController.m */,
 				BF0F375C1F30E1E1009CA6BA /* MagazineViewController.h */,
 				BF0F375D1F30E1E1009CA6BA /* MagazineViewController.m */,
+				BF0F37CA1F359751009CA6BA /* MagazineDetailViewController.h */,
+				BF0F37CB1F359751009CA6BA /* MagazineDetailViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -567,6 +570,7 @@
 				BF0F37991F32D916009CA6BA /* MJRefreshBackFooter.m in Sources */,
 				BF0F37AA1F32D916009CA6BA /* UIView+MJExtension.m in Sources */,
 				BF0F37A71F32D916009CA6BA /* NSBundle+MJRefresh.m in Sources */,
+				BF0F37CC1F359751009CA6BA /* MagazineDetailViewController.m in Sources */,
 				BF0F36EE1F305B34009CA6BA /* main.m in Sources */,
 				BF0F379B1F32D916009CA6BA /* MJRefreshFooter.m in Sources */,
 				BF0F37A61F32D916009CA6BA /* MJRefreshConst.m in Sources */,

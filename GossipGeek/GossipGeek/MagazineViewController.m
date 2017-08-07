@@ -13,11 +13,13 @@
 #import "Magazine.h"
 #import "ErrorView.h"
 #import <AVOSCloud/AVOSCloud.h>
+#import "MagazineDetailViewController.h"
+#import <MBProgressHUD/MBProgressHUD.h>
+
 @interface MagazineViewController ()<UITableViewDelegate,UITableViewDataSource,ErrorViewClickDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *magazineTableView;
 @property (strong, nonatomic) MagazineViewModel *magazineViewModel;
-//@property (strong, nonatomic) UILabel *errorLabel;
-//@property (strong, nonatomic) UIImageView *errorImageView;
+@property (strong, nonatomic) MagazineDetailViewController *magazineDetailViewController;
 @property (strong, nonatomic) ErrorView *errorView;
 @end
 
@@ -34,6 +36,7 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [MBProgressHUD showHUDAddedTo:self.tabBarController.view animated:true];
     [self pullDownSetupData];
 
 }
@@ -52,6 +55,7 @@
 
 -(void)pullDownSetupData {
     [self.magazineViewModel getDataFromNetWork:^(NSError *error) {
+        [MBProgressHUD hideHUDForView:self.tabBarController.view animated:true];
         [self.magazineTableView.mj_header endRefreshing];
         [self.magazineTableView reloadData];
         if (error) {
@@ -61,9 +65,7 @@
         }
     }];
 }
--(void)viewWillLayoutSubviews {
-    [super viewWillLayoutSubviews];
-}
+
 -(void)hiddenErrorInfoUI:(Boolean)flag {
     if (flag) {
         self.errorView.hidden = false;
@@ -86,6 +88,7 @@
 }
 
 -(void)errorViewClickDelegate {
+    [MBProgressHUD showHUDAddedTo:self.tabBarController.view animated:true];
     [self pullDownSetupData];
 }
 
@@ -117,6 +120,20 @@
         }];
     }
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Magazine* selectMagazine = self.magazineViewModel.magazines[indexPath.row];
+    self.magazineDetailViewController.url = selectMagazine.url;
+    self.magazineDetailViewController.tabBarController.tabBar.hidden = true;
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier  isEqual: @"magazineSegue"]) {
+        self.magazineDetailViewController = (MagazineDetailViewController*)[segue destinationViewController];
+    }
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
