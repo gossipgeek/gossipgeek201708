@@ -52,7 +52,12 @@
 		BF0F37C71F345CFA009CA6BA /* ErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0F37C61F345CFA009CA6BA /* ErrorView.m */; };
 		BF0F37C91F3467B4009CA6BA /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BF0F37C81F3467B4009CA6BA /* default.jpg */; };
 		BF0F37CC1F359751009CA6BA /* MagazineDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0F37CB1F359751009CA6BA /* MagazineDetailViewController.m */; };
+		BF21F6C21F3836CB00A64945 /* AddGossipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF21F6C11F3836CB00A64945 /* AddGossipViewController.m */; };
 		BFEA1C891F36DBCA00316F9E /* MBProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BFEA1C881F36DBCA00316F9E /* MBProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BFEA1C941F37FDC100316F9E /* GossipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA1C931F37FDC100316F9E /* GossipViewController.m */; };
+		BFEA1C971F37FDF800316F9E /* GossipTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA1C961F37FDF800316F9E /* GossipTableViewCell.m */; };
+		BFEA1C9A1F380BB100316F9E /* GossipViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA1C991F380BB100316F9E /* GossipViewModel.m */; };
+		BFEA1C9D1F380BE600316F9E /* Gossip.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA1C9C1F380BE600316F9E /* Gossip.m */; };
 		F6FF54BF1F308FE700179B14 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FF54BE1F308FE700179B14 /* SignInViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -161,7 +166,17 @@
 		BF0F37C81F3467B4009CA6BA /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
 		BF0F37CA1F359751009CA6BA /* MagazineDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagazineDetailViewController.h; sourceTree = "<group>"; };
 		BF0F37CB1F359751009CA6BA /* MagazineDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagazineDetailViewController.m; sourceTree = "<group>"; };
+		BF21F6C01F3836CB00A64945 /* AddGossipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddGossipViewController.h; sourceTree = "<group>"; };
+		BF21F6C11F3836CB00A64945 /* AddGossipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddGossipViewController.m; sourceTree = "<group>"; };
 		BFEA1C881F36DBCA00316F9E /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
+		BFEA1C921F37FDC100316F9E /* GossipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GossipViewController.h; sourceTree = "<group>"; };
+		BFEA1C931F37FDC100316F9E /* GossipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GossipViewController.m; sourceTree = "<group>"; };
+		BFEA1C951F37FDF800316F9E /* GossipTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GossipTableViewCell.h; sourceTree = "<group>"; };
+		BFEA1C961F37FDF800316F9E /* GossipTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GossipTableViewCell.m; sourceTree = "<group>"; };
+		BFEA1C981F380BB100316F9E /* GossipViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GossipViewModel.h; sourceTree = "<group>"; };
+		BFEA1C991F380BB100316F9E /* GossipViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GossipViewModel.m; sourceTree = "<group>"; };
+		BFEA1C9B1F380BE600316F9E /* Gossip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gossip.h; sourceTree = "<group>"; };
+		BFEA1C9C1F380BE600316F9E /* Gossip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gossip.m; sourceTree = "<group>"; };
 		F6FF54BD1F308FE700179B14 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		F6FF54BE1F308FE700179B14 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -285,6 +300,8 @@
 			children = (
 				BF0F37631F31D672009CA6BA /* Magazine.h */,
 				BF0F37641F31D672009CA6BA /* Magazine.m */,
+				BFEA1C9B1F380BE600316F9E /* Gossip.h */,
+				BFEA1C9C1F380BE600316F9E /* Gossip.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -298,6 +315,10 @@
 				BF0F375D1F30E1E1009CA6BA /* MagazineViewController.m */,
 				BF0F37CA1F359751009CA6BA /* MagazineDetailViewController.h */,
 				BF0F37CB1F359751009CA6BA /* MagazineDetailViewController.m */,
+				BFEA1C921F37FDC100316F9E /* GossipViewController.h */,
+				BFEA1C931F37FDC100316F9E /* GossipViewController.m */,
+				BF21F6C01F3836CB00A64945 /* AddGossipViewController.h */,
+				BF21F6C11F3836CB00A64945 /* AddGossipViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -307,6 +328,8 @@
 			children = (
 				BF0F37B41F32FC36009CA6BA /* MagazineViewModel.h */,
 				BF0F37B51F32FC36009CA6BA /* MagazineViewModel.m */,
+				BFEA1C981F380BB100316F9E /* GossipViewModel.h */,
+				BFEA1C991F380BB100316F9E /* GossipViewModel.m */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -316,6 +339,8 @@
 			children = (
 				BF0F37601F3160ED009CA6BA /* MagazineTableViewCell.h */,
 				BF0F37611F3160ED009CA6BA /* MagazineTableViewCell.m */,
+				BFEA1C951F37FDF800316F9E /* GossipTableViewCell.h */,
+				BFEA1C961F37FDF800316F9E /* GossipTableViewCell.m */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -483,6 +508,7 @@
 				TargetAttributes = {
 					BF0F36E81F305B34009CA6BA = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 25EZUPR5QA;
 						ProvisioningStyle = Automatic;
 					};
 					BF0F37011F305B34009CA6BA = {
@@ -578,12 +604,14 @@
 				BF0F37A21F32D916009CA6BA /* MJRefreshBackStateFooter.m in Sources */,
 				BF0F37B61F32FC36009CA6BA /* MagazineViewModel.m in Sources */,
 				BF0F375E1F30E1E1009CA6BA /* MagazineViewController.m in Sources */,
+				BF21F6C21F3836CB00A64945 /* AddGossipViewController.m in Sources */,
 				BF0F37A51F32D916009CA6BA /* MJRefreshStateHeader.m in Sources */,
 				BF0F37621F3160ED009CA6BA /* MagazineTableViewCell.m in Sources */,
 				BF0F37A81F32D916009CA6BA /* UIScrollView+MJExtension.m in Sources */,
 				BF0F37A31F32D916009CA6BA /* MJRefreshGifHeader.m in Sources */,
 				BF0F37A11F32D916009CA6BA /* MJRefreshBackNormalFooter.m in Sources */,
 				BF0F36F11F305B34009CA6BA /* AppDelegate.m in Sources */,
+				BFEA1C971F37FDF800316F9E /* GossipTableViewCell.m in Sources */,
 				BF0F379A1F32D916009CA6BA /* MJRefreshComponent.m in Sources */,
 				BF0F379E1F32D916009CA6BA /* MJRefreshAutoNormalFooter.m in Sources */,
 				F6FF54BF1F308FE700179B14 /* SignInViewController.m in Sources */,
@@ -592,7 +620,10 @@
 				BF0F37AA1F32D916009CA6BA /* UIView+MJExtension.m in Sources */,
 				BF0F37A71F32D916009CA6BA /* NSBundle+MJRefresh.m in Sources */,
 				BF0F37CC1F359751009CA6BA /* MagazineDetailViewController.m in Sources */,
+				BFEA1C9A1F380BB100316F9E /* GossipViewModel.m in Sources */,
 				BF0F36EE1F305B34009CA6BA /* main.m in Sources */,
+				BFEA1C941F37FDC100316F9E /* GossipViewController.m in Sources */,
+				BFEA1C9D1F380BE600316F9E /* Gossip.m in Sources */,
 				BF0F379B1F32D916009CA6BA /* MJRefreshFooter.m in Sources */,
 				BF0F37A61F32D916009CA6BA /* MJRefreshConst.m in Sources */,
 				BF0F37C71F345CFA009CA6BA /* ErrorView.m in Sources */,
@@ -751,12 +782,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 25EZUPR5QA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = GossipGeek/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LIBTOOLFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tw.GossipGeek;
@@ -768,12 +801,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 25EZUPR5QA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = GossipGeek/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LIBTOOLFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tw.GossipGeek;

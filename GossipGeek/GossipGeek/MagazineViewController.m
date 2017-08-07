@@ -27,7 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
     [self createErrorInfoUI];
     self.magazineViewModel = [[MagazineViewModel alloc]init];
     [self initMagazineTableView];
@@ -37,8 +37,9 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [MBProgressHUD showHUDAddedTo:self.tabBarController.view animated:true];
+    self.tabBarController.tabBar.hidden = false;
     [self pullDownSetupData];
-
+    
 }
 
 -(void)initMagazineTableView {
@@ -59,7 +60,7 @@
         [self.magazineTableView.mj_header endRefreshing];
         [self.magazineTableView reloadData];
         if (error) {
-             [self hiddenErrorInfoUI:true];
+            [self hiddenErrorInfoUI:true];
         }else {
             [self hiddenErrorInfoUI:false];
         }
@@ -127,6 +128,8 @@
     self.magazineDetailViewController.url = selectMagazine.url;
     self.magazineDetailViewController.tabBarController.tabBar.hidden = true;
 }
+
+
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier  isEqual: @"magazineSegue"]) {
