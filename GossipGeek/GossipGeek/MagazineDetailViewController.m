@@ -9,9 +9,6 @@
 #import "MagazineDetailViewController.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 @interface MagazineDetailViewController ()<UIWebViewDelegate>
-//@property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
-
-
 @end
 
 @implementation MagazineDetailViewController
@@ -21,9 +18,9 @@
     self.magazineWebView.backgroundColor = [UIColor clearColor];
     self.magazineWebView.delegate = self;
     [self updataWebview];
-    
     self.automaticallyAdjustsScrollViewInsets = false;
 }
+
 - (IBAction)goBackList:(id)sender {
     [self.navigationController popViewControllerAnimated:true];
 }

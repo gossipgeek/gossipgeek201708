@@ -6,8 +6,9 @@
 //  Copyright © 2017 cozhang . All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <AVOSCloud/AVOSCloud.h>
+#import <Foundation/Foundation.h>
+
+@class AVFile;
 @interface Magazine : NSObject
 @property(strong, nonatomic) NSString *title;
 @property(strong, nonatomic) NSString *content;

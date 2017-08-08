@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
@@ -146,18 +145,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SyM-lA-9oU">
-                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rrG-pu-8nw">
-                                <rect key="frame" x="10" y="589" width="24" height="24"/>
+                                <rect key="frame" x="10" y="633" width="24" height="24"/>
                                 <state key="normal" title="1" backgroundImage="zan-icon"/>
                                 <connections>
                                     <action selector="zanClick:" destination="9Bm-Hs-rIA" eventType="touchUpInside" id="odu-NT-djk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAm-nt-jen">
-                                <rect key="frame" x="341" y="589" width="24" height="24"/>
+                                <rect key="frame" x="341" y="633" width="24" height="24"/>
                                 <state key="normal" backgroundImage="pinglun-icon"/>
                             </button>
                         </subviews>
@@ -188,7 +187,7 @@
                             </barButtonItem>
                         </leftBarButtonItems>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="magazineWebView" destination="SyM-lA-9oU" id="0rg-p6-WpP"/>
                     </connections>

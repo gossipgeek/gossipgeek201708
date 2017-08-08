@@ -72,7 +72,6 @@
     }
 }
 
-
 -(void)createErrorInfoUI {
     self.errorView = [[ErrorView alloc]init];
     self.errorView.delegate = self;
