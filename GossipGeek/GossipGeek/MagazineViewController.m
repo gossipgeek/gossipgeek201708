@@ -51,9 +51,7 @@
     [self.refreshControl addTarget:self action:@selector(pullDownSetupData) forControlEvents:UIControlEventValueChanged];
     self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"putDownToUpdata", nil)];
     [self.magazineTableView addSubview:self.refreshControl];
-    
     self.magazineTableView.tableFooterView = [[UIView alloc]initWithFrame:(CGRectZero)];
-    
 }
 
 - (void)pullDownSetupData {
