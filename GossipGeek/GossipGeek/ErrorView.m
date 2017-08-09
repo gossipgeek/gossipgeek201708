@@ -24,29 +24,26 @@
         [self addSubview:self.errorLabel];
         UITapGestureRecognizer *tapGestuerRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(viewClick)];
         [self addGestureRecognizer:tapGestuerRecognizer];
+        
+        self.errorLabel.translatesAutoresizingMaskIntoConstraints = false;
+        [[self.errorLabel leadingAnchor] constraintEqualToAnchor:self.leadingAnchor constant:0].active = true;
+        [[self.errorLabel trailingAnchor] constraintEqualToAnchor:self.trailingAnchor constant:0].active = true;
+        [[self.errorLabel heightAnchor] constraintEqualToConstant:44].active = true;
+        [[self.errorLabel centerYAnchor] constraintEqualToAnchor:self.centerYAnchor constant:80].active = true;
+        self.errorLabel.textAlignment = NSTextAlignmentCenter;
+        self.errorLabel.text = NSLocalizedString(@"networkConnectionFailed", nil);
+        
+        self.errorImageView.translatesAutoresizingMaskIntoConstraints = false;
+        [[self.errorImageView bottomAnchor] constraintEqualToAnchor:self.errorLabel.topAnchor constant:15].active = true;
+        [[self.errorImageView centerXAnchor] constraintEqualToAnchor:self.errorLabel.centerXAnchor].active = true;
+        [[self.errorImageView widthAnchor] constraintEqualToAnchor:self.widthAnchor constant:-100].active = true;
+        [[self.errorImageView heightAnchor] constraintEqualToAnchor:self.errorImageView.widthAnchor multiplier:0.8125 constant:0].active = true;
     }
     return self;
 }
 
 - (void)viewClick {
-    [self.delegate errorViewClickDelegate];
+    [self.delegate errorViewClick];
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    self.errorLabel.translatesAutoresizingMaskIntoConstraints = false;
-    [[self.errorLabel leadingAnchor] constraintEqualToAnchor:self.leadingAnchor constant:0].active = true;
-    [[self.errorLabel trailingAnchor] constraintEqualToAnchor:self.trailingAnchor constant:0].active = true;
-    [[self.errorLabel heightAnchor] constraintEqualToConstant:44].active = true;
-    [[self.errorLabel centerYAnchor] constraintEqualToAnchor:self.centerYAnchor constant:80].active = true;
-    self.errorLabel.textAlignment = NSTextAlignmentCenter;
-    self.errorLabel.text = @"网络连接失败，检查网络后点击该界面刷新";
-    
-    self.errorImageView.translatesAutoresizingMaskIntoConstraints = false;
-    [[self.errorImageView bottomAnchor] constraintEqualToAnchor:self.errorLabel.topAnchor constant:15].active = true;
-    [[self.errorImageView centerXAnchor] constraintEqualToAnchor:self.errorLabel.centerXAnchor].active = true;
-    [[self.errorImageView widthAnchor] constraintEqualToAnchor:self.widthAnchor constant:-100].active = true;
-    [[self.errorImageView heightAnchor] constraintEqualToAnchor:self.errorImageView.widthAnchor multiplier:0.8125 constant:0].active = true;
-    
-}
 @end

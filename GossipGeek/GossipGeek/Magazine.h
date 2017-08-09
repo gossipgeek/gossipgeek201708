@@ -14,6 +14,6 @@
 @property(copy, nonatomic) NSString *time;
 @property(copy, nonatomic) NSString *likeNumber;
 @property(copy, nonatomic) NSString *url;
-@property(strong, nonatomic) AVFile *imageAvfile;
+@property(strong, nonatomic) AVFile *imageFile;
 
 @end

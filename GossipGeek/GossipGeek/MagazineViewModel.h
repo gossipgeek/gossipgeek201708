@@ -11,9 +11,5 @@
 #import <AVOSCloud/AVOSCloud.h>
 @interface MagazineViewModel : NSObject
 @property(strong, nonatomic) NSMutableArray<Magazine*> *magazines;
-- (instancetype)init;
-- (void)getDataFromNetWork:(void(^)(NSError* error))block;
-- (void)avobjectToMagazineModel:(NSArray*)magazineAVObjects;
-- (void)addMagezineModel:(Magazine*)magazine;
-- (void)userTimeSort;
+- (void)fetchAVObjectDataFromService:(void(^)(NSArray *objects, NSError* error))block;
 @end

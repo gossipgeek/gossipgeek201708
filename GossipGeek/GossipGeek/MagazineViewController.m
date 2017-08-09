@@ -12,13 +12,12 @@
 #import "Magazine.h"
 #import "ErrorView.h"
 #import <AVOSCloud/AVOSCloud.h>
-#import "MagazineDetailViewController.h"
+
 #import <MBProgressHUD/MBProgressHUD.h>
 
-@interface MagazineViewController ()<UITableViewDelegate,UITableViewDataSource,ErrorViewClickDelegate>
+@interface MagazineViewController ()<UITableViewDelegate,UITableViewDataSource,ErrorViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *magazineTableView;
 @property (strong, nonatomic) MagazineViewModel *magazineViewModel;
-@property (strong, nonatomic) MagazineDetailViewController *magazineDetailViewController;
 @property (strong, nonatomic) ErrorView *errorView;
 
 @property (strong, nonatomic) UIRefreshControl* refreshControl;
@@ -50,7 +49,7 @@
     self.magazineTableView.showsVerticalScrollIndicator = NO;    
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(pullDownSetupData) forControlEvents:UIControlEventValueChanged];
-    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉后刷新数据"];
+    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"putDownToUpdata", nil)];
     [self.magazineTableView addSubview:self.refreshControl];
     
     self.magazineTableView.tableFooterView = [[UIView alloc]initWithFrame:(CGRectZero)];
@@ -59,7 +58,7 @@
 
 - (void)pullDownSetupData {
     [self.refreshControl beginRefreshing];
-    [self.magazineViewModel getDataFromNetWork:^(NSError *error) {
+    [self.magazineViewModel fetchAVObjectDataFromService:^(NSArray *objects, NSError *error) {
         [UIView animateWithDuration:0.25 animations:^{
             [self.refreshControl endRefreshing];
             [MBProgressHUD hideHUDForView:self.tabBarController.view animated:true];
@@ -94,7 +93,7 @@
     [[self.errorView centerYAnchor] constraintEqualToAnchor:self.view.centerYAnchor].active = true;
 }
 
-- (void)errorViewClickDelegate {
+- (void)errorViewClick {
     [MBProgressHUD showHUDAddedTo:self.tabBarController.view animated:true];
     [self pullDownSetupData];
 }
@@ -115,10 +114,10 @@
     cell.timeLabel.text = currentMagazine.time;
     cell.likeNumberLabel.text = currentMagazine.likeNumber;
     
-    if (currentMagazine.imageAvfile == nil) {
+    if (currentMagazine.imageFile == nil) {
         cell.logoImageView.image = [UIImage imageNamed:@"default.jpg"];
     }else {
-        [currentMagazine.imageAvfile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        [currentMagazine.imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
             if (!error) {
                 cell.logoImageView.image = [UIImage imageWithData:data];
             }else {
@@ -127,25 +126,6 @@
         }];
     }
     return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    Magazine* selectMagazine = self.magazineViewModel.magazines[indexPath.row];
-    self.magazineDetailViewController.url = selectMagazine.url;
-    self.magazineDetailViewController.tabBarController.tabBar.hidden = true;
-}
-
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier  isEqual: @"magazineSegue"]) {
-        self.magazineDetailViewController = (MagazineDetailViewController*)[segue destinationViewController];
-    }
-    
-    
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
