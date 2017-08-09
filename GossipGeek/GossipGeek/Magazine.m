@@ -10,4 +10,15 @@
 
 @implementation Magazine
 
+@dynamic title;
+@dynamic content;
+@dynamic time;
+@dynamic likenumber;
+@dynamic url;
+@dynamic image;
+
++ (NSString*)parseClassName {
+    return @"Magazine";
+}
+
 @end

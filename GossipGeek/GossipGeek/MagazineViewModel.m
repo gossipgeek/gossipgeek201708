@@ -23,11 +23,12 @@
     [query orderByDescending:@"createdAt"];
     [query includeKey:@"content"];
     [query includeKey:@"title"];
-    [query includeKey:@"URL"];
-    [query includeKey:@"zannumber"];
+    [query includeKey:@"url"];
+    [query includeKey:@"likenumber"];
     [query includeKey:@"time"];
     [query includeKey:@"image"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        [self.magazines removeAllObjects];
         if (!error) {
             [self avobjectToMagazineModel:objects];
         }
@@ -36,15 +37,15 @@
 }
 
 - (void)avobjectToMagazineModel:(NSArray *)magazineAVObjects {
-    [self.magazines removeAllObjects];
     for (AVObject *avobject in magazineAVObjects) {
-        Magazine *magazine = [[Magazine alloc]init];
-        magazine.title = [avobject objectForKey:@"title"];
-        magazine.content = [avobject objectForKey:@"content"];
-        magazine.time = [avobject objectForKey:@"time"];
-        magazine.url = [avobject objectForKey:@"URL"];
-        magazine.likeNumber = [NSString stringWithFormat:@"共%@人点赞",[avobject objectForKey:@"zannumber"]];
-        magazine.imageFile = [avobject objectForKey:@"image"];
+        Magazine *magazine = (Magazine*)avobject;
+////        [magazine objectForKey:@"title"];
+//        magazine.title = [avobject objectForKey:@"title"];
+//        magazine.content = [avobject objectForKey:@"content"];
+//        magazine.time = [avobject objectForKey:@"time"];
+//        magazine.url = [avobject objectForKey:@"URL"];
+//        magazine.likenumber = [NSString stringWithFormat:@"共%@人点赞",[avobject objectForKey:@"likenumber"]];
+//        magazine.image = [avobject objectForKey:@"image"];
         [self addMagezineModel:magazine];
     }
     [self useMagazineReleaseTimeToSort];
@@ -66,12 +67,12 @@
     NSArray *obj2Times = [time2 componentsSeparatedByString:@"-"];
     for (int i = 0; i < obj1Times.count; i++) {
         if ([obj1Times[i] intValue] > [obj2Times[i] intValue]) {
-            return false;
+            return NSOrderedAscending;
         }else if([obj1Times[i] intValue] < [obj2Times[i] intValue]){
-            return true;
+            return NSOrderedDescending;
         }
     }
-    return true;
+    return NSOrderedSame;
 }
 
 @end

@@ -62,20 +62,16 @@
             [MBProgressHUD hideHUDForView:self.tabBarController.view animated:true];
             [self.magazineTableView reloadData];
             if (error) {
-                [self hiddenErrorInfoUI:true];
+                [self showErrorInfoUI:YES];
             }else {
-                [self hiddenErrorInfoUI:false];
+                [self showErrorInfoUI:NO];
             }
         }];
     }];
 }
 
-- (void)hiddenErrorInfoUI:(Boolean)flag {
-    if (flag) {
-        self.errorView.hidden = false;
-    }else {
-        self.errorView.hidden = true;
-    }
+- (void)showErrorInfoUI:(BOOL)flag {
+    self.errorView.hidden = !flag;
 }
 
 - (void)createErrorInfoUI {
@@ -110,12 +106,12 @@
     cell.titleLabel.text = currentMagazine.title;
     cell.contantLabel.text = currentMagazine.content;
     cell.timeLabel.text = currentMagazine.time;
-    cell.likeNumberLabel.text = currentMagazine.likeNumber;
+    cell.likeNumberLabel.text = currentMagazine.likenumber;
     
-    if (currentMagazine.imageFile == nil) {
+    if (currentMagazine.image == nil) {
         cell.logoImageView.image = [UIImage imageNamed:@"default.jpg"];
     }else {
-        [currentMagazine.imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        [currentMagazine.image getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
             if (!error) {
                 cell.logoImageView.image = [UIImage imageWithData:data];
             }else {
