@@ -12,7 +12,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *zanNumberLabel;
+@property (weak, nonatomic) IBOutlet UILabel *likeNumberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *contantLabel;
 
 @end

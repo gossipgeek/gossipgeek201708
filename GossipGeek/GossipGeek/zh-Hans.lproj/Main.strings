@@ -20,8 +20,8 @@
 /* Class = "UILabel"; text = "contant"; ObjectID = "oVZ-19-4zt"; */
 "oVZ-19-4zt.text" = "contant";
 
-/* Class = "UILabel"; text = "zanNumber"; ObjectID = "qR6-ru-v8h"; */
-"qR6-ru-v8h.text" = "zanNumber";
+/* Class = "UILabel"; text = "likeNumber"; ObjectID = "qR6-ru-v8h"; */
+"qR6-ru-v8h.text" = "likeNumber";
 
 /* Class = "UILabel"; text = "time"; ObjectID = "wKw-rf-5zv"; */
 "wKw-rf-5zv.text" = "time";

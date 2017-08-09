@@ -6,14 +6,14 @@
 //  Copyright © 2017 cozhang . All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 #import <AVOSCloud/AVOSCloud.h>
 @interface Magazine : NSObject
-@property(strong, nonatomic) NSString *title;
-@property(strong, nonatomic) NSString *content;
-@property(strong, nonatomic) NSString *time;
-@property(strong, nonatomic) NSString *zanNumber;
-@property(strong, nonatomic) NSString *url;
+@property(copy, nonatomic) NSString *title;
+@property(copy, nonatomic) NSString *content;
+@property(copy, nonatomic) NSString *time;
+@property(copy, nonatomic) NSString *likeNumber;
+@property(copy, nonatomic) NSString *url;
 @property(strong, nonatomic) AVFile *imageAvfile;
 
 @end

@@ -43,7 +43,7 @@
         magazine.content = [avobjec objectForKey:@"content"];
         magazine.time = [avobjec objectForKey:@"time"];
         magazine.url = [avobjec objectForKey:@"URL"];
-        magazine.zanNumber = [NSString stringWithFormat:@"共%@人点赞",[avobjec objectForKey:@"zannumber"]];
+        magazine.likeNumber = [NSString stringWithFormat:@"共%@人点赞",[avobjec objectForKey:@"zannumber"]];
         magazine.imageAvfile = [avobjec objectForKey:@"image"];
         [self addMagezineModel:magazine];
     }

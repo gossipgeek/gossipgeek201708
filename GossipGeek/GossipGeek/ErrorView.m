@@ -7,7 +7,10 @@
 //
 
 #import "ErrorView.h"
-
+@interface ErrorView()
+@property (strong, nonatomic) UILabel *errorLabel;
+@property (strong, nonatomic) UIImageView *errorImageView;
+@end
 @implementation ErrorView
 
 - (instancetype)init {

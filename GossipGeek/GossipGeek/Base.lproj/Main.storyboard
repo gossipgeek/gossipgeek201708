@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
@@ -31,7 +30,7 @@
         <!--杂志-->
         <scene sceneID="rvB-Xp-tmu">
             <objects>
-                <viewController id="3Uz-lh-PKI" customClass="MagazineViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="3Uz-lh-PKI" customClass="MagazineViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="R3X-oD-Hdy"/>
                         <viewControllerLayoutGuide type="bottom" id="NiV-KY-va6"/>
@@ -75,7 +74,7 @@
                                                     <color key="textColor" red="0.79599106311798096" green="0.79612869024276733" blue="0.79598242044448853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="zanNumber" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qR6-ru-v8h">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="likeNumber" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qR6-ru-v8h">
                                                     <rect key="frame" x="187.5" y="313" width="167.5" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.79599106311798096" green="0.79612869024276733" blue="0.79598242044448853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -105,10 +104,10 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="contantLabel" destination="oVZ-19-4zt" id="Rae-0Y-yfb"/>
+                                            <outlet property="likeNumberLabel" destination="qR6-ru-v8h" id="Ji7-yf-XgI"/>
                                             <outlet property="logoImageView" destination="asQ-Et-nwP" id="gRL-ny-mBP"/>
                                             <outlet property="timeLabel" destination="wKw-rf-5zv" id="ddV-f9-qI4"/>
                                             <outlet property="titleLabel" destination="Dkl-vb-d8c" id="89Q-5m-waL"/>
-                                            <outlet property="zanNumberLabel" destination="qR6-ru-v8h" id="2dP-H9-oax"/>
                                             <segue destination="9Bm-Hs-rIA" kind="show" identifier="magazineSegue" id="nMA-Tg-iod"/>
                                         </connections>
                                     </tableViewCell>
@@ -343,9 +342,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="active-icon" width="28" height="28"/>
+        <image name="active-icon" width="24" height="24"/>
         <image name="gossip-icon.png" width="50" height="50"/>
-        <image name="magazine-icon" width="28" height="28"/>
+        <image name="magazine-icon" width="24" height="24"/>
         <image name="userinfo-icon" width="28" height="28"/>
     </resources>
 </document>

@@ -10,6 +10,7 @@
 
 @interface MagazineDetailViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *goBack;
+@property (weak, nonatomic) IBOutlet UIWebView *magazineWebView;
 @end
 
 @implementation MagazineDetailViewController

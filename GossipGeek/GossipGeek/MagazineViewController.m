@@ -8,7 +8,6 @@
 
 #import "MagazineViewController.h"
 #import "MagazineTableViewCell.h"
-#import "MJRefresh/MJRefresh.h"
 #import "MagazineViewModel.h"
 #import "Magazine.h"
 #import "ErrorView.h"
@@ -21,6 +20,8 @@
 @property (strong, nonatomic) MagazineViewModel *magazineViewModel;
 @property (strong, nonatomic) MagazineDetailViewController *magazineDetailViewController;
 @property (strong, nonatomic) ErrorView *errorView;
+
+@property (strong, nonatomic) UIRefreshControl* refreshControl;
 @end
 
 @implementation MagazineViewController
@@ -46,23 +47,29 @@
     self.magazineTableView.dataSource = self;
     self.magazineTableView.rowHeight = UITableViewAutomaticDimension;
     self.magazineTableView.estimatedRowHeight = 360;
-    self.magazineTableView.showsVerticalScrollIndicator = NO;
-    MJRefreshNormalHeader *mjHeader = [[MJRefreshNormalHeader alloc] init];
-    [mjHeader setRefreshingTarget:self refreshingAction:@selector(pullDownSetupData)];
-    self.magazineTableView.mj_header = mjHeader;
+    self.magazineTableView.showsVerticalScrollIndicator = NO;    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(pullDownSetupData) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉后刷新数据"];
+    [self.magazineTableView addSubview:self.refreshControl];
+    
     self.magazineTableView.tableFooterView = [[UIView alloc]initWithFrame:(CGRectZero)];
+    
 }
 
 - (void)pullDownSetupData {
+    [self.refreshControl beginRefreshing];
     [self.magazineViewModel getDataFromNetWork:^(NSError *error) {
-        [MBProgressHUD hideHUDForView:self.tabBarController.view animated:true];
-        [self.magazineTableView.mj_header endRefreshing];
-        [self.magazineTableView reloadData];
-        if (error) {
-            [self hiddenErrorInfoUI:true];
-        }else {
-            [self hiddenErrorInfoUI:false];
-        }
+        [UIView animateWithDuration:0.25 animations:^{
+            [self.refreshControl endRefreshing];
+            [MBProgressHUD hideHUDForView:self.tabBarController.view animated:true];
+            [self.magazineTableView reloadData];
+            if (error) {
+                [self hiddenErrorInfoUI:true];
+            }else {
+                [self hiddenErrorInfoUI:false];
+            }
+        }];
     }];
 }
 
@@ -106,7 +113,7 @@
     cell.titleLabel.text = currentMagazine.title;
     cell.contantLabel.text = currentMagazine.content;
     cell.timeLabel.text = currentMagazine.time;
-    cell.zanNumberLabel.text = currentMagazine.zanNumber;
+    cell.likeNumberLabel.text = currentMagazine.likeNumber;
     
     if (currentMagazine.imageAvfile == nil) {
         cell.logoImageView.image = [UIImage imageNamed:@"default.jpg"];

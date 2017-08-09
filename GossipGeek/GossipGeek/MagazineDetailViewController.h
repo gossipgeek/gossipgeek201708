@@ -9,6 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MagazineDetailViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIWebView *magazineWebView;
-@property (strong, nonatomic) NSString *url;
+@property (copy, nonatomic) NSString *url;
 @end
