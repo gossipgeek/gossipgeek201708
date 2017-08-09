@@ -37,6 +37,7 @@
 		BF0F37C91F3467B4009CA6BA /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BF0F37C81F3467B4009CA6BA /* default.jpg */; };
 		BF21F6C41F38742B00A64945 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF21F6C31F38742B00A64945 /* MBProgressHUD.framework */; };
 		BF21F6C51F38742B00A64945 /* MBProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF21F6C31F38742B00A64945 /* MBProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BF21F7501F3AF41500A64945 /* GGMagazineViewModelSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = BF21F74F1F3AF41500A64945 /* GGMagazineViewModelSpecs.m */; };
 		F6FF54BF1F308FE700179B14 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FF54BE1F308FE700179B14 /* SignInViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +119,7 @@
 		BF0F37C61F345CFA009CA6BA /* ErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorView.m; sourceTree = "<group>"; };
 		BF0F37C81F3467B4009CA6BA /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
 		BF21F6C31F38742B00A64945 /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
+		BF21F74F1F3AF41500A64945 /* GGMagazineViewModelSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGMagazineViewModelSpecs.m; sourceTree = "<group>"; };
 		F6FF54BD1F308FE700179B14 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		F6FF54BE1F308FE700179B14 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -213,6 +215,7 @@
 				BF0F37081F305B34009CA6BA /* Info.plist */,
 				BE2FBCD71F38008700C80A5A /* SwiftSpecs.swift */,
 				BE2FBCD61F38008600C80A5A /* GossipGeekTests-Bridging-Header.h */,
+				BF21F74F1F3AF41500A64945 /* GGMagazineViewModelSpecs.m */,
 			);
 			path = GossipGeekTests;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE2FBCD81F38008700C80A5A /* SwiftSpecs.swift in Sources */,
+				BF21F7501F3AF41500A64945 /* GGMagazineViewModelSpecs.m in Sources */,
 				BE4EE0301F32BA7B00A6AA85 /* GGDemoSpecs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

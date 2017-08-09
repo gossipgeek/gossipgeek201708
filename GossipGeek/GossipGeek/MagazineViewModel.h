@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Magazine.h"
-#import <AVOSCloud/AVOSCloud.h>
+
 @interface MagazineViewModel : NSObject
 @property(strong, nonatomic) NSMutableArray<Magazine*> *magazines;
 - (void)fetchAVObjectDataFromService:(void(^)(NSArray *objects, NSError* error))block;

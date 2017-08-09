@@ -7,6 +7,7 @@
 //
 
 #import "MagazineViewModel.h"
+#import <AVOSCloud/AVOSCloud.h>
 @implementation MagazineViewModel
 
 - (instancetype)init {
@@ -46,25 +47,31 @@
         magazine.imageFile = [avobject objectForKey:@"image"];
         [self addMagezineModel:magazine];
     }
-    [self useMagazineTimeToSort];
+    [self useMagazineReleaseTimeToSort];
 }
 
 - (void)addMagezineModel:(Magazine *)magazine {
     [self.magazines addObject:magazine];
 }
 
-- (void)useMagazineTimeToSort {
+- (void)useMagazineReleaseTimeToSort {
     [self.magazines sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
-        NSArray *obj1Times = [((Magazine*)obj1).time componentsSeparatedByString:@"-"];
-        NSArray *obj2Times = [((Magazine*)obj2).time componentsSeparatedByString:@"-"];
-        for (int i = 0; i < obj1Times.count; i++) {
-            if ([obj1Times[i] intValue] > [obj2Times[i] intValue]) {
-                return false;
-            }else if([obj1Times[i] intValue] < [obj2Times[i] intValue]){
-                return true;
-            }
-        }
-        return true;
+
+        return [self isTimeOneSmallThanTimeTwo:((Magazine*)obj1).time TimeTwo:((Magazine*)obj2).time];
     }];
 }
+
+- (BOOL)isTimeOneSmallThanTimeTwo:(NSString*)time1 TimeTwo:(NSString*)time2 {
+    NSArray *obj1Times = [time1 componentsSeparatedByString:@"-"];
+    NSArray *obj2Times = [time2 componentsSeparatedByString:@"-"];
+    for (int i = 0; i < obj1Times.count; i++) {
+        if ([obj1Times[i] intValue] > [obj2Times[i] intValue]) {
+            return false;
+        }else if([obj1Times[i] intValue] < [obj2Times[i] intValue]){
+            return true;
+        }
+    }
+    return true;
+}
+
 @end
