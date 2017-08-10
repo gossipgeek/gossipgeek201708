@@ -121,9 +121,9 @@
 		F614DD721F32B8AC0075E9F5 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cartfile; path = ../Cartfile; sourceTree = "<group>"; };
 		F679A13D1F34181F0035BEA9 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		F679A13E1F34181F0035BEA9 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
-		F6C800621F3C506B00B9965F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F6C800641F3C506B00B9965F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		F6C800661F3C506B00B9965F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F6C8006A1F3C557A00B9965F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F6C8006B1F3C557A00B9965F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F6E76ACB1F3ABA6400D43A2C /* SignInViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewModel.h; sourceTree = "<group>"; };
 		F6E76ACC1F3ABA6400D43A2C /* SignInViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewModel.m; sourceTree = "<group>"; };
 		F6E76AD11F3ADCFB00D43A2C /* project.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = project.plist; sourceTree = "<group>"; };
@@ -169,7 +169,6 @@
 		BF0F36E01F305B34009CA6BA = {
 			isa = PBXGroup;
 			children = (
-				BF21F6C31F38742B00A64945 /* MBProgressHUD.framework */,
 				BF0F36EB1F305B34009CA6BA /* GossipGeek */,
 				BF0F37051F305B34009CA6BA /* GossipGeekTests */,
 				BF0F36EA1F305B34009CA6BA /* Products */,
@@ -209,8 +208,8 @@
 				F6C800611F3C506B00B9965F /* LaunchScreen.storyboard */,
 				F6C800631F3C506B00B9965F /* Localizable.strings */,
 				F6C800651F3C506B00B9965F /* Main.storyboard */,
-				BF0F37C81F3467B4009CA6BA /* default.jpg */,
 				BF0F37B81F332629009CA6BA /* networkError.jpeg */,
+				BF0F37C81F3467B4009CA6BA /* default.jpg */,
 				BF0F36F81F305B34009CA6BA /* Assets.xcassets */,
 				BF0F36FD1F305B34009CA6BA /* Info.plist */,
 				BF0F36ED1F305B34009CA6BA /* main.m */,
@@ -235,6 +234,7 @@
 		BF0F37471F305ED7009CA6BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BF21F6C31F38742B00A64945 /* MBProgressHUD.framework */,
 				F6E76B381F3B218B00D43A2C /* Reachability.framework */,
 				BE2FBCCD1F37FDE600C80A5A /* Nimble.framework */,
 				BE2FBCCE1F37FDE600C80A5A /* Quick.framework */,
@@ -385,6 +385,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = BF0F36E01F305B34009CA6BA;
 			productRefGroup = BF0F36EA1F305B34009CA6BA /* Products */;
@@ -464,7 +465,7 @@
 		F6C800611F3C506B00B9965F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F6C800621F3C506B00B9965F /* en */,
+				F6C8006A1F3C557A00B9965F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -480,7 +481,7 @@
 		F6C800651F3C506B00B9965F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F6C800661F3C506B00B9965F /* en */,
+				F6C8006B1F3C557A00B9965F /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

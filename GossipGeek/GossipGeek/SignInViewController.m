@@ -30,7 +30,7 @@ typedef enum {
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *signInButton;
 @property (strong, nonatomic) SignInViewModel *signInViewModel;
-@property (weak, nonatomic) MBProgressHUD *loadingHud;
+@property (strong, nonatomic) MBProgressHUD *loadingHud;
 
 @end
 
@@ -41,6 +41,7 @@ typedef enum {
     
     [self initCurrentPage];
     
+    self.loadingHud = [[MBProgressHUD alloc]init];
     self.signInViewModel = [[SignInViewModel alloc]init];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldDidChangeEditing:) name:UITextFieldTextDidChangeNotification object:nil];
@@ -78,6 +79,7 @@ typedef enum {
         [self showOrHideLoading:NO];
         if (error) {
             NSLog(@"Sign In Failed : %@", error);
+            [AVUser logOut];
             [self errorTips:error];
         } else {
             NSLog(@"Sign In Success");
@@ -102,7 +104,7 @@ typedef enum {
 }
 
 - (void)errorTips:(NSError *)error {
-    NSString *errorDescription;
+    NSString *errorDescription = nil;
     switch (error.code) {
         case ERROR_EMAIL_NOT_VERIFED:
             [self showAlertWithTitle:NSLocalizedString(@"SignIn_error", nil) andMessage:NSLocalizedString(@"SignIn_goEmailVerified", nil)];
@@ -122,7 +124,10 @@ typedef enum {
         default:
             errorDescription = error.localizedDescription;
     }
-    [self showHud:errorDescription];
+    
+    if (errorDescription != nil) {
+        [self showHud:errorDescription];
+    }
 }
 
 - (void) showHud:(NSString *) error {
@@ -143,9 +148,11 @@ typedef enum {
 
 -(void)showOrHideLoading:(BOOL)show {
     if (show) {
-        self.loadingHud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        self.loadingHud = [MBProgressHUD showHUDAddedTo:self.view animated:NO];
     } else {
-        [self.loadingHud hideAnimated:YES];
+        if (![self.loadingHud isHidden]) {
+            [self.loadingHud hideAnimated:NO];
+        }
     }
 }
 
