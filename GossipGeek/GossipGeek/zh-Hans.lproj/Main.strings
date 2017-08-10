@@ -1,0 +1,27 @@
+
+/* Class = "UITabBarItem"; title = "活动"; ObjectID = "581-0I-yTY"; */
+"581-0I-yTY.title" = "活动";
+
+/* Class = "UITabBarItem"; title = "爆料"; ObjectID = "BUr-VJ-e7q"; */
+"BUr-VJ-e7q.title" = "爆料";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "Dkl-vb-d8c"; */
+"Dkl-vb-d8c.text" = "Title";
+
+/* Class = "UITabBarItem"; title = "杂志"; ObjectID = "P8J-kk-3kQ"; */
+"P8J-kk-3kQ.title" = "杂志";
+
+/* Class = "UINavigationItem"; title = "杂志"; ObjectID = "cwn-pg-vfy"; */
+"cwn-pg-vfy.title" = "杂志";
+
+/* Class = "UITabBarItem"; title = "更多"; ObjectID = "jG1-B3-jYj"; */
+"jG1-B3-jYj.title" = "更多";
+
+/* Class = "UILabel"; text = "contant"; ObjectID = "oVZ-19-4zt"; */
+"oVZ-19-4zt.text" = "contant";
+
+/* Class = "UILabel"; text = "likeNumber"; ObjectID = "qR6-ru-v8h"; */
+"qR6-ru-v8h.text" = "likeNumber";
+
+/* Class = "UILabel"; text = "time"; ObjectID = "wKw-rf-5zv"; */
+"wKw-rf-5zv.text" = "time";
