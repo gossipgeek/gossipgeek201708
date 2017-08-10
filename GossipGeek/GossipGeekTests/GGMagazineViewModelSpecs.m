@@ -8,7 +8,7 @@
 #define QUICK_DISABLE_SHORT_SYNTAX 1
 #import <XCTest/XCTest.h>
 #import "MagazineViewModel.h"
-
+#import <AVOSCloud/AVOSCloud.h>
 @import Quick;
 @import Nimble;
 
@@ -36,15 +36,15 @@ describe(@"GGModel Specs", ^{
         });
         
         it(@"should be false when time1 is 2017-03-11 and time2 is 2016-11-12", ^{
-            expect([magazineModel isTimeOneSmallThanTimeTwo:@"2017-03-11" TimeTwo:@"2016-11-12"]).to(equal(false));
+            expect([magazineModel isTimeOneSmallThanTimeTwo:@"2017-03-11" TimeTwo:@"2016-11-12"]).to(equal(NSOrderedDescending));
         });
         
         it(@"should be true when time1 is 2016-03-11 and time2 is 2016-11-12", ^{
-            expect([magazineModel isTimeOneSmallThanTimeTwo:@"2016-03-11" TimeTwo:@"2016-11-12"]).to(equal(true));
+            expect([magazineModel isTimeOneSmallThanTimeTwo:@"2016-03-11" TimeTwo:@"2016-11-12"]).to(equal(NSOrderedDescending));
         });
         
         it(@"should be true when time1 is 2017-03-11 and time2 is 2017-03-11", ^{
-            expect([magazineModel isTimeOneSmallThanTimeTwo:@"2017-03-11" TimeTwo:@"2017-03-11"]).to(equal(true));
+            expect([magazineModel isTimeOneSmallThanTimeTwo:@"2017-03-11" TimeTwo:@"2017-03-11"]).to(equal(NSOrderedSame));
         });
         
     });
