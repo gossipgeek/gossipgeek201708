@@ -18,8 +18,7 @@
     return self;
 }
 
-- (void)fetchAVObjectData:(void (^)(int newMagazineCount,NSError* error))block {
-    
+- (void)fetchAVObjectData:(void (^)(int newMagazineCount,NSError *error))block {
     AVQuery *query = [AVQuery queryWithClassName:@"Magazine"];
     [query orderByDescending:@"time"];
     [query includeKey:@"content"];
@@ -41,9 +40,9 @@
     [self.magazines addObject:magazine];
 }
 
-- (int)upDataMagazines:(NSArray* ) magazineAVObjects {
+- (int)upDataMagazines:(NSArray *) magazineAVObjects {
     int newMagazineCount = 0;
-    for (Magazine* item in magazineAVObjects) {
+    for (Magazine *item in magazineAVObjects) {
         if (![self isContainSameMagazine:item]) {
             [self addMagezineModel:item];
             newMagazineCount++;
@@ -53,8 +52,8 @@
 }
 
 - (BOOL)isContainSameMagazine:(Magazine *)magazine {
-    for (Magazine* item in self.magazines) {
-        if ([item.url isEqualToString:magazine.url]) {
+    for (Magazine *item in self.magazines) {
+        if ([item.objectId isEqualToString:magazine.objectId]) {
             return YES;
         }
     }

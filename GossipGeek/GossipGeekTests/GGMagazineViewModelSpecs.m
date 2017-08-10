@@ -31,7 +31,7 @@ describe(@"GGModel Specs", ^{
         beforeEach(^{
             magazineModel = [[MagazineViewModel alloc] init];
             Magazine* magazine = [[Magazine alloc] init];
-            magazine.url = @"www.123.com";
+            magazine.objectId = @"12321asdsa";
             [magazineModel.magazines addObject:magazine];
         });
         
@@ -41,14 +41,14 @@ describe(@"GGModel Specs", ^{
         
         it(@"should be YES when magazine is exist", ^{
             Magazine* magazine = [[Magazine alloc] init];
-            magazine.url = @"www.123.com";
+            magazine.objectId = @"12321asdsa";
 
             expect([magazineModel isContainSameMagazine:magazine]).to(equal(YES));
         });
         
         it(@"should be NO when magazine is not exist", ^{
             Magazine* magazine = [[Magazine alloc] init];
-            magazine.url = @"www.asd.com";
+            magazine.objectId = @"uuuqyqq";
             
             expect([magazineModel isContainSameMagazine:magazine]).to(equal(NO));
         });

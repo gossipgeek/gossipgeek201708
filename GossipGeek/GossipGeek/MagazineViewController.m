@@ -5,6 +5,7 @@
 //  Created by cozhang  on 02/08/2017.
 //  Copyright © 2017 cozhang . All rights reserved.
 //
+#define NOT_MORE_DATA_HUD_DELAY 0.5
 
 #import "MagazineViewController.h"
 #import "MagazineTableViewCell.h"
@@ -12,14 +13,13 @@
 #import "Magazine.h"
 #import "ErrorView.h"
 #import <AVOSCloud/AVOSCloud.h>
-
 #import <MBProgressHUD/MBProgressHUD.h>
 
 @interface MagazineViewController ()<UITableViewDelegate,UITableViewDataSource,ErrorViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *magazineTableView;
 @property (strong, nonatomic) MagazineViewModel *magazineViewModel;
 @property (strong, nonatomic) ErrorView *errorView;
-@property (strong, nonatomic) UIRefreshControl* refreshControl;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 @end
 
 @implementation MagazineViewController
@@ -74,11 +74,11 @@
 }
 
 - (void)showNotHaveMoreMagazineDataHUD {
-    MBProgressHUD* notMoreDataHud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    MBProgressHUD *notMoreDataHud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     notMoreDataHud.mode = MBProgressHUDModeText;
     notMoreDataHud.label.text = NSLocalizedString(@"notMoreMagazineData", nil);
     notMoreDataHud.removeFromSuperViewOnHide = YES;
-    [notMoreDataHud hideAnimated:YES afterDelay:0.5];
+    [notMoreDataHud hideAnimated:YES afterDelay:NOT_MORE_DATA_HUD_DELAY];
 }
 
 - (void)showErrorInfoUI:(BOOL)flag {
@@ -113,7 +113,7 @@
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MagazineTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"magezineCell"];
-    Magazine* currentMagazine = self.magazineViewModel.magazines[indexPath.row];
+    Magazine *currentMagazine = self.magazineViewModel.magazines[indexPath.row];
     cell.titleLabel.text = currentMagazine.title;
     cell.contantLabel.text = currentMagazine.content;
     cell.timeLabel.text = currentMagazine.time;
@@ -131,6 +131,5 @@
     }
     return cell;
 }
-
 
 @end

@@ -10,6 +10,7 @@
 #import <AVOSCloud/AVOSCloud.h>
 @implementation Magazine
 
+@dynamic objectId;
 @dynamic title;
 @dynamic content;
 @dynamic time;
