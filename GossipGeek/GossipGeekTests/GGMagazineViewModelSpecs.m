@@ -5,10 +5,9 @@
 //  Created by cozhang  on 09/08/2017.
 //  Copyright © 2017 cozhang . All rights reserved.
 //
-
+#define QUICK_DISABLE_SHORT_SYNTAX 1
 #import <XCTest/XCTest.h>
 #import "MagazineViewModel.h"
-#define QUICK_DISABLE_SHORT_SYNTAX 1
 
 @import Quick;
 @import Nimble;

@@ -11,5 +11,5 @@
 
 @interface MagazineViewModel : NSObject
 @property(strong, nonatomic) NSMutableArray<Magazine*> *magazines;
-- (void)fetchAVObjectDataFromService:(void(^)(NSArray *objects, NSError* error))block;
+- (void)fetchAVObjectData:(void(^)(NSArray *objects, NSError* error))block;
 @end

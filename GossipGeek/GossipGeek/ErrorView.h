@@ -8,11 +8,10 @@
 
 #import <UIKit/UIKit.h>
 @protocol ErrorViewDelegate <NSObject>
-- (void) errorViewClick;
+- (void) errorViewDidClick;
 @end
 
 @interface ErrorView : UIView
 @property (weak, nonatomic) id<ErrorViewDelegate> delegate;
-- (instancetype)init;
 - (void)viewClick;
 @end

@@ -15,7 +15,7 @@
 
 - (instancetype)init {
     self = [super init];
-    if (self) {        
+    if (self) {
         [self initErrorLabel];
         [self initErrorImageView];
         UITapGestureRecognizer *tapGestuerRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(viewClick)];
@@ -27,11 +27,11 @@
 - (void)initErrorImageView {
     self.errorImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"networkError.jpeg"]];
     [self addSubview:self.errorImageView];
-    self.errorImageView.translatesAutoresizingMaskIntoConstraints = false;
-    [[self.errorImageView bottomAnchor] constraintEqualToAnchor:self.errorLabel.topAnchor constant:15].active = true;
-    [[self.errorImageView centerXAnchor] constraintEqualToAnchor:self.errorLabel.centerXAnchor].active = true;
-    [[self.errorImageView widthAnchor] constraintEqualToAnchor:self.widthAnchor constant:-100].active = true;
-    [[self.errorImageView heightAnchor] constraintEqualToAnchor:self.errorImageView.widthAnchor multiplier:0.8125 constant:0].active = true;
+    self.errorImageView.translatesAutoresizingMaskIntoConstraints = NO;
+    [[self.errorImageView bottomAnchor] constraintEqualToAnchor:self.errorLabel.topAnchor constant:15].active = YES;
+    [[self.errorImageView centerXAnchor] constraintEqualToAnchor:self.errorLabel.centerXAnchor].active = YES;
+    [[self.errorImageView widthAnchor] constraintEqualToAnchor:self.widthAnchor constant:-100].active = YES;
+    [[self.errorImageView heightAnchor] constraintEqualToAnchor:self.errorImageView.widthAnchor multiplier:0.8125 constant:0].active = YES;
 }
 
 - (void)initErrorLabel {
@@ -39,17 +39,17 @@
     self.errorLabel.font = [UIFont systemFontOfSize:15];
     self.errorLabel.textColor = [UIColor grayColor];
     [self addSubview:self.errorLabel];
-    self.errorLabel.translatesAutoresizingMaskIntoConstraints = false;
-    [[self.errorLabel leadingAnchor] constraintEqualToAnchor:self.leadingAnchor constant:0].active = true;
-    [[self.errorLabel trailingAnchor] constraintEqualToAnchor:self.trailingAnchor constant:0].active = true;
-    [[self.errorLabel heightAnchor] constraintEqualToConstant:44].active = true;
-    [[self.errorLabel centerYAnchor] constraintEqualToAnchor:self.centerYAnchor constant:80].active = true;
+    self.errorLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    [[self.errorLabel leadingAnchor] constraintEqualToAnchor:self.leadingAnchor constant:0].active = YES;
+    [[self.errorLabel trailingAnchor] constraintEqualToAnchor:self.trailingAnchor constant:0].active = YES;
+    [[self.errorLabel heightAnchor] constraintEqualToConstant:44].active = YES;
+    [[self.errorLabel centerYAnchor] constraintEqualToAnchor:self.centerYAnchor constant:80].active = YES;
     self.errorLabel.textAlignment = NSTextAlignmentCenter;
     self.errorLabel.text = NSLocalizedString(@"networkConnectionFailed", nil);
 }
 
 - (void)viewClick {
-    [self.delegate errorViewClick];
+    [self.delegate errorViewDidClick];
 }
 
 @end

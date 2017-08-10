@@ -18,7 +18,7 @@
     return self;
 }
 
-- (void)fetchAVObjectDataFromService:(void (^)(NSArray *objects,NSError* error))block {
+- (void)fetchAVObjectData:(void (^)(NSArray *objects,NSError* error))block {
     AVQuery *query = [AVQuery queryWithClassName:@"Magazine"];
     [query orderByDescending:@"createdAt"];
     [query includeKey:@"content"];
@@ -37,15 +37,7 @@
 }
 
 - (void)avobjectToMagazineModel:(NSArray *)magazineAVObjects {
-    for (AVObject *avobject in magazineAVObjects) {
-        Magazine *magazine = (Magazine*)avobject;
-////        [magazine objectForKey:@"title"];
-//        magazine.title = [avobject objectForKey:@"title"];
-//        magazine.content = [avobject objectForKey:@"content"];
-//        magazine.time = [avobject objectForKey:@"time"];
-//        magazine.url = [avobject objectForKey:@"URL"];
-//        magazine.likenumber = [NSString stringWithFormat:@"共%@人点赞",[avobject objectForKey:@"likenumber"]];
-//        magazine.image = [avobject objectForKey:@"image"];
+    for (Magazine *magazine in magazineAVObjects) {
         [self addMagezineModel:magazine];
     }
     [self useMagazineReleaseTimeToSort];
@@ -57,7 +49,6 @@
 
 - (void)useMagazineReleaseTimeToSort {
     [self.magazines sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
-
         return [self isTimeOneSmallThanTimeTwo:((Magazine*)obj1).time TimeTwo:((Magazine*)obj2).time];
     }];
 }

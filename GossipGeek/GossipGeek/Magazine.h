@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <AVOSCloud/AVOSCloud.h>
-@class AVFile;
 @interface Magazine : AVObject<AVSubclassing>
 @property(copy, nonatomic) NSString *title;
 @property(copy, nonatomic) NSString *content;

@@ -19,7 +19,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *magazineTableView;
 @property (strong, nonatomic) MagazineViewModel *magazineViewModel;
 @property (strong, nonatomic) ErrorView *errorView;
-
 @property (strong, nonatomic) UIRefreshControl* refreshControl;
 @end
 
@@ -31,12 +30,12 @@
     [self createErrorInfoUI];
     self.magazineViewModel = [[MagazineViewModel alloc]init];
     [self initMagazineTableView];
-    self.automaticallyAdjustsScrollViewInsets = false;
+    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [MBProgressHUD showHUDAddedTo:self.tabBarController.view animated:true];
+    [MBProgressHUD showHUDAddedTo:self.tabBarController.view animated:YES];
     [self pullDownSetupData];
     
 }
@@ -56,10 +55,10 @@
 
 - (void)pullDownSetupData {
     [self.refreshControl beginRefreshing];
-    [self.magazineViewModel fetchAVObjectDataFromService:^(NSArray *objects, NSError *error) {
+    [self.magazineViewModel fetchAVObjectData:^(NSArray *objects, NSError *error) {
         [UIView animateWithDuration:0.25 animations:^{
             [self.refreshControl endRefreshing];
-            [MBProgressHUD hideHUDForView:self.tabBarController.view animated:true];
+            [MBProgressHUD hideHUDForView:self.tabBarController.view animated:YES];
             [self.magazineTableView reloadData];
             if (error) {
                 [self showErrorInfoUI:YES];
@@ -77,18 +76,18 @@
 - (void)createErrorInfoUI {
     self.errorView = [[ErrorView alloc]init];
     self.errorView.delegate = self;
-    self.errorView.hidden = true;
+    self.errorView.hidden = YES;
     [self.view addSubview:self.errorView];
-    self.errorView.userInteractionEnabled = true;
-    self.errorView.translatesAutoresizingMaskIntoConstraints = false;
-    [[self.errorView leadingAnchor] constraintEqualToAnchor:self.view.leadingAnchor constant:0].active = true;
-    [[self.errorView trailingAnchor] constraintEqualToAnchor:self.view.trailingAnchor constant:0].active = true;
-    [[self.errorView heightAnchor] constraintEqualToAnchor:self.view.heightAnchor constant:0].active = true;
-    [[self.errorView centerYAnchor] constraintEqualToAnchor:self.view.centerYAnchor].active = true;
+    self.errorView.userInteractionEnabled = YES;
+    self.errorView.translatesAutoresizingMaskIntoConstraints = NO;
+    [[self.errorView leadingAnchor] constraintEqualToAnchor:self.view.leadingAnchor constant:0].active = YES;
+    [[self.errorView trailingAnchor] constraintEqualToAnchor:self.view.trailingAnchor constant:0].active = YES;
+    [[self.errorView heightAnchor] constraintEqualToAnchor:self.view.heightAnchor constant:0].active = YES;
+    [[self.errorView centerYAnchor] constraintEqualToAnchor:self.view.centerYAnchor].active = YES;
 }
 
-- (void)errorViewClick {
-    [MBProgressHUD showHUDAddedTo:self.tabBarController.view animated:true];
+- (void)errorViewDidClick {
+    [MBProgressHUD showHUDAddedTo:self.tabBarController.view animated:YES];
     [self pullDownSetupData];
 }
 
@@ -106,8 +105,7 @@
     cell.titleLabel.text = currentMagazine.title;
     cell.contantLabel.text = currentMagazine.content;
     cell.timeLabel.text = currentMagazine.time;
-    cell.likeNumberLabel.text = currentMagazine.likenumber;
-    
+    cell.likeNumberLabel.text = [NSString stringWithFormat:@"共有%@人点赞",currentMagazine.likenumber];
     if (currentMagazine.image == nil) {
         cell.logoImageView.image = [UIImage imageNamed:@"default.jpg"];
     }else {
