@@ -10,6 +10,6 @@
 #import "Magazine.h"
 
 @interface MagazineViewModel : NSObject
-@property(strong, nonatomic) NSMutableArray<Magazine*> *magazines;
-- (void)fetchAVObjectData:(void(^)(NSArray *objects, NSError* error))block;
+@property(strong, nonatomic) NSMutableArray<Magazine* > *magazines;
+- (void)fetchAVObjectData:(void(^)(int newMagazineCount, NSError* error))block;
 @end

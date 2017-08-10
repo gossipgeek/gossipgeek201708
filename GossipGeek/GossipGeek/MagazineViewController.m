@@ -27,8 +27,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self createErrorInfoUI];
     self.magazineViewModel = [[MagazineViewModel alloc]init];
+    
+    [self createErrorInfoUI];
     [self initMagazineTableView];
     self.automaticallyAdjustsScrollViewInsets = NO;
 }
@@ -55,7 +56,7 @@
 
 - (void)pullDownSetupData {
     [self.refreshControl beginRefreshing];
-    [self.magazineViewModel fetchAVObjectData:^(NSArray *objects, NSError *error) {
+    [self.magazineViewModel fetchAVObjectData:^(int newMagazineCount, NSError *error) {
         [UIView animateWithDuration:0.25 animations:^{
             [self.refreshControl endRefreshing];
             [MBProgressHUD hideHUDForView:self.tabBarController.view animated:YES];
@@ -64,9 +65,20 @@
                 [self showErrorInfoUI:YES];
             }else {
                 [self showErrorInfoUI:NO];
+                if (newMagazineCount == 0) {
+                    [self showNotHaveMoreMagazineDataHUD];
+                }
             }
         }];
     }];
+}
+
+- (void)showNotHaveMoreMagazineDataHUD {
+    MBProgressHUD* notMoreDataHud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    notMoreDataHud.mode = MBProgressHUDModeText;
+    notMoreDataHud.label.text = NSLocalizedString(@"notMoreMagazineData", nil);
+    notMoreDataHud.removeFromSuperViewOnHide = YES;
+    [notMoreDataHud hideAnimated:YES afterDelay:0.5];
 }
 
 - (void)showErrorInfoUI:(BOOL)flag {
@@ -105,7 +117,7 @@
     cell.titleLabel.text = currentMagazine.title;
     cell.contantLabel.text = currentMagazine.content;
     cell.timeLabel.text = currentMagazine.time;
-    cell.likeNumberLabel.text = [NSString stringWithFormat:@"共有%@人点赞",currentMagazine.likenumber];
+    cell.likeNumberLabel.text = [NSString stringWithFormat:NSLocalizedString(@"likeTotalNumber", nil),currentMagazine.likenumber];
     if (currentMagazine.image == nil) {
         cell.logoImageView.image = [UIImage imageNamed:@"default.jpg"];
     }else {

@@ -18,9 +18,10 @@
     return self;
 }
 
-- (void)fetchAVObjectData:(void (^)(NSArray *objects,NSError* error))block {
+- (void)fetchAVObjectData:(void (^)(int newMagazineCount,NSError* error))block {
+    
     AVQuery *query = [AVQuery queryWithClassName:@"Magazine"];
-    [query orderByDescending:@"createdAt"];
+    [query orderByDescending:@"time"];
     [query includeKey:@"content"];
     [query includeKey:@"title"];
     [query includeKey:@"url"];
@@ -28,42 +29,35 @@
     [query includeKey:@"time"];
     [query includeKey:@"image"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        [self.magazines removeAllObjects];
+        int newMagazineCount = 0;
         if (!error) {
-            [self avobjectToMagazineModel:objects];
+            newMagazineCount = [self upDataMagazines:objects];
         }
-        block(objects,error);
+        block(newMagazineCount,error);
     }];
-}
-
-- (void)avobjectToMagazineModel:(NSArray *)magazineAVObjects {
-    for (Magazine *magazine in magazineAVObjects) {
-        [self addMagezineModel:magazine];
-    }
-    [self useMagazineReleaseTimeToSort];
 }
 
 - (void)addMagezineModel:(Magazine *)magazine {
     [self.magazines addObject:magazine];
 }
 
-- (void)useMagazineReleaseTimeToSort {
-    [self.magazines sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
-        return [self isTimeOneSmallThanTimeTwo:((Magazine*)obj1).time TimeTwo:((Magazine*)obj2).time];
-    }];
-}
-
-- (BOOL)isTimeOneSmallThanTimeTwo:(NSString*)time1 TimeTwo:(NSString*)time2 {
-    NSArray *obj1Times = [time1 componentsSeparatedByString:@"-"];
-    NSArray *obj2Times = [time2 componentsSeparatedByString:@"-"];
-    for (int i = 0; i < obj1Times.count; i++) {
-        if ([obj1Times[i] intValue] > [obj2Times[i] intValue]) {
-            return NSOrderedAscending;
-        }else if([obj1Times[i] intValue] < [obj2Times[i] intValue]){
-            return NSOrderedDescending;
+- (int)upDataMagazines:(NSArray* ) magazineAVObjects {
+    int newMagazineCount = 0;
+    for (Magazine* item in magazineAVObjects) {
+        if (![self isContainSameMagazine:item]) {
+            [self addMagezineModel:item];
+            newMagazineCount++;
         }
     }
-    return NSOrderedSame;
+    return newMagazineCount;
 }
 
+- (BOOL)isContainSameMagazine:(Magazine *)magazine {
+    for (Magazine* item in self.magazines) {
+        if ([item.url isEqualToString:magazine.url]) {
+            return YES;
+        }
+    }
+    return NO;
+}
 @end
