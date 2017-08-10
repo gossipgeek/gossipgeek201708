@@ -34,7 +34,11 @@
     if (email == nil || password == nil) {
         return NO;
     }
-    return (![email isEqualToString:nullString] && ![password isEqualToString:nullString]);
+    if ([email isEqualToString:nullString] || [password isEqualToString:nullString]) {
+        return NO;
+    } else {
+        return YES;
+    }
 }
 
 @end

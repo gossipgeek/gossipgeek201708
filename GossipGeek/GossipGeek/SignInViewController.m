@@ -30,7 +30,8 @@ typedef enum {
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *signInButton;
 @property (strong, nonatomic) SignInViewModel *signInViewModel;
-@property (strong, nonatomic) MBProgressHUD *loadingHud;
+@property (weak, nonatomic) MBProgressHUD *loadingHud;
+@property (nonatomic) BOOL onlyTWEmailEnable;
 
 @end
 
@@ -39,10 +40,10 @@ typedef enum {
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self initCurrentPage];
-    
-    self.loadingHud = [[MBProgressHUD alloc]init];
     self.signInViewModel = [[SignInViewModel alloc]init];
+    self.onlyTWEmailEnable = [self.signInViewModel getOnlyTWEmailEnable];
+        
+    [self initCurrentPage];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldDidChangeEditing:) name:UITextFieldTextDidChangeNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldDidBeginEditing:) name:UITextFieldTextDidBeginEditingNotification object:nil];
@@ -56,7 +57,7 @@ typedef enum {
     [self setSignInButtonEnable:NO];
     NSString *email = self.emailTextField.text;
     if ([self.signInViewModel isEmailFormat:email]) {
-        if ([self.signInViewModel getOnlyTWEmailEnable]) {
+        if (self.onlyTWEmailEnable) {
             if ([self.signInViewModel isTWEmailFormat:email]) {
                 [self signIn];
             } else {
@@ -150,9 +151,7 @@ typedef enum {
     if (show) {
         self.loadingHud = [MBProgressHUD showHUDAddedTo:self.view animated:NO];
     } else {
-        if (![self.loadingHud isHidden]) {
-            [self.loadingHud hideAnimated:NO];
-        }
+       [self.loadingHud hideAnimated:NO];
     }
 }
 
@@ -173,7 +172,7 @@ typedef enum {
 - (void)initCurrentPage {
     [self setSignInButtonEnable:NO];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"SignIn_back", nil) style:UIBarButtonItemStylePlain target:nil action:nil];
-    if ([self.signInViewModel getOnlyTWEmailEnable]) {
+    if (self.onlyTWEmailEnable) {
         self.emailTextField.placeholder = NSLocalizedString(@"SignIn_inputTWEmail", nil);
     }
 }
