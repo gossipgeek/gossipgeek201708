@@ -31,7 +31,7 @@
 
 - (BOOL)isBothAreNotEmptyStringWithEmail:(NSString *)email andPassword:(NSString *)password {
     NSString *nullString = @"";
-    if (email == NULL || password == NULL) {
+    if (email == nil || password == nil) {
         return NO;
     }
     return (![email isEqualToString:nullString] && ![password isEqualToString:nullString]);

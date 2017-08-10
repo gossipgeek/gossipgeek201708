@@ -28,8 +28,8 @@ typedef enum {
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *signInButton;
-@property SignInViewModel *signInViewModel;
-@property MBProgressHUD *loadingHud;
+@property (strong, nonatomic) SignInViewModel *signInViewModel;
+@property (weak, nonatomic) MBProgressHUD *loadingHud;
 
 @end
 

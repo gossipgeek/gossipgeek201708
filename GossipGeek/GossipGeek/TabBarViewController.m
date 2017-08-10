@@ -6,6 +6,8 @@
 //  Copyright © 2017 cozhang . All rights reserved.
 //
 
+#define HUD_SHOW_TIME 2.f
+
 #import "TabBarViewController.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import "SignInViewController.h"
@@ -57,7 +59,7 @@
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeText;
     hud.label.text = error;
-    [hud hideAnimated:YES afterDelay:2.f];
+    [hud hideAnimated:YES afterDelay:HUD_SHOW_TIME];
 }
 
 @end
