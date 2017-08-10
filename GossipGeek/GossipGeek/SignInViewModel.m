@@ -8,13 +8,26 @@
 
 #import "SignInViewModel.h"
 
+typedef enum {
+    ERROR_EMAIL_PASSWORD_NOT_MATCH = 210,
+    ERROR_ACCOUNT_NOT_EXIST = 211,
+    ERROR_EMAIL_NOT_VERIFED = 216,
+    ERROR_SIGNIN_LIMIT = 219,
+    ERROR_NETWORK_NOT_REACHABLE = -1009,
+} SIGNIN_ERROR_CODE;
+
 @implementation SignInViewModel
+
+- (id) init {
+    self = [super init];
+    self.onlyTWEmailEnable = [self getOnlyTWEmailEnable];
+    return self;
+}
 
 - (BOOL)getOnlyTWEmailEnable {
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"project" ofType:@"plist"];
     NSMutableDictionary *plist = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
-    BOOL onlyTWEmailEnable = [[plist objectForKey:@"onlyTWEmailEnable"] boolValue];
-    return onlyTWEmailEnable;
+    return [[plist objectForKey:@"onlyTWEmailEnable"] boolValue];
 }
 
 - (BOOL)isEmailFormat:(NSString *)email {
@@ -39,6 +52,30 @@
     } else {
         return YES;
     }
+}
+
+- (NSString *)getErrorDescription:(NSError *)error {
+    NSString *errorDescription = nil;
+    switch (error.code) {
+        case ERROR_EMAIL_NOT_VERIFED:
+            errorDescription = NSLocalizedString(@"SignIn_goEmailVerified", nil);
+            break;
+        case ERROR_EMAIL_PASSWORD_NOT_MATCH:
+            errorDescription = NSLocalizedString(@"SignIn_eamilMismatchPassword", nil);
+            break;
+        case ERROR_ACCOUNT_NOT_EXIST:
+            errorDescription = NSLocalizedString(@"SignIn_userNotExist", nil);
+            break;
+        case ERROR_SIGNIN_LIMIT:
+            errorDescription = NSLocalizedString(@"SignIn_signInLimit", nil);
+            break;
+        case ERROR_NETWORK_NOT_REACHABLE:
+            errorDescription = NSLocalizedString(@"SignIn_networkError", nil);
+            break;
+        default:
+            errorDescription = error.localizedDescription;
+    }
+    return errorDescription;
 }
 
 @end

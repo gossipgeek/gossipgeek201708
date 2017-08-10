@@ -10,9 +10,10 @@
 
 @interface SignInViewModel : NSObject
 
-- (BOOL)getOnlyTWEmailEnable;
 - (BOOL)isEmailFormat:(NSString *)email;
 - (BOOL)isTWEmailFormat:(NSString *)email;
+- (NSString *)getErrorDescription:(NSError *)error;
 - (BOOL)isBothAreNotEmptyStringWithEmail:(NSString *)email andPassword:(NSString *)password;
+@property BOOL onlyTWEmailEnable;
 
 @end
