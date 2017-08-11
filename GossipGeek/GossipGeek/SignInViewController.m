@@ -111,7 +111,7 @@
 
 - (void)errorTips:(NSError *)error {
     NSString *errorDescription = [self.signInViewModel getErrorDescription:error];
-    if (errorDescription == NSLocalizedString(@"SignIn_goEmailVerified", nil)) {
+    if ([errorDescription isEqualToString:NSLocalizedString(@"SignIn_goEmailVerified", nil)]) {
         [self showAlertWithTitle:NSLocalizedString(@"SignIn_error", nil) andMessage:errorDescription];
     } else {
         [self showHud:errorDescription];
