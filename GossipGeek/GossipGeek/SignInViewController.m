@@ -30,23 +30,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        
     [self initCurrentPage];
-
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
-    [self.view addGestureRecognizer:tap];
-    tap.delegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldDidChangeEditing:) name:UITextFieldTextDidChangeNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldDidBeginEditing:) name:UITextFieldTextDidBeginEditingNotification object:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [[NSNotificationCenter defaultCenter]removeObserver:self];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
 }
 
 - (SignInViewModel *)signInViewModel{
@@ -60,19 +58,14 @@
     [self setSignInButtonEnable:NO];
     
     NSString *email = self.emailTextField.text;
-    if (self.signInViewModel.onlyTWEmailEnable) {
-        if ([self.signInViewModel isTWEmailFormat:email]) {
-            [self signIn];
-        } else {
-            [self showHud:NSLocalizedString(@"SignIn_onlyTWEmailEnable",nil)];
-        }
+    if ([self.signInViewModel isTWEmailFormat:email]) {
+        [self signIn];
+    } else if ([self.signInViewModel isEmailFormat:email] && !self.signInViewModel.onlyTWEmailEnable) {
+        [self signIn];
+    } else if ([self.signInViewModel isEmailFormat:email] && self.signInViewModel.onlyTWEmailEnable) {
+        [self showHud:NSLocalizedString(@"SignIn_onlyTWEmailEnable",nil)];
     } else {
-        if ([self.signInViewModel isEmailFormat:email]) {
-            [self signIn];
-        } else {
-            [self showHud:NSLocalizedString(@"SignIn_notEmail",nil)];
-
-        }
+        [self showHud:NSLocalizedString(@"SignIn_notEmail",nil)];
     }
     
     [self setSignInButtonEnable:YES];
@@ -95,12 +88,6 @@
     }];
 }
 
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    if ([self.signInViewModel isBothAreNotEmptyStringWithEmail:self.emailTextField.text andPassword:self.passwordTextField.text]) {
-        [self setSignInButtonEnable:YES];
-    }
-}
-
 - (void)textFieldDidChangeEditing:(UITextField *)textField {
     if ([self.signInViewModel isBothAreNotEmptyStringWithEmail:self.emailTextField.text andPassword:self.passwordTextField.text]) {
         [self setSignInButtonEnable:YES];
@@ -118,7 +105,7 @@
     }
 }
 
-- (void)showHud:(NSString *) error {
+- (void)showHud:(NSString *)error {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeText;
     hud.label.text = error;
@@ -134,7 +121,7 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
--(void)shouldShowLoading:(BOOL)show {
+- (void)shouldShowLoading:(BOOL)show {
     if (show) {
         self.loadingHud = [MBProgressHUD showHUDAddedTo:self.view animated:NO];
     } else {
@@ -142,13 +129,9 @@
     }
 }
 
--(void)setSignInButtonEnable:(BOOL)enable {
+- (void)setSignInButtonEnable:(BOOL)enable {
     self.signInButton.enabled = enable;
     self.signInButton.alpha = enable?SIGNIN_BUTTON_ALPHA_WHEN_ENABLED:SIGNIN_BUTTON_ALPHA_WHEN_DISABLED;
-}
-
--(void)dismissKeyboard {
-    [self.view endEditing:YES];
 }
 
 - (void)initCurrentPage {

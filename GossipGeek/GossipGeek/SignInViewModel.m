@@ -43,15 +43,7 @@ typedef enum {
 }
 
 - (BOOL)isBothAreNotEmptyStringWithEmail:(NSString *)email andPassword:(NSString *)password {
-    NSString *nullString = @"";
-    if (email == nil || password == nil) {
-        return NO;
-    }
-    if ([email isEqualToString:nullString] || [password isEqualToString:nullString]) {
-        return NO;
-    } else {
-        return YES;
-    }
+    return (email.length > 0) && (password.length > 0);
 }
 
 - (NSString *)getErrorDescription:(NSError *)error {

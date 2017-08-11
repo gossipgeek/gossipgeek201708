@@ -76,27 +76,27 @@ describe(@"SignInViewModel Specs", ^{
         
         it(@"should return NO when the email is '18829042843@163.com'", ^{
             NSString *email = @"18829042843@163.com";
-            expect([signInViewModel isTWEmailFormat:email]).to(equal(NO));
+            expect([signInViewModel isTWEmailFormat:email]).to(beFalse());
         });
         
         it(@"should return NO when the email is '18829042843'", ^{
-            NSString *email = @"18829042843@163.com";
-            expect([signInViewModel isTWEmailFormat:email]).to(equal(NO));
+            NSString *email = @"18829042843";
+            expect([signInViewModel isTWEmailFormat:email]).to(beFalse());
         });
         
         it(@"should return YES when the email is '18829042843@thoughtworks.com'", ^{
             NSString *email = @"18829042843@thoughtworks.com";
-            expect([signInViewModel isTWEmailFormat:email]).to(equal(YES));
+            expect([signInViewModel isTWEmailFormat:email]).to(beTrue());
         });
         
         it(@"should return YES when the email is 'fcliang@thoughtworks.com'", ^{
             NSString *email = @"fcliang@thoughtworks.com";
-            expect([signInViewModel isTWEmailFormat:email]).to(equal(YES));
+            expect([signInViewModel isTWEmailFormat:email]).to(beTrue());
         });
         
     });
     
-    context(@"isBothAreEmptyStringWithEmailandPassword", ^{
+    context(@"isBothAreNotEmptyStringWithEmailandPassword", ^{
         
         __block SignInViewModel *signInViewModel = nil;
         
@@ -111,25 +111,31 @@ describe(@"SignInViewModel Specs", ^{
         it(@"should return NO when the email is @'123' and password is @''", ^{
             NSString *email = @"123";
             NSString *password = @"";
-            expect([signInViewModel isBothAreNotEmptyStringWithEmail:email andPassword:password]).to(equal(NO));
+            expect([signInViewModel isBothAreNotEmptyStringWithEmail:email andPassword:password]).to(beFalse());
         });
         
         it(@"should return NO when the email is @'' and password is @'123'", ^{
             NSString *email = @"";
             NSString *password = @"123";
-            expect([signInViewModel isBothAreNotEmptyStringWithEmail:email andPassword:password]).to(equal(NO));
+            expect([signInViewModel isBothAreNotEmptyStringWithEmail:email andPassword:password]).to(beFalse());
         });
         
         it(@"should return NO when the email is @'' and password is @''", ^{
             NSString *email = @"";
             NSString *password = @"";
-            expect([signInViewModel isBothAreNotEmptyStringWithEmail:email andPassword:password]).to(equal(NO));
+            expect([signInViewModel isBothAreNotEmptyStringWithEmail:email andPassword:password]).to(beFalse());
+        });
+        
+        it(@"should return NO when the email is nil and password is nil", ^{
+            NSString *email = nil;
+            NSString *password = nil;
+            expect([signInViewModel isBothAreNotEmptyStringWithEmail:email andPassword:password]).to(beFalse());
         });
         
         it(@"should return YES when the email is @'123' and password is @'123'", ^{
             NSString *email = @"123";
             NSString *password = @"123";
-            expect([signInViewModel isBothAreNotEmptyStringWithEmail:email andPassword:password]).to(equal(YES));
+            expect([signInViewModel isBothAreNotEmptyStringWithEmail:email andPassword:password]).to(beTrue());
         });
 
     });
