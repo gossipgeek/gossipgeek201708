@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import "Magazine.h"
+#import "SignInViewController.h"
 
 #define APP_ID @"NvYIsxK8CR8DPgETCjsW8bTH-gzGzoHsz"
 #define APP_KEY @"0hfEA0BynwXUi2Couw2gPnks"
@@ -20,17 +21,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [Magazine registerSubclass];
+
     [AVOSCloud setApplicationId:APP_ID clientKey:APP_KEY];
     //开启 SDK 的调试日志（debug log）,方便追踪问题。调试日志开启后，SDK 会把网络请求、错误消息等信息输出到 IDE 的日志窗口
     [AVOSCloud setAllLogsEnabled:YES];
     //跟踪统计应用的打开情况
     [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-    
+
     return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-    
+
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
@@ -42,11 +44,28 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    
+    [self verifiedSessionToken];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     
+}
+
+- (void)verifiedSessionToken {
+    AVUser *currentUser = [AVUser currentUser];
+    NSString *sessionToken = currentUser.sessionToken;
+    [AVUser becomeWithSessionTokenInBackground:sessionToken
+                                         block:^(AVUser *user, NSError *error) {
+                                             if (!error) {
+                                                 NSLog(@"User did login with session token.");
+                                             } else {
+                                                 if (sessionToken == nil) {
+                                                     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+                                                     UIViewController *signInPage = [storyBoard instantiateViewControllerWithIdentifier:@"signInPage"];
+                                                     [self.window.rootViewController presentViewController:signInPage animated:YES completion:nil];
+                                                 }
+                                             }
+                                         }];
 }
 
 @end
