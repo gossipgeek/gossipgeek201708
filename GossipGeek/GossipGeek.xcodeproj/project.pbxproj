@@ -40,6 +40,7 @@
 		BF21F78E1F42EE9700A64945 /* MBProgressHUD+ShowTextHud.m in Sources */ = {isa = PBXBuildFile; fileRef = BF21F78D1F42EE9700A64945 /* MBProgressHUD+ShowTextHud.m */; };
 		F61288191F3C4B5C0095075A /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF21F6C31F38742B00A64945 /* MBProgressHUD.framework */; };
 		F612881A1F3C4B5C0095075A /* MBProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF21F6C31F38742B00A64945 /* MBProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F69893261F4309E4002CF317 /* GGSignUpViewModelSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = F69893251F4309E4002CF317 /* GGSignUpViewModelSpecs.m */; };
 		F6C800671F3C506B00B9965F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6C800611F3C506B00B9965F /* LaunchScreen.storyboard */; };
 		F6C800681F3C506B00B9965F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F6C800631F3C506B00B9965F /* Localizable.strings */; };
 		F6C800691F3C506B00B9965F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6C800651F3C506B00B9965F /* Main.storyboard */; };
@@ -48,6 +49,8 @@
 		F6E76AD61F3AE48A00D43A2C /* GGSignInViewModelSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = F6E76AD51F3AE48A00D43A2C /* GGSignInViewModelSpecs.m */; };
 		F6E76B391F3B218B00D43A2C /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E76B381F3B218B00D43A2C /* Reachability.framework */; };
 		F6E76B3A1F3B218B00D43A2C /* Reachability.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F6E76B381F3B218B00D43A2C /* Reachability.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F6FE96F41F3DA1D80086F878 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FE96F31F3DA1D80086F878 /* SignUpViewController.m */; };
+		F6FE96F71F3DA36D0086F878 /* SignUpViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FE96F61F3DA36D0086F878 /* SignUpViewModel.m */; };
 		F6FF54BF1F308FE700179B14 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FF54BE1F308FE700179B14 /* SignInViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -137,8 +140,9 @@
 		BF278B981F43E60800969CD8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		BF278B991F43E60800969CD8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		BF278B9A1F43E60800969CD8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		F6112D5E1F444F6D00DA51B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F614DD721F32B8AC0075E9F5 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cartfile; path = ../Cartfile; sourceTree = "<group>"; };
-		F6C800641F3C506B00B9965F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F69893251F4309E4002CF317 /* GGSignUpViewModelSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGSignUpViewModelSpecs.m; sourceTree = "<group>"; };
 		F6C8006A1F3C557A00B9965F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F6C8006B1F3C557A00B9965F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F6E76ACB1F3ABA6400D43A2C /* SignInViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewModel.h; sourceTree = "<group>"; };
@@ -146,6 +150,10 @@
 		F6E76AD11F3ADCFB00D43A2C /* project.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = project.plist; sourceTree = "<group>"; };
 		F6E76AD51F3AE48A00D43A2C /* GGSignInViewModelSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGSignInViewModelSpecs.m; sourceTree = "<group>"; };
 		F6E76B381F3B218B00D43A2C /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reachability.framework; sourceTree = "<group>"; };
+		F6FE96F21F3DA1D80086F878 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		F6FE96F31F3DA1D80086F878 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		F6FE96F51F3DA36D0086F878 /* SignUpViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewModel.h; sourceTree = "<group>"; };
+		F6FE96F61F3DA36D0086F878 /* SignUpViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewModel.m; sourceTree = "<group>"; };
 		F6FF54BD1F308FE700179B14 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		F6FF54BE1F308FE700179B14 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -245,6 +253,7 @@
 				BE2FBCD61F38008600C80A5A /* GossipGeekTests-Bridging-Header.h */,
 				BF21F74F1F3AF41500A64945 /* GGMagazineViewModelSpecs.m */,
 				F6E76AD51F3AE48A00D43A2C /* GGSignInViewModelSpecs.m */,
+				F69893251F4309E4002CF317 /* GGSignUpViewModelSpecs.m */,
 			);
 			path = GossipGeekTests;
 			sourceTree = "<group>";
@@ -297,6 +306,8 @@
 				BF0F375D1F30E1E1009CA6BA /* MagazineViewController.m */,
 				BF21F7751F3C35AD00A64945 /* MagazineDetailViewController.h */,
 				BF21F7761F3C35AD00A64945 /* MagazineDetailViewController.m */,
+				F6FE96F21F3DA1D80086F878 /* SignUpViewController.h */,
+				F6FE96F31F3DA1D80086F878 /* SignUpViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -310,6 +321,8 @@
 				F6E76ACC1F3ABA6400D43A2C /* SignInViewModel.m */,
 				BF21F77E1F3D9F0F00A64945 /* UserMagazineLikeViewModel.h */,
 				BF21F77F1F3D9F0F00A64945 /* UserMagazineLikeViewModel.m */,
+				F6FE96F51F3DA36D0086F878 /* SignUpViewModel.h */,
+				F6FE96F61F3DA36D0086F878 /* SignUpViewModel.m */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -466,10 +479,12 @@
 				BF0F37651F31D672009CA6BA /* Magazine.m in Sources */,
 				BF0F37B61F32FC36009CA6BA /* MagazineViewModel.m in Sources */,
 				BF0F375E1F30E1E1009CA6BA /* MagazineViewController.m in Sources */,
+				F6FE96F71F3DA36D0086F878 /* SignUpViewModel.m in Sources */,
 				BF0F37621F3160ED009CA6BA /* MagazineTableViewCell.m in Sources */,
 				BF21F7801F3D9F0F00A64945 /* UserMagazineLikeViewModel.m in Sources */,
 				BF0F36F11F305B34009CA6BA /* AppDelegate.m in Sources */,
 				F6FF54BF1F308FE700179B14 /* SignInViewController.m in Sources */,
+				F6FE96F41F3DA1D80086F878 /* SignUpViewController.m in Sources */,
 				BF0F36EE1F305B34009CA6BA /* main.m in Sources */,
 				BF21F78E1F42EE9700A64945 /* MBProgressHUD+ShowTextHud.m in Sources */,
 				BF21F78B1F42EA1F00A64945 /* Reachability+CheckNetwork.m in Sources */,
@@ -482,6 +497,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F69893261F4309E4002CF317 /* GGSignUpViewModelSpecs.m in Sources */,
 				BE2FBCD81F38008700C80A5A /* SwiftSpecs.swift in Sources */,
 				BF21F7501F3AF41500A64945 /* GGMagazineViewModelSpecs.m in Sources */,
 				BE4EE0301F32BA7B00A6AA85 /* GGDemoSpecs.m in Sources */,
@@ -512,9 +528,9 @@
 		F6C800631F3C506B00B9965F /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F6C800641F3C506B00B9965F /* en */,
 				BF21F7811F42D4AC00A64945 /* Base */,
 				BF278B9A1F43E60800969CD8 /* zh-Hans */,
+				F6112D5E1F444F6D00DA51B9 /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

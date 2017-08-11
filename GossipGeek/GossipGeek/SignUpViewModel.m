@@ -1,23 +1,19 @@
 //
-//  SignInViewModel.m
+//  SignUpViewModel.m
 //  GossipGeek
 //
-//  Created by Facheng Liang  on 09/08/2017.
+//  Created by Facheng Liang  on 11/08/2017.
 //  Copyright © 2017 cozhang . All rights reserved.
 //
 
-#import "SignInViewModel.h"
-#import "SignInViewController.h"
+#import "SignUpViewModel.h"
 
 typedef enum {
-    ERROR_EMAIL_PASSWORD_NOT_MATCH = 210,
-    ERROR_ACCOUNT_NOT_EXIST = 211,
-    ERROR_EMAIL_NOT_VERIFED = 216,
-    ERROR_SIGNIN_LIMIT = 219,
+    ERROR_EMAIL_ALREADY_OCCUPIED = 203,
     ERROR_NETWORK_NOT_REACHABLE = -1009,
-} SIGNIN_ERROR_CODE;
+} SIGNUP_ERROR_CODE;
 
-@implementation SignInViewModel
+@implementation SignUpViewModel
 
 - (id)init {
     if (self = [super init]) {
@@ -51,17 +47,8 @@ typedef enum {
 - (NSString *)getErrorDescription:(NSError *)error {
     NSString *errorDescription = nil;
     switch (error.code) {
-        case ERROR_EMAIL_NOT_VERIFED:
-            errorDescription = NSLocalizedString(@"promptGoEmailVerified", nil);
-            break;
-        case ERROR_EMAIL_PASSWORD_NOT_MATCH:
-            errorDescription = NSLocalizedString(@"promptEamilMismatchPassword", nil);
-            break;
-        case ERROR_ACCOUNT_NOT_EXIST:
-            errorDescription = NSLocalizedString(@"promptUserNotExist", nil);
-            break;
-        case ERROR_SIGNIN_LIMIT:
-            errorDescription = NSLocalizedString(@"promptSignInLimit", nil);
+        case ERROR_EMAIL_ALREADY_OCCUPIED:
+            errorDescription = NSLocalizedString(@"promptEmailAlreadyOccupied", nil);
             break;
         case ERROR_NETWORK_NOT_REACHABLE:
             errorDescription = NSLocalizedString(@"promptNetworkError", nil);
@@ -70,6 +57,14 @@ typedef enum {
             errorDescription = error.localizedDescription;
     }
     return errorDescription;
+}
+
+- (AVUser *)setUserInfoWithEmial:(NSString *)email andPassword:(NSString *)password {
+    AVUser *user = [AVUser user];
+    user.email = email;
+    user.password = password;
+    user.username = email;
+    return user;
 }
 
 - (NSString *)getEmailTextFieldPlaceHolder {
