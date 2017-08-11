@@ -27,12 +27,12 @@
     [AVOSCloud setAllLogsEnabled:YES];
     //跟踪统计应用的打开情况
     [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-    
+
     return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-    
+
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
@@ -44,11 +44,28 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    
+    [self verifiedSessionToken];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     
+}
+
+- (void)verifiedSessionToken {
+    AVUser *currentUser = [AVUser currentUser];
+    NSString *sessionToken = currentUser.sessionToken;
+    [AVUser becomeWithSessionTokenInBackground:sessionToken
+                                         block:^(AVUser *user, NSError *error) {
+                                             if (!error) {
+                                                 NSLog(@"User did login with session token.");
+                                             } else {
+                                                 if (sessionToken == nil) {
+                                                     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+                                                     UIViewController *signInPage = [storyBoard instantiateViewControllerWithIdentifier:@"signInPage"];
+                                                     [self.window.rootViewController presentViewController:signInPage animated:YES completion:nil];
+                                                 }
+                                             }
+                                         }];
 }
 
 @end

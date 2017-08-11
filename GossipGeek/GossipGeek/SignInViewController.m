@@ -118,7 +118,7 @@
     }
 }
 
-- (void) showHud:(NSString *) error {
+- (void)showHud:(NSString *) error {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeText;
     hud.label.text = error;

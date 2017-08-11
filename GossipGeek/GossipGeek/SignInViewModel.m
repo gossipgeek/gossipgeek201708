@@ -18,7 +18,7 @@ typedef enum {
 
 @implementation SignInViewModel
 
-- (id) init {
+- (id)init {
     self = [super init];
     self.onlyTWEmailEnable = [self getOnlyTWEmailEnable];
     return self;
