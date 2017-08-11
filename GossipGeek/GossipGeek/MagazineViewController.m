@@ -5,8 +5,6 @@
 //  Created by cozhang  on 02/08/2017.
 //  Copyright © 2017 cozhang . All rights reserved.
 //
-#define NOT_MORE_DATA_HUD_DELAY 0.5
-
 #import "MagazineViewController.h"
 #import "MagazineTableViewCell.h"
 #import "MagazineViewModel.h"
@@ -14,31 +12,34 @@
 #import "ErrorView.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import <MBProgressHUD/MBProgressHUD.h>
-
-@interface MagazineViewController ()<UITableViewDelegate,UITableViewDataSource,ErrorViewDelegate>
+#import "MagazineDetailViewController.h"
+#import "UserMagazineLikeViewModel.h"
+#import "MBProgressHUD+ShowTextHud.h"
+@interface MagazineViewController ()<UITableViewDelegate,UITableViewDataSource,ErrorViewDelegate,UpdateLikeNumerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *magazineTableView;
 @property (strong, nonatomic) MagazineViewModel *magazineViewModel;
 @property (strong, nonatomic) ErrorView *errorView;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
+@property (strong, nonatomic) NSIndexPath *selectIndexPath;
 @end
 
 @implementation MagazineViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
     self.magazineViewModel = [[MagazineViewModel alloc]init];
     
     [self createErrorInfoUI];
     [self initMagazineTableView];
     self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    [MBProgressHUD showHUDAddedTo:self.tabBarController.view animated:YES];
+    [self pullDownSetupDate];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [MBProgressHUD showHUDAddedTo:self.tabBarController.view animated:YES];
-    [self pullDownSetupData];
-    
+- (void)likeNumberDidUpdate {
+    [self.magazineTableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:self.selectIndexPath.row inSection:self.selectIndexPath.section], nil] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 - (void)initMagazineTableView {
@@ -46,15 +47,15 @@
     self.magazineTableView.dataSource = self;
     self.magazineTableView.rowHeight = UITableViewAutomaticDimension;
     self.magazineTableView.estimatedRowHeight = 360;
-    self.magazineTableView.showsVerticalScrollIndicator = NO;    
+    self.magazineTableView.showsVerticalScrollIndicator = NO;
     self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.refreshControl addTarget:self action:@selector(pullDownSetupData) forControlEvents:UIControlEventValueChanged];
-    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"putDownToUpdata", nil)];
+    [self.refreshControl addTarget:self action:@selector(pullDownSetupDate) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"Magazine_putDownToUpdate", nil)];
     [self.magazineTableView addSubview:self.refreshControl];
     self.magazineTableView.tableFooterView = [[UIView alloc]initWithFrame:(CGRectZero)];
 }
 
-- (void)pullDownSetupData {
+- (void)pullDownSetupDate {
     [self.refreshControl beginRefreshing];
     [self.magazineViewModel fetchAVObjectData:^(int newMagazineCount, NSError *error) {
         [UIView animateWithDuration:0.25 animations:^{
@@ -62,23 +63,19 @@
             [MBProgressHUD hideHUDForView:self.tabBarController.view animated:YES];
             [self.magazineTableView reloadData];
             if (error) {
-                [self showErrorInfoUI:YES];
+                if (self.magazineViewModel.magazines.count != 0) {
+                    [MBProgressHUD showTextHUD:self.view hudText:NSLocalizedString(@"Magazine_connectFailed", nil)];
+                }else {
+                    [self showErrorInfoUI:YES];
+                }
             }else {
                 [self showErrorInfoUI:NO];
                 if (newMagazineCount == 0) {
-                    [self showNotHaveMoreMagazineDataHUD];
+                    [MBProgressHUD showTextHUD:self.view hudText:NSLocalizedString(@"Magazine_notMoreMagazineDate", nil)];
                 }
             }
         }];
     }];
-}
-
-- (void)showNotHaveMoreMagazineDataHUD {
-    MBProgressHUD *notMoreDataHud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    notMoreDataHud.mode = MBProgressHUDModeText;
-    notMoreDataHud.label.text = NSLocalizedString(@"notMoreMagazineData", nil);
-    notMoreDataHud.removeFromSuperViewOnHide = YES;
-    [notMoreDataHud hideAnimated:YES afterDelay:NOT_MORE_DATA_HUD_DELAY];
 }
 
 - (void)showErrorInfoUI:(BOOL)flag {
@@ -88,19 +85,12 @@
 - (void)createErrorInfoUI {
     self.errorView = [[ErrorView alloc]init];
     self.errorView.delegate = self;
-    self.errorView.hidden = YES;
-    [self.view addSubview:self.errorView];
-    self.errorView.userInteractionEnabled = YES;
-    self.errorView.translatesAutoresizingMaskIntoConstraints = NO;
-    [[self.errorView leadingAnchor] constraintEqualToAnchor:self.view.leadingAnchor constant:0].active = YES;
-    [[self.errorView trailingAnchor] constraintEqualToAnchor:self.view.trailingAnchor constant:0].active = YES;
-    [[self.errorView heightAnchor] constraintEqualToAnchor:self.view.heightAnchor constant:0].active = YES;
-    [[self.errorView centerYAnchor] constraintEqualToAnchor:self.view.centerYAnchor].active = YES;
+    [ErrorView createErrorView:self.view errorView:self.errorView];
 }
 
 - (void)errorViewDidClick {
     [MBProgressHUD showHUDAddedTo:self.tabBarController.view animated:YES];
-    [self pullDownSetupData];
+    [self pullDownSetupDate];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -111,13 +101,13 @@
     return self.magazineViewModel.magazines.count;
 }
 
-- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MagazineTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"magezineCell"];
     Magazine *currentMagazine = self.magazineViewModel.magazines[indexPath.row];
     cell.titleLabel.text = currentMagazine.title;
     cell.contantLabel.text = currentMagazine.content;
     cell.timeLabel.text = currentMagazine.time;
-    cell.likeNumberLabel.text = [NSString stringWithFormat:NSLocalizedString(@"likeTotalNumber", nil),currentMagazine.likenumber];
+    cell.likeNumberLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Magazine_likeTotalNumber", nil),currentMagazine.likenumber];
     if (currentMagazine.image == nil) {
         cell.logoImageView.image = [UIImage imageNamed:@"default.jpg"];
     }else {
@@ -131,5 +121,20 @@
     }
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.selectIndexPath = indexPath;
+    [self performSegueWithIdentifier:@"magazineDetailSegue" sender:indexPath];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(nullable id)sender {
+    NSIndexPath *indexPath = sender;
+    Magazine *selectMagazine = self.magazineViewModel.magazines[indexPath.row];
+    MagazineDetailViewController *viewController = segue.destinationViewController;
+    viewController.magazine = selectMagazine;
+    viewController.delegate = self;
+}
+
 
 @end

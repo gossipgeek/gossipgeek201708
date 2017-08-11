@@ -14,7 +14,6 @@
 @dynamic title;
 @dynamic content;
 @dynamic time;
-@dynamic likenumber;
 @dynamic url;
 @dynamic image;
 

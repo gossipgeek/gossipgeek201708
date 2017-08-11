@@ -11,6 +11,7 @@
 #import "Magazine.h"
 #import "SignInViewController.h"
 
+#import "UserMagazineLike.h"
 #define APP_ID @"NvYIsxK8CR8DPgETCjsW8bTH-gzGzoHsz"
 #define APP_KEY @"0hfEA0BynwXUi2Couw2gPnks"
 @interface AppDelegate ()
@@ -21,7 +22,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [Magazine registerSubclass];
-
+    [UserMagazineLike registerSubclass];
     [AVOSCloud setApplicationId:APP_ID clientKey:APP_KEY];
     //开启 SDK 的调试日志（debug log）,方便追踪问题。调试日志开启后，SDK 会把网络请求、错误消息等信息输出到 IDE 的日志窗口
     [AVOSCloud setAllLogsEnabled:YES];

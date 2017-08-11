@@ -1,0 +1,65 @@
+/* Class = "UITabBarItem"; title = "活动"; ObjectID = "581-0I-yTY"; */
+"581-0I-yTY.title" = "Activity";
+
+/* Class = "UITextField"; placeholder = "邮箱"; ObjectID = "81w-13-FaF"; */
+"81w-13-FaF.placeholder" = "Email";
+
+/* Class = "UITextField"; placeholder = "邮箱"; ObjectID = "A1S-7H-7ZK"; */
+"A1S-7H-7ZK.placeholder" = "Email";
+
+/* Class = "UITabBarItem"; title = "爆料"; ObjectID = "BUr-VJ-e7q"; */
+"BUr-VJ-e7q.title" = "Gossip";
+
+/* Class = "UIButton"; normalTitle = "注册"; ObjectID = "DIr-we-bJA"; */
+"DIr-we-bJA.normalTitle" = "Sign Up";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "Dkl-vb-d8c"; */
+"Dkl-vb-d8c.text" = "Title";
+
+/* Class = "UINavigationItem"; title = "登录"; ObjectID = "HvX-cR-gQf"; */
+"HvX-cR-gQf.title" = "Sign In";
+
+/* Class = "UITextField"; placeholder = "邮箱"; ObjectID = "Jmd-Dc-uNQ"; */
+"Jmd-Dc-uNQ.placeholder" = "Email";
+
+/* Class = "UITabBarItem"; title = "杂志"; ObjectID = "P8J-kk-3kQ"; */
+"P8J-kk-3kQ.title" = "Magazine";
+
+/* Class = "UIButton"; normalTitle = "发送"; ObjectID = "Rhg-KS-xsh"; */
+"Rhg-KS-xsh.normalTitle" = "Send";
+
+/* Class = "UINavigationItem"; title = "杂志"; ObjectID = "cwn-pg-vfy"; */
+"cwn-pg-vfy.title" = "Magazine";
+
+/* Class = "UITextField"; placeholder = "密码"; ObjectID = "dBS-h7-XV5"; */
+"dBS-h7-XV5.placeholder" = "Password";
+
+/* Class = "UITextField"; placeholder = "密码"; ObjectID = "dFv-WT-cCV"; */
+"dFv-WT-cCV.placeholder" = "Password";
+
+/* Class = "UITabBarItem"; title = "更多"; ObjectID = "jG1-B3-jYj"; */
+"jG1-B3-jYj.title" = "More";
+
+/* Class = "UIButton"; normalTitle = "忘记密码？"; ObjectID = "lZe-qE-SSm"; */
+"lZe-qE-SSm.normalTitle" = "Forget Password ？";
+
+/* Class = "UILabel"; text = "contant"; ObjectID = "oVZ-19-4zt"; */
+"oVZ-19-4zt.text" = "contant";
+
+/* Class = "UILabel"; text = "likeNumber"; ObjectID = "qR6-ru-v8h"; */
+"qR6-ru-v8h.text" = "likeNumber";
+
+/* Class = "UINavigationItem"; title = "杂志详情"; ObjectID = "qVU-0p-AkH"; */
+"qVU-0p-AkH.title" = "Magazine Detail";
+
+/* Class = "UIButton"; normalTitle = "登录"; ObjectID = "qd1-gM-fPh"; */
+"qd1-gM-fPh.normalTitle" = "Sign In";
+
+/* Class = "UIButton"; normalTitle = "注册"; ObjectID = "uYe-6r-hSl"; */
+"uYe-6r-hSl.normalTitle" = "Sign Up";
+
+/* Class = "UILabel"; text = "time"; ObjectID = "wKw-rf-5zv"; */
+"wKw-rf-5zv.text" = "time";
+
+/* Class = "UIBarButtonItem"; title = "关闭"; ObjectID = "wgq-Ph-sMp"; */
+"wgq-Ph-sMp.title" = "Close";
