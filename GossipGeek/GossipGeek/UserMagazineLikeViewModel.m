@@ -9,6 +9,7 @@
 #import "UserMagazineLikeViewModel.h"
 #import "Magazine.h"
 #import <AVOSCloud/AVOSCloud.h>
+
 @implementation UserMagazineLikeViewModel
 + (void)saveMagazineLiked:(Magazine *)currentMagazine {
     UserMagazineLike *userMagazineLike = [[UserMagazineLike alloc]initWithClassName:@"UserMagazineLike"];

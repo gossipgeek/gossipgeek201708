@@ -17,5 +17,4 @@
 + (NSString*)parseClassName {
     return @"UserMagazineLike";
 }
-
 @end

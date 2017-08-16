@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+
 @protocol ErrorViewDelegate <NSObject>
 - (void) errorViewDidClick;
 @end

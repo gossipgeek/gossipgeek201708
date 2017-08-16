@@ -9,6 +9,7 @@
 #import "MagazineViewModel.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import "UserMagazineLike.h"
+
 @implementation MagazineViewModel
 
 - (instancetype)init {
@@ -85,7 +86,4 @@
         block(likeNumber,error);
     }];
 }
-
-
-
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "Reachability+CheckNetwork.h"
+
 @implementation Reachability (CheckNetwork)
 +(ReachabilityType )internetStatus {
     Reachability *reachability   = [Reachability reachabilityWithHostName:@"https://leancloud.cn"];

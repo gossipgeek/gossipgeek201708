@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MBProgressHUD/MBProgressHUD.h>
+
 @interface MBProgressHUD (ShowTextHud)
 + (void)showTextHUD:(UIView *)superView hudText:(NSString *)text;
 @end

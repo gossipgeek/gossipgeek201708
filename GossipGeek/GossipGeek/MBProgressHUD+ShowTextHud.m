@@ -8,6 +8,7 @@
 
 #import "MBProgressHUD+ShowTextHud.h"
 #define HUD_TEXT_DELAY 0.5
+
 @implementation MBProgressHUD (ShowTextHud)
 + (void)showTextHUD:(UIView *)superView hudText:(NSString *)text {
     MBProgressHUD *notMoreDataHud = [MBProgressHUD showHUDAddedTo:superView animated:YES];

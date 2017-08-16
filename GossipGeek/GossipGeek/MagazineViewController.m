@@ -15,6 +15,7 @@
 #import "MagazineDetailViewController.h"
 #import "UserMagazineLikeViewModel.h"
 #import "MBProgressHUD+ShowTextHud.h"
+
 @interface MagazineViewController ()<UITableViewDelegate,UITableViewDataSource,ErrorViewDelegate,UpdateLikeNumerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *magazineTableView;
 @property (strong, nonatomic) MagazineViewModel *magazineViewModel;
@@ -135,6 +136,4 @@
     viewController.magazine = selectMagazine;
     viewController.delegate = self;
 }
-
-
 @end

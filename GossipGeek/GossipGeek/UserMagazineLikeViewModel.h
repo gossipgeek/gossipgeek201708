@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "UserMagazineLike.h"
+
 @class Magazine;
 @interface UserMagazineLikeViewModel : NSObject
 + (void)saveMagazineLiked:(Magazine* )currentMagazine;

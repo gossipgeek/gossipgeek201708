@@ -9,6 +9,7 @@
 
 #import "MagazineTableViewCell.h"
 #define GRAY_BORDER_COLOR [UIColor colorWithRed:0.90 green:0.90 blue:0.90 alpha:1.00].CGColor
+
 @implementation MagazineTableViewCell
 
 - (void)awakeFromNib {

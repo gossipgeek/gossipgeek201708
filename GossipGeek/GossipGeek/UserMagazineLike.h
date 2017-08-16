@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <AVOSCloud/AVOSCloud.h>
+
 @interface UserMagazineLike : AVObject<AVSubclassing>
-@property (nonatomic) BOOL liked;
+@property (nonatomic, assign) BOOL liked;
 @property (nonatomic, strong) AVObject *users;
 @property (nonatomic, strong) AVObject *magazines;
-@property(copy, nonatomic) NSString *objectId;
+@property (copy, nonatomic) NSString *objectId;
 @end

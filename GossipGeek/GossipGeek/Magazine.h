@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <AVOSCloud/AVOSCloud.h>
+
 @interface Magazine : AVObject<AVSubclassing>
 @property(copy, nonatomic) NSString *title;
 @property(copy, nonatomic) NSString *content;
@@ -16,5 +17,4 @@
 @property(copy, nonatomic) NSString *url;
 @property(copy, nonatomic) NSString *objectId;
 @property(strong, nonatomic) AVFile *image;
-
 @end

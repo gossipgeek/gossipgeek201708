@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-@class Magazine;
 
+@class Magazine;
 @protocol UpdateLikeNumerDelegate <NSObject>
 - (void) likeNumberDidUpdate;
 @end

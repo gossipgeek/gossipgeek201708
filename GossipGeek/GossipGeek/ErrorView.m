@@ -7,6 +7,7 @@
 //
 
 #import "ErrorView.h"
+
 @interface ErrorView()
 @property (strong, nonatomic) UILabel *errorLabel;
 @property (strong, nonatomic) UIImageView *errorImageView;
@@ -62,5 +63,4 @@
     [[view heightAnchor] constraintEqualToAnchor:superView.heightAnchor constant:0].active = YES;
     [[view centerYAnchor] constraintEqualToAnchor:superView.centerYAnchor].active = YES;
 }
-
 @end

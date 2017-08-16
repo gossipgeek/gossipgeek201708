@@ -11,9 +11,9 @@
 #import "Magazine.h"
 #import "UserMagazineLikeViewModel.h"
 #import "ErrorView.h"
-#import "ToolView.h"
 #import "Reachability+CheckNetwork.h"
 #import "MBProgressHUD+ShowTextHud.h"
+
 #define LIKE_NUMBER_ADD_ONE 1
 @interface MagazineDetailViewController ()<UIWebViewDelegate,ErrorViewDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
@@ -21,7 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *likeNumberLabel;
 @property (strong, nonatomic) MBProgressHUD *waitUpdateHud;
 @property (strong, nonatomic) ErrorView *errorView;
-@property (weak, nonatomic) IBOutlet ToolView *toolView;
+@property (weak, nonatomic) IBOutlet UIView *toolView;
 @end
 
 @implementation MagazineDetailViewController
@@ -121,5 +121,4 @@
     self.errorView.delegate = self;
     [ErrorView createErrorView:self.view errorView:self.errorView];
 }
-
 @end

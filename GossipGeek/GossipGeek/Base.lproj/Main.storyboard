@@ -155,7 +155,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="563"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4D-NP-93a" customClass="ToolView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4D-NP-93a">
                                 <rect key="frame" x="0.0" y="627" width="375" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhG-Ms-n4y">
@@ -230,7 +230,7 @@
                         <outlet property="likeButton" destination="yhG-Ms-n4y" id="SAI-cO-f6c"/>
                         <outlet property="likeNumberLabel" destination="Zle-A9-ybT" id="3OU-33-CHc"/>
                         <outlet property="magazineWebView" destination="xzL-r2-9G4" id="FFI-Dw-JiM"/>
-                        <outlet property="toolView" destination="D4D-NP-93a" id="txQ-4i-7xH"/>
+                        <outlet property="toolView" destination="D4D-NP-93a" id="CD6-PS-OOV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fpY-Xz-Dmt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -582,9 +582,9 @@
     <resources>
         <image name="active-icon" width="24" height="24"/>
         <image name="back-icon" width="28" height="28"/>
-        <image name="comment-icon" width="64" height="64"/>
+        <image name="comment-icon" width="32" height="32"/>
         <image name="gossip-icon.png" width="50" height="50"/>
-        <image name="like-icon" width="64" height="64"/>
+        <image name="like-icon" width="32" height="32"/>
         <image name="magazine-icon" width="24" height="24"/>
         <image name="userinfo-icon" width="28" height="28"/>
     </resources>
