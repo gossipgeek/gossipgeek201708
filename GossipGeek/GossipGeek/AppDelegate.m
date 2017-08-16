@@ -28,6 +28,9 @@
     //跟踪统计应用的打开情况
     [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
 
+    UIViewController *homePage = [self getViewControllerWithIdentifier:@"homePage" andStoryBoardName:@"Main"];
+    [self.window setRootViewController:homePage];
+    [self verifiedSessionToken];
     return YES;
 }
 
@@ -44,7 +47,7 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    [self verifiedSessionToken];
+
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -60,12 +63,18 @@
                                                  NSLog(@"User did login with session token.");
                                              } else {
                                                  if (sessionToken == nil) {
-                                                     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-                                                     UIViewController *signInPage = [storyBoard instantiateViewControllerWithIdentifier:@"signInPage"];
-                                                     [self.window.rootViewController presentViewController:signInPage animated:YES completion:nil];
+                                                     dispatch_async(dispatch_get_main_queue(), ^{
+                                                         [self.window.rootViewController performSegueWithIdentifier:@"fromHomePageToSignIn" sender:nil];
+                                                     });
                                                  }
                                              }
                                          }];
+}
+
+- (UIViewController *)getViewControllerWithIdentifier:(NSString *)identifier andStoryBoardName:(NSString *)storyBoardName {
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:storyBoardName bundle:[NSBundle mainBundle]];
+    UIViewController *viewController = (UIViewController *)[storyBoard instantiateViewControllerWithIdentifier:identifier];
+    return viewController;
 }
 
 @end

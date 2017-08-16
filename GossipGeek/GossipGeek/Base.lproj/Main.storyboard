@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -191,7 +192,7 @@
         <!--注册-->
         <scene sceneID="OwR-Vh-ZXl">
             <objects>
-                <viewController storyboardIdentifier="signUpPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Zg0-KZ-kLw" userLabel="注册" customClass="SignUpViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signUpPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Zg0-KZ-kLw" userLabel="注册" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2XZ-7Z-QQw"/>
                         <viewControllerLayoutGuide type="bottom" id="wZg-Aq-zOm"/>
@@ -302,7 +303,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Cc2-sw-6VE">
             <objects>
-                <navigationController id="2M0-c0-deS" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="signInNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2M0-c0-deS" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="miJ-MX-W4T">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -458,7 +459,7 @@
         <!--Tab Bar View Controller-->
         <scene sceneID="nCM-r3-Snj">
             <objects>
-                <tabBarController restorationIdentifier="aaaa" storyboardIdentifier="goossipgeek" id="7DA-4L-get" customClass="TabBarViewController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="homePage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7DA-4L-get" customClass="TabBarViewController" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="geg-UX-wg8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
