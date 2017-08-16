@@ -33,6 +33,11 @@
 		BF21F6C41F38742B00A64945 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF21F6C31F38742B00A64945 /* MBProgressHUD.framework */; };
 		BF21F7501F3AF41500A64945 /* GGMagazineViewModelSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = BF21F74F1F3AF41500A64945 /* GGMagazineViewModelSpecs.m */; };
 		BF21F7511F3BF4E200A64945 /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0F37451F305E8D009CA6BA /* AVOSCloud.framework */; };
+		BF21F7771F3C35AD00A64945 /* MagazineDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF21F7761F3C35AD00A64945 /* MagazineDetailViewController.m */; };
+		BF21F77D1F3D50DE00A64945 /* UserMagazineLike.m in Sources */ = {isa = PBXBuildFile; fileRef = BF21F77C1F3D50DE00A64945 /* UserMagazineLike.m */; };
+		BF21F7801F3D9F0F00A64945 /* UserMagazineLikeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF21F77F1F3D9F0F00A64945 /* UserMagazineLikeViewModel.m */; };
+		BF21F78B1F42EA1F00A64945 /* Reachability+CheckNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = BF21F78A1F42EA1F00A64945 /* Reachability+CheckNetwork.m */; };
+		BF21F78E1F42EE9700A64945 /* MBProgressHUD+ShowTextHud.m in Sources */ = {isa = PBXBuildFile; fileRef = BF21F78D1F42EE9700A64945 /* MBProgressHUD+ShowTextHud.m */; };
 		F61288191F3C4B5C0095075A /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF21F6C31F38742B00A64945 /* MBProgressHUD.framework */; };
 		F612881A1F3C4B5C0095075A /* MBProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF21F6C31F38742B00A64945 /* MBProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F6C800671F3C506B00B9965F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6C800611F3C506B00B9965F /* LaunchScreen.storyboard */; };
@@ -117,6 +122,21 @@
 		BF0F37C81F3467B4009CA6BA /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
 		BF21F6C31F38742B00A64945 /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
 		BF21F74F1F3AF41500A64945 /* GGMagazineViewModelSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGMagazineViewModelSpecs.m; sourceTree = "<group>"; };
+		BF21F7751F3C35AD00A64945 /* MagazineDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagazineDetailViewController.h; sourceTree = "<group>"; };
+		BF21F7761F3C35AD00A64945 /* MagazineDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagazineDetailViewController.m; sourceTree = "<group>"; };
+		BF21F77B1F3D50DE00A64945 /* UserMagazineLike.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserMagazineLike.h; sourceTree = "<group>"; };
+		BF21F77C1F3D50DE00A64945 /* UserMagazineLike.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserMagazineLike.m; sourceTree = "<group>"; };
+		BF21F77E1F3D9F0F00A64945 /* UserMagazineLikeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserMagazineLikeViewModel.h; sourceTree = "<group>"; };
+		BF21F77F1F3D9F0F00A64945 /* UserMagazineLikeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserMagazineLikeViewModel.m; sourceTree = "<group>"; };
+		BF21F7811F42D4AC00A64945 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BF21F7891F42EA1F00A64945 /* Reachability+CheckNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Reachability+CheckNetwork.h"; sourceTree = "<group>"; };
+		BF21F78A1F42EA1F00A64945 /* Reachability+CheckNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Reachability+CheckNetwork.m"; sourceTree = "<group>"; };
+		BF21F78C1F42EE9700A64945 /* MBProgressHUD+ShowTextHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+ShowTextHud.h"; sourceTree = "<group>"; };
+		BF21F78D1F42EE9700A64945 /* MBProgressHUD+ShowTextHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+ShowTextHud.m"; sourceTree = "<group>"; };
+		BF21F7901F42F14400A64945 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		BF278B981F43E60800969CD8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		BF278B991F43E60800969CD8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		BF278B9A1F43E60800969CD8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F614DD721F32B8AC0075E9F5 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cartfile; path = ../Cartfile; sourceTree = "<group>"; };
 		F6C800641F3C506B00B9965F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F6C8006A1F3C557A00B9965F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -185,6 +205,7 @@
 		BF0F36EB1F305B34009CA6BA /* GossipGeek */ = {
 			isa = PBXGroup;
 			children = (
+				BF21F7851F42E9E600A64945 /* Common */,
 				BF0F37C41F345CCE009CA6BA /* View */,
 				BF0F37B71F330757009CA6BA /* Vender */,
 				BF0F375F1F3160AE009CA6BA /* Cell */,
@@ -261,6 +282,8 @@
 			children = (
 				BF0F37631F31D672009CA6BA /* Magazine.h */,
 				BF0F37641F31D672009CA6BA /* Magazine.m */,
+				BF21F77B1F3D50DE00A64945 /* UserMagazineLike.h */,
+				BF21F77C1F3D50DE00A64945 /* UserMagazineLike.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -272,6 +295,8 @@
 				F6FF54BE1F308FE700179B14 /* SignInViewController.m */,
 				BF0F375C1F30E1E1009CA6BA /* MagazineViewController.h */,
 				BF0F375D1F30E1E1009CA6BA /* MagazineViewController.m */,
+				BF21F7751F3C35AD00A64945 /* MagazineDetailViewController.h */,
+				BF21F7761F3C35AD00A64945 /* MagazineDetailViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -283,6 +308,8 @@
 				BF0F37B51F32FC36009CA6BA /* MagazineViewModel.m */,
 				F6E76ACB1F3ABA6400D43A2C /* SignInViewModel.h */,
 				F6E76ACC1F3ABA6400D43A2C /* SignInViewModel.m */,
+				BF21F77E1F3D9F0F00A64945 /* UserMagazineLikeViewModel.h */,
+				BF21F77F1F3D9F0F00A64945 /* UserMagazineLikeViewModel.m */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -310,6 +337,17 @@
 				BF0F37C61F345CFA009CA6BA /* ErrorView.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		BF21F7851F42E9E600A64945 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BF21F7891F42EA1F00A64945 /* Reachability+CheckNetwork.h */,
+				BF21F78A1F42EA1F00A64945 /* Reachability+CheckNetwork.m */,
+				BF21F78C1F42EE9700A64945 /* MBProgressHUD+ShowTextHud.h */,
+				BF21F78D1F42EE9700A64945 /* MBProgressHUD+ShowTextHud.m */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,6 +419,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = BF0F36E01F305B34009CA6BA;
 			productRefGroup = BF0F36EA1F305B34009CA6BA /* Products */;
@@ -422,13 +461,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF21F77D1F3D50DE00A64945 /* UserMagazineLike.m in Sources */,
+				BF21F7771F3C35AD00A64945 /* MagazineDetailViewController.m in Sources */,
 				BF0F37651F31D672009CA6BA /* Magazine.m in Sources */,
 				BF0F37B61F32FC36009CA6BA /* MagazineViewModel.m in Sources */,
 				BF0F375E1F30E1E1009CA6BA /* MagazineViewController.m in Sources */,
 				BF0F37621F3160ED009CA6BA /* MagazineTableViewCell.m in Sources */,
+				BF21F7801F3D9F0F00A64945 /* UserMagazineLikeViewModel.m in Sources */,
 				BF0F36F11F305B34009CA6BA /* AppDelegate.m in Sources */,
 				F6FF54BF1F308FE700179B14 /* SignInViewController.m in Sources */,
 				BF0F36EE1F305B34009CA6BA /* main.m in Sources */,
+				BF21F78E1F42EE9700A64945 /* MBProgressHUD+ShowTextHud.m in Sources */,
+				BF21F78B1F42EA1F00A64945 /* Reachability+CheckNetwork.m in Sources */,
 				BF0F37C71F345CFA009CA6BA /* ErrorView.m in Sources */,
 				F6E76ACD1F3ABA6400D43A2C /* SignInViewModel.m in Sources */,
 			);
@@ -460,6 +504,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F6C8006A1F3C557A00B9965F /* Base */,
+				BF278B981F43E60800969CD8 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -468,6 +513,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				F6C800641F3C506B00B9965F /* en */,
+				BF21F7811F42D4AC00A64945 /* Base */,
+				BF278B9A1F43E60800969CD8 /* zh-Hans */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -476,6 +523,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				F6C8006B1F3C557A00B9965F /* Base */,
+				BF21F7901F42F14400A64945 /* en */,
+				BF278B991F43E60800969CD8 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

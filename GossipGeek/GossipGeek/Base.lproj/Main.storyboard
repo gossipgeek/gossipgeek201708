@@ -8,6 +8,8 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -130,11 +132,110 @@
                     <navigationItem key="navigationItem" title="杂志" id="cwn-pg-vfy"/>
                     <connections>
                         <outlet property="magazineTableView" destination="gQv-a7-hCb" id="hKB-mL-rXB"/>
+                        <segue destination="7uV-OG-g3d" kind="show" identifier="magazineDetailSegue" id="tic-Dx-J5h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o5X-Pl-1TG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1042" y="-775"/>
+        </scene>
+        <!--杂志详情-->
+        <scene sceneID="MGG-Ve-gBQ">
+            <objects>
+                <viewController storyboardIdentifier="magazineDetail" id="7uV-OG-g3d" customClass="MagazineDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="49n-6t-PQO"/>
+                        <viewControllerLayoutGuide type="bottom" id="XsO-a1-5L9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hAn-LF-PGb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xzL-r2-9G4">
+                                <rect key="frame" x="0.0" y="64" width="375" height="563"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4D-NP-93a">
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhG-Ms-n4y">
+                                        <rect key="frame" x="30" y="7" width="26" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="yhG-Ms-n4y" secondAttribute="height" multiplier="1:1" id="67O-eJ-ycP"/>
+                                        </constraints>
+                                        <state key="normal" image="like-icon"/>
+                                        <connections>
+                                            <action selector="likeButtonDidClick:" destination="7uV-OG-g3d" eventType="touchUpInside" id="LO6-BV-WHo"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8m-P9-7UA">
+                                        <rect key="frame" x="319" y="7" width="26" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="m8m-P9-7UA" secondAttribute="height" multiplier="1:1" id="ga5-Af-AAw"/>
+                                        </constraints>
+                                        <state key="normal" image="comment-icon"/>
+                                        <connections>
+                                            <action selector="commentButtonDidClick:" destination="7uV-OG-g3d" eventType="touchUpInside" id="KV4-Ne-VC6"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zle-A9-ybT">
+                                        <rect key="frame" x="56" y="10" width="26" height="26"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.077545799314975739" green="0.5910225510597229" blue="0.86121642589569092" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="m8m-P9-7UA" secondAttribute="bottom" constant="7" id="2MG-NG-AiG"/>
+                                    <constraint firstItem="Zle-A9-ybT" firstAttribute="height" secondItem="yhG-Ms-n4y" secondAttribute="height" id="GzF-mD-Ch0"/>
+                                    <constraint firstItem="Zle-A9-ybT" firstAttribute="baseline" secondItem="yhG-Ms-n4y" secondAttribute="baseline" id="KfS-5f-Woz"/>
+                                    <constraint firstItem="m8m-P9-7UA" firstAttribute="top" secondItem="D4D-NP-93a" secondAttribute="top" constant="7" id="TbQ-7U-u2i"/>
+                                    <constraint firstItem="yhG-Ms-n4y" firstAttribute="leading" secondItem="D4D-NP-93a" secondAttribute="leading" constant="30" id="VJh-AF-h8n"/>
+                                    <constraint firstItem="Zle-A9-ybT" firstAttribute="top" secondItem="D4D-NP-93a" secondAttribute="top" constant="10" id="WcP-on-AiV"/>
+                                    <constraint firstItem="yhG-Ms-n4y" firstAttribute="top" secondItem="D4D-NP-93a" secondAttribute="top" constant="7" id="cBr-7r-TxX"/>
+                                    <constraint firstItem="Zle-A9-ybT" firstAttribute="width" secondItem="yhG-Ms-n4y" secondAttribute="width" id="egY-Yj-UMI"/>
+                                    <constraint firstItem="Zle-A9-ybT" firstAttribute="leading" secondItem="yhG-Ms-n4y" secondAttribute="trailing" id="p8s-qn-o0q"/>
+                                    <constraint firstAttribute="bottom" secondItem="yhG-Ms-n4y" secondAttribute="bottom" constant="7" id="xI5-SU-V85"/>
+                                    <constraint firstAttribute="trailing" secondItem="m8m-P9-7UA" secondAttribute="trailing" constant="30" id="yKW-B0-dwO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="D4D-NP-93a" firstAttribute="height" secondItem="hAn-LF-PGb" secondAttribute="height" multiplier="0.06" id="3G4-6r-TQ3"/>
+                            <constraint firstItem="D4D-NP-93a" firstAttribute="leading" secondItem="hAn-LF-PGb" secondAttribute="leading" id="8zR-Mw-lDf"/>
+                            <constraint firstItem="xzL-r2-9G4" firstAttribute="bottom" secondItem="D4D-NP-93a" secondAttribute="top" id="EX9-Au-WSf"/>
+                            <constraint firstAttribute="trailing" secondItem="xzL-r2-9G4" secondAttribute="trailing" id="P4o-oH-CcS"/>
+                            <constraint firstItem="xzL-r2-9G4" firstAttribute="leading" secondItem="hAn-LF-PGb" secondAttribute="leading" id="ShH-ad-oxn"/>
+                            <constraint firstAttribute="bottom" secondItem="D4D-NP-93a" secondAttribute="bottom" id="fF6-zC-fxG"/>
+                            <constraint firstAttribute="trailing" secondItem="D4D-NP-93a" secondAttribute="trailing" id="pyI-Rk-kTz"/>
+                            <constraint firstItem="xzL-r2-9G4" firstAttribute="top" secondItem="49n-6t-PQO" secondAttribute="bottom" id="yja-UQ-He6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="杂志详情" id="qVU-0p-AkH">
+                        <leftBarButtonItems>
+                            <barButtonItem image="back-icon" id="xKs-wD-SNN">
+                                <connections>
+                                    <action selector="goBackClick:" destination="7uV-OG-g3d" id="cri-Yi-62N"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="关闭" id="wgq-Ph-sMp">
+                                <connections>
+                                    <action selector="goBackList:" destination="7uV-OG-g3d" id="u2u-7g-YFK"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="likeButton" destination="yhG-Ms-n4y" id="SAI-cO-f6c"/>
+                        <outlet property="likeNumberLabel" destination="Zle-A9-ybT" id="3OU-33-CHc"/>
+                        <outlet property="magazineWebView" destination="xzL-r2-9G4" id="FFI-Dw-JiM"/>
+                        <outlet property="toolView" destination="D4D-NP-93a" id="CD6-PS-OOV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fpY-Xz-Dmt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2533.5999999999999" y="-815.44227886056979"/>
         </scene>
         <!--爆料-->
         <scene sceneID="g2G-DN-Ms5">
@@ -480,7 +581,10 @@
     </scenes>
     <resources>
         <image name="active-icon" width="24" height="24"/>
+        <image name="back-icon" width="28" height="28"/>
+        <image name="comment-icon" width="32" height="32"/>
         <image name="gossip-icon.png" width="50" height="50"/>
+        <image name="like-icon" width="32" height="32"/>
         <image name="magazine-icon" width="24" height="24"/>
         <image name="userinfo-icon" width="28" height="28"/>
     </resources>

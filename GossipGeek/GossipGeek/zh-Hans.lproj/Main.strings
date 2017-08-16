@@ -1,0 +1,66 @@
+
+/* Class = "UITabBarItem"; title = "活动"; ObjectID = "581-0I-yTY"; */
+"581-0I-yTY.title" = "活动";
+
+/* Class = "UITextField"; placeholder = "邮箱"; ObjectID = "81w-13-FaF"; */
+"81w-13-FaF.placeholder" = "邮箱";
+
+/* Class = "UITextField"; placeholder = "邮箱"; ObjectID = "A1S-7H-7ZK"; */
+"A1S-7H-7ZK.placeholder" = "邮箱";
+
+/* Class = "UITabBarItem"; title = "爆料"; ObjectID = "BUr-VJ-e7q"; */
+"BUr-VJ-e7q.title" = "爆料";
+
+/* Class = "UIButton"; normalTitle = "注册"; ObjectID = "DIr-we-bJA"; */
+"DIr-we-bJA.normalTitle" = "注册";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "Dkl-vb-d8c"; */
+"Dkl-vb-d8c.text" = "Title";
+
+/* Class = "UINavigationItem"; title = "登录"; ObjectID = "HvX-cR-gQf"; */
+"HvX-cR-gQf.title" = "登录";
+
+/* Class = "UITextField"; placeholder = "邮箱"; ObjectID = "Jmd-Dc-uNQ"; */
+"Jmd-Dc-uNQ.placeholder" = "邮箱";
+
+/* Class = "UITabBarItem"; title = "杂志"; ObjectID = "P8J-kk-3kQ"; */
+"P8J-kk-3kQ.title" = "杂志";
+
+/* Class = "UIButton"; normalTitle = "发送"; ObjectID = "Rhg-KS-xsh"; */
+"Rhg-KS-xsh.normalTitle" = "发送";
+
+/* Class = "UINavigationItem"; title = "杂志"; ObjectID = "cwn-pg-vfy"; */
+"cwn-pg-vfy.title" = "杂志";
+
+/* Class = "UITextField"; placeholder = "密码"; ObjectID = "dBS-h7-XV5"; */
+"dBS-h7-XV5.placeholder" = "密码";
+
+/* Class = "UITextField"; placeholder = "密码"; ObjectID = "dFv-WT-cCV"; */
+"dFv-WT-cCV.placeholder" = "密码";
+
+/* Class = "UITabBarItem"; title = "更多"; ObjectID = "jG1-B3-jYj"; */
+"jG1-B3-jYj.title" = "更多";
+
+/* Class = "UIButton"; normalTitle = "忘记密码？"; ObjectID = "lZe-qE-SSm"; */
+"lZe-qE-SSm.normalTitle" = "忘记密码？";
+
+/* Class = "UILabel"; text = "contant"; ObjectID = "oVZ-19-4zt"; */
+"oVZ-19-4zt.text" = "contant";
+
+/* Class = "UILabel"; text = "likeNumber"; ObjectID = "qR6-ru-v8h"; */
+"qR6-ru-v8h.text" = "likeNumber";
+
+/* Class = "UINavigationItem"; title = "杂志详情"; ObjectID = "qVU-0p-AkH"; */
+"qVU-0p-AkH.title" = "杂志详情";
+
+/* Class = "UIButton"; normalTitle = "登录"; ObjectID = "qd1-gM-fPh"; */
+"qd1-gM-fPh.normalTitle" = "登录";
+
+/* Class = "UIButton"; normalTitle = "注册"; ObjectID = "uYe-6r-hSl"; */
+"uYe-6r-hSl.normalTitle" = "注册";
+
+/* Class = "UILabel"; text = "time"; ObjectID = "wKw-rf-5zv"; */
+"wKw-rf-5zv.text" = "time";
+
+/* Class = "UIBarButtonItem"; title = "关闭"; ObjectID = "wgq-Ph-sMp"; */
+"wgq-Ph-sMp.title" = "关闭";

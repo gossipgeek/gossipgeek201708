@@ -8,18 +8,16 @@
 
 #import "Magazine.h"
 #import <AVOSCloud/AVOSCloud.h>
-@implementation Magazine
 
+@implementation Magazine
 @dynamic objectId;
 @dynamic title;
 @dynamic content;
 @dynamic time;
-@dynamic likenumber;
 @dynamic url;
 @dynamic image;
 
 + (NSString*)parseClassName {
     return @"Magazine";
 }
-
 @end
