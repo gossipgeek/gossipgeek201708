@@ -16,16 +16,14 @@
 #import "SignInViewModel.h"
 #import "SignUpViewController.h"
 #import "MBProgressHUD+ShowTextHud.h"
+#import "NSString+EmailFormat.h"
 
 @interface SignInViewController ()<UITextFieldDelegate,UIGestureRecognizerDelegate,SetSignUpEmailToSignInEmailDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
-@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *signInButton;
 @property (weak, nonatomic) IBOutlet UIButton *forgotPasswordButton;
 @property (weak, nonatomic) IBOutlet UIButton *signUpButton;
 @property (strong, nonatomic) SignInViewModel *signInViewModel;
-@property (weak, nonatomic) MBProgressHUD *loadingHud;
 
 @end
 
@@ -77,13 +75,14 @@
 
 - (IBAction)clickedSignInButton:(UIButton *)sender {
     [self setSignInButtonEnable:NO];
+    [self.view endEditing:YES];
     
     NSString *email = self.emailTextField.text;
-    if ([self.signInViewModel isTWEmailFormat:email]) {
+    if ([email isTWEmailFormat]) {
         [self signIn];
-    } else if ([self.signInViewModel isEmailFormat:email] && !self.signInViewModel.onlyTWEmailEnable) {
+    } else if ([email isEmailFormat] && !self.signInViewModel.onlyTWEmailEnable) {
         [self signIn];
-    } else if ([self.signInViewModel isEmailFormat:email] && self.signInViewModel.onlyTWEmailEnable) {
+    } else if ([email isEmailFormat] && self.signInViewModel.onlyTWEmailEnable) {
         [MBProgressHUD showTextHUD:self.view hudText:NSLocalizedString(@"promptOnlyTWEmailEnable", nil)];
     } else {
         [MBProgressHUD showTextHUD:self.view hudText:NSLocalizedString(@"promptNotEmail", nil)];
@@ -93,25 +92,21 @@
 }
 
 - (void)signIn {
-    NSString *email = self.emailTextField.text;
-    NSString *password = self.passwordTextField.text;
-    [self shouldShowLoading:YES];
-    [AVUser logInWithUsernameInBackground:email password:password block:^(AVUser *user, NSError *error) {
-        [self shouldShowLoading:NO];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [self.signInViewModel signIn:self response:^(AVUser *user, NSError *error) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         if (error) {
             NSLog(@"Sign In Failed : %@", error);
-            [AVUser logOut];
             [self errorTips:error];
         } else {
             NSLog(@"Sign In Success");
-            [self.view endEditing:YES];
             [self dismissViewControllerAnimated:YES completion:nil];
         }
     }];
 }
 
 - (void)textFieldDidChangeEditing:(UITextField *)textField {
-    if ([self.signInViewModel isBothAreNotEmptyStringWithEmail:self.emailTextField.text andPassword:self.passwordTextField.text]) {
+    if ([self.emailTextField.text isBothAreNotEmptyStringWithPassword:self.passwordTextField.text]) {
         [self setSignInButtonEnable:YES];
     } else {
         [self setSignInButtonEnable:NO];
@@ -128,20 +123,15 @@
 }
 
 - (void)showAlertWithTitle:(NSString *)title andMessage:(NSString *)message {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"titleCancel", nil) style:UIAlertActionStyleCancel handler:nil];
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"titleOk", nil) style:UIAlertActionStyleDefault handler:nil];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
+                               message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"titleCancel", nil)
+                                                           style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"titleOk", nil)
+                                                       style:UIAlertActionStyleDefault handler:nil];
     [alert addAction:cancelAction];
     [alert addAction:okAction];
     [self presentViewController:alert animated:YES completion:nil];
-}
-
-- (void)shouldShowLoading:(BOOL)show {
-    if (show) {
-        self.loadingHud = [MBProgressHUD showHUDAddedTo:self.view animated:NO];
-    } else {
-       [self.loadingHud hideAnimated:NO];
-    }
 }
 
 - (void)setSignInButtonEnable:(BOOL)enable {
@@ -154,9 +144,12 @@
     
     self.navigationItem.title = NSLocalizedString(@"titleSignIn", nil);
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"titleBack", nil) style:UIBarButtonItemStylePlain target:nil action:nil];
-    [self.signInButton setTitle:NSLocalizedString(@"titleSignIn", nil) forState:UIControlStateNormal];
-    [self.signUpButton setTitle:NSLocalizedString(@"titleSignUp", nil) forState:UIControlStateNormal];
-    [self.forgotPasswordButton setTitle:NSLocalizedString(@"titleForgotPassword", nil) forState:UIControlStateNormal];
+    [self.signInButton setTitle:NSLocalizedString(@"titleSignIn", nil)
+                       forState:UIControlStateNormal];
+    [self.signUpButton setTitle:NSLocalizedString(@"titleSignUp", nil)
+                       forState:UIControlStateNormal];
+    [self.forgotPasswordButton setTitle:NSLocalizedString(@"titleForgotPassword", nil)
+                               forState:UIControlStateNormal];
     self.emailTextField.placeholder = [self.signInViewModel getEmailTextFieldPlaceHolder];
     self.passwordTextField.placeholder = NSLocalizedString(@"titlePassword", nil);
 }

@@ -7,7 +7,8 @@
 //
 
 #import "SignInViewModel.h"
-#import "SignInViewController.h"
+#import "NSString+EmailFormat.h"
+#import "MBProgressHUD+ShowTextHud.h"
 
 typedef enum {
     ERROR_EMAIL_PASSWORD_NOT_MATCH = 210,
@@ -21,31 +22,9 @@ typedef enum {
 
 - (id)init {
     if (self = [super init]) {
-        self.onlyTWEmailEnable = [self getOnlyTWEmailEnable];
+        self.onlyTWEmailEnable = [NSString getOnlyTWEmailEnable];
     }
     return self;
-}
-
-- (BOOL)getOnlyTWEmailEnable {
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"project" ofType:@"plist"];
-    NSMutableDictionary *plist = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
-    return [[plist objectForKey:@"onlyTWEmailEnable"] boolValue];
-}
-
-- (BOOL)isEmailFormat:(NSString *)email {
-    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
-    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
-    return [emailTest evaluateWithObject:email];
-}
-
-- (BOOL)isTWEmailFormat:(NSString *)email {
-    NSString *twEmailRegex = @"[A-Z0-9a-z._%+-]+@thoughtworks.com";
-    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", twEmailRegex];
-    return [emailTest evaluateWithObject:email];
-}
-
-- (BOOL)isBothAreNotEmptyStringWithEmail:(NSString *)email andPassword:(NSString *)password {
-    return (email.length > 0) && (password.length > 0);
 }
 
 - (NSString *)getErrorDescription:(NSError *)error {
@@ -73,8 +52,13 @@ typedef enum {
 }
 
 - (NSString *)getEmailTextFieldPlaceHolder {
-    NSString *placeHolder =  self.onlyTWEmailEnable ? NSLocalizedString(@"titleInputTWEmail", nil) : NSLocalizedString(@"titleEmail", nil);
-    return placeHolder;
+    return self.onlyTWEmailEnable ? NSLocalizedString(@"titleInputTWEmail", nil)
+                                  : NSLocalizedString(@"titleEmail", nil);
+}
+
+- (void)signIn:(SignInViewController *)signInVC response:(void (^)(AVUser *user, NSError *error))response {
+    [AVUser logInWithUsernameInBackground:signInVC.emailTextField.text
+                                 password:signInVC.passwordTextField.text block:response];
 }
 
 @end

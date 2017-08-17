@@ -14,10 +14,9 @@
 #import <AVOSCloud/AVOSCloud.h>
 #import "SignUpViewModel.h"
 #import "MBProgressHUD+ShowTextHud.h"
+#import "NSString+EmailFormat.h"
 
 @interface SignUpViewController ()<UITextFieldDelegate>
-@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
-@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *signUpButton;
 @property (strong, nonatomic) SignUpViewModel *signUpViewModel;
 @property (weak, nonatomic) MBProgressHUD *loadingHud;
@@ -60,13 +59,14 @@
 
 - (IBAction)clickedSignUpButton:(UIButton *)sender {
     [self setSignUpButtonEnable:NO];
+    [self.view endEditing:YES];
     
     NSString *email = self.emailTextField.text;
-    if ([self.signUpViewModel isTWEmailFormat:email]) {
+    if ([email isTWEmailFormat]) {
         [self signUp];
-    } else if ([self.signUpViewModel isEmailFormat:email] && !self.signUpViewModel.onlyTWEmailEnable) {
+    } else if ([email isEmailFormat] && !self.signUpViewModel.onlyTWEmailEnable) {
         [self signUp];
-    } else if ([self.signUpViewModel isEmailFormat:email] && self.signUpViewModel.onlyTWEmailEnable) {
+    } else if ([email isEmailFormat] && self.signUpViewModel.onlyTWEmailEnable) {
         [MBProgressHUD showTextHUD:self.view hudText:NSLocalizedString(@"promptOnlyTWEmailEnable", nil)];
     } else {
         [MBProgressHUD showTextHUD:self.view hudText:NSLocalizedString(@"promptNotEmail", nil)];
@@ -76,41 +76,29 @@
 }
 
 - (void)signUp {
-    AVUser *user = [self.signUpViewModel setUserInfoWithEmial:self.emailTextField.text andPassword:self.passwordTextField.text];
-    [self shouldShowLoading:YES];
-    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        [self shouldShowLoading:NO];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [self.signUpViewModel signUp:self response:^(BOOL succeeded, NSError *error) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         if(succeeded) {
-            NSLog(@"sign up succeeded");
-            //注册成功后leadCloud会保存currentUser
-            //因为要求邮箱必须验证才能登录，所以这里清空currentUser缓存
-            [AVUser logOut];
-            [self.view endEditing:YES];
             [self showAlertWithTitle:NSLocalizedString(@"promptSignUpSucceeded", nil) andMessage:NSLocalizedString(@"promptGoEmailVerified", nil)];
         } else {
-            NSLog(@"sign up faield, %@",error);
             [self errorTips:error];
         }
     }];
 }
 
 - (void)goSignInPage {
-    [self.setEmailDelegate setSignUpEmailToSignInEmail:self.emailTextField.text];
-    [self.navigationController popViewControllerAnimated:YES];
+    SEL selector = NSSelectorFromString(@"setSignUpEmailToSignInEmail:");
+    if ([self.setEmailDelegate respondsToSelector:selector]) {
+        [self.setEmailDelegate setSignUpEmailToSignInEmail:self.emailTextField.text];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (void)errorTips:(NSError *)error {
     NSString *errorDescription = [self.signUpViewModel getErrorDescription:error];
     if (errorDescription != nil) {
         [MBProgressHUD showTextHUD:self.view hudText:errorDescription];
-    }
-}
-
-- (void)shouldShowLoading:(BOOL)show {
-    if (show) {
-        self.loadingHud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    } else {
-        [self.loadingHud hideAnimated:NO];
     }
 }
 
@@ -124,7 +112,7 @@
 }
 
 - (void)textFieldDidChangeEditing:(UITextField *)textField {
-    if ([self.signUpViewModel isBothAreNotEmptyStringWithEmail:self.emailTextField.text andPassword:self.passwordTextField.text]) {
+    if ([self.emailTextField.text isBothAreNotEmptyStringWithPassword:self.passwordTextField.text]) {
         [self setSignUpButtonEnable:YES];
     } else {
         [self setSignUpButtonEnable:NO];

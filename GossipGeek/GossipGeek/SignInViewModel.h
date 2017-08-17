@@ -7,14 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SignInViewController.h"
+#import <AVOSCloud/AVOSCloud.h>
 
 @interface SignInViewModel : NSObject
 
 @property (nonatomic) BOOL onlyTWEmailEnable;
-- (BOOL)isEmailFormat:(NSString *)email;
-- (BOOL)isTWEmailFormat:(NSString *)email;
+
 - (NSString *)getErrorDescription:(NSError *)error;
-- (BOOL)isBothAreNotEmptyStringWithEmail:(NSString *)email andPassword:(NSString *)password;
 - (NSString *)getEmailTextFieldPlaceHolder;
+- (void)signIn:(SignInViewController *)signInVC response:(void (^)(AVUser *user, NSError *error))response;
 
 @end

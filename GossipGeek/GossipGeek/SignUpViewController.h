@@ -13,5 +13,9 @@
 @end
 
 @interface SignUpViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) id<SetSignUpEmailToSignInEmailDelegate> setEmailDelegate;
+
 @end

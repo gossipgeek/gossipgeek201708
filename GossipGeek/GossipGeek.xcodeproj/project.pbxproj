@@ -40,13 +40,13 @@
 		BF21F78E1F42EE9700A64945 /* MBProgressHUD+ShowTextHud.m in Sources */ = {isa = PBXBuildFile; fileRef = BF21F78D1F42EE9700A64945 /* MBProgressHUD+ShowTextHud.m */; };
 		F61288191F3C4B5C0095075A /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF21F6C31F38742B00A64945 /* MBProgressHUD.framework */; };
 		F612881A1F3C4B5C0095075A /* MBProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF21F6C31F38742B00A64945 /* MBProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F69893261F4309E4002CF317 /* GGSignUpViewModelSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = F69893251F4309E4002CF317 /* GGSignUpViewModelSpecs.m */; };
+		F64234101F45687E00907CA2 /* NSString+EmailFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = F642340F1F45687E00907CA2 /* NSString+EmailFormat.m */; };
+		F64234121F456FB200907CA2 /* GGNSStringAndEmailFormatSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = F64234111F456FB200907CA2 /* GGNSStringAndEmailFormatSpecs.m */; };
 		F6C800671F3C506B00B9965F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6C800611F3C506B00B9965F /* LaunchScreen.storyboard */; };
 		F6C800681F3C506B00B9965F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F6C800631F3C506B00B9965F /* Localizable.strings */; };
 		F6C800691F3C506B00B9965F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6C800651F3C506B00B9965F /* Main.storyboard */; };
 		F6E76ACD1F3ABA6400D43A2C /* SignInViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F6E76ACC1F3ABA6400D43A2C /* SignInViewModel.m */; };
 		F6E76AD21F3ADCFB00D43A2C /* project.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6E76AD11F3ADCFB00D43A2C /* project.plist */; };
-		F6E76AD61F3AE48A00D43A2C /* GGSignInViewModelSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = F6E76AD51F3AE48A00D43A2C /* GGSignInViewModelSpecs.m */; };
 		F6E76B391F3B218B00D43A2C /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E76B381F3B218B00D43A2C /* Reachability.framework */; };
 		F6E76B3A1F3B218B00D43A2C /* Reachability.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F6E76B381F3B218B00D43A2C /* Reachability.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F6FE96F41F3DA1D80086F878 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FE96F31F3DA1D80086F878 /* SignUpViewController.m */; };
@@ -142,13 +142,14 @@
 		BF278B9A1F43E60800969CD8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F6112D5E1F444F6D00DA51B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F614DD721F32B8AC0075E9F5 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cartfile; path = ../Cartfile; sourceTree = "<group>"; };
-		F69893251F4309E4002CF317 /* GGSignUpViewModelSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGSignUpViewModelSpecs.m; sourceTree = "<group>"; };
+		F642340E1F45687E00907CA2 /* NSString+EmailFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+EmailFormat.h"; sourceTree = "<group>"; };
+		F642340F1F45687E00907CA2 /* NSString+EmailFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+EmailFormat.m"; sourceTree = "<group>"; };
+		F64234111F456FB200907CA2 /* GGNSStringAndEmailFormatSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGNSStringAndEmailFormatSpecs.m; sourceTree = "<group>"; };
 		F6C8006A1F3C557A00B9965F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F6C8006B1F3C557A00B9965F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F6E76ACB1F3ABA6400D43A2C /* SignInViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewModel.h; sourceTree = "<group>"; };
 		F6E76ACC1F3ABA6400D43A2C /* SignInViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewModel.m; sourceTree = "<group>"; };
 		F6E76AD11F3ADCFB00D43A2C /* project.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = project.plist; sourceTree = "<group>"; };
-		F6E76AD51F3AE48A00D43A2C /* GGSignInViewModelSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGSignInViewModelSpecs.m; sourceTree = "<group>"; };
 		F6E76B381F3B218B00D43A2C /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reachability.framework; sourceTree = "<group>"; };
 		F6FE96F21F3DA1D80086F878 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		F6FE96F31F3DA1D80086F878 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
@@ -252,8 +253,7 @@
 				BE2FBCD71F38008700C80A5A /* SwiftSpecs.swift */,
 				BE2FBCD61F38008600C80A5A /* GossipGeekTests-Bridging-Header.h */,
 				BF21F74F1F3AF41500A64945 /* GGMagazineViewModelSpecs.m */,
-				F6E76AD51F3AE48A00D43A2C /* GGSignInViewModelSpecs.m */,
-				F69893251F4309E4002CF317 /* GGSignUpViewModelSpecs.m */,
+				F64234111F456FB200907CA2 /* GGNSStringAndEmailFormatSpecs.m */,
 			);
 			path = GossipGeekTests;
 			sourceTree = "<group>";
@@ -359,6 +359,8 @@
 				BF21F78A1F42EA1F00A64945 /* Reachability+CheckNetwork.m */,
 				BF21F78C1F42EE9700A64945 /* MBProgressHUD+ShowTextHud.h */,
 				BF21F78D1F42EE9700A64945 /* MBProgressHUD+ShowTextHud.m */,
+				F642340E1F45687E00907CA2 /* NSString+EmailFormat.h */,
+				F642340F1F45687E00907CA2 /* NSString+EmailFormat.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -484,6 +486,7 @@
 				BF21F7801F3D9F0F00A64945 /* UserMagazineLikeViewModel.m in Sources */,
 				BF0F36F11F305B34009CA6BA /* AppDelegate.m in Sources */,
 				F6FF54BF1F308FE700179B14 /* SignInViewController.m in Sources */,
+				F64234101F45687E00907CA2 /* NSString+EmailFormat.m in Sources */,
 				F6FE96F41F3DA1D80086F878 /* SignUpViewController.m in Sources */,
 				BF0F36EE1F305B34009CA6BA /* main.m in Sources */,
 				BF21F78E1F42EE9700A64945 /* MBProgressHUD+ShowTextHud.m in Sources */,
@@ -497,11 +500,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F69893261F4309E4002CF317 /* GGSignUpViewModelSpecs.m in Sources */,
 				BE2FBCD81F38008700C80A5A /* SwiftSpecs.swift in Sources */,
+				F64234121F456FB200907CA2 /* GGNSStringAndEmailFormatSpecs.m in Sources */,
 				BF21F7501F3AF41500A64945 /* GGMagazineViewModelSpecs.m in Sources */,
 				BE4EE0301F32BA7B00A6AA85 /* GGDemoSpecs.m in Sources */,
-				F6E76AD61F3AE48A00D43A2C /* GGSignInViewModelSpecs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

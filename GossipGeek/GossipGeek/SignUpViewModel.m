@@ -7,6 +7,8 @@
 //
 
 #import "SignUpViewModel.h"
+#import "NSString+EmailFormat.h"
+#import "MBProgressHUD+ShowTextHud.h"
 
 typedef enum {
     ERROR_EMAIL_ALREADY_OCCUPIED = 203,
@@ -17,31 +19,9 @@ typedef enum {
 
 - (id)init {
     if (self = [super init]) {
-        self.onlyTWEmailEnable = [self getOnlyTWEmailEnable];
+        self.onlyTWEmailEnable = [NSString getOnlyTWEmailEnable];
     }
     return self;
-}
-
-- (BOOL)getOnlyTWEmailEnable {
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"project" ofType:@"plist"];
-    NSMutableDictionary *plist = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
-    return [[plist objectForKey:@"onlyTWEmailEnable"] boolValue];
-}
-
-- (BOOL)isEmailFormat:(NSString *)email {
-    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
-    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
-    return [emailTest evaluateWithObject:email];
-}
-
-- (BOOL)isTWEmailFormat:(NSString *)email {
-    NSString *twEmailRegex = @"[A-Z0-9a-z._%+-]+@thoughtworks.com";
-    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", twEmailRegex];
-    return [emailTest evaluateWithObject:email];
-}
-
-- (BOOL)isBothAreNotEmptyStringWithEmail:(NSString *)email andPassword:(NSString *)password {
-    return (email.length > 0) && (password.length > 0);
 }
 
 - (NSString *)getErrorDescription:(NSError *)error {
@@ -70,6 +50,22 @@ typedef enum {
 - (NSString *)getEmailTextFieldPlaceHolder {
     NSString *placeHolder =  self.onlyTWEmailEnable ? NSLocalizedString(@"titleInputTWEmail", nil) : NSLocalizedString(@"titleEmail", nil);
     return placeHolder;
+}
+
+- (void)signUp:(SignUpViewController *)signUpVC response:(void (^)(BOOL succeeded, NSError *error))response {
+    AVUser *user = [self setUserInfoWithEmial:signUpVC.emailTextField.text
+                                  andPassword:signUpVC.passwordTextField.text];
+    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if(succeeded) {
+            NSLog(@"sign up succeeded");
+            //注册成功后leadCloud会保存currentUser
+            //因为要求邮箱必须验证才能登录，所以这里清空currentUser缓存
+            [AVUser logOut];
+        } else {
+            NSLog(@"sign up faield, %@",error);
+        }
+        response(succeeded, error);
+    }];
 }
 
 @end
