@@ -28,7 +28,7 @@
     [AVOSCloud setAllLogsEnabled:YES];
     //跟踪统计应用的打开情况
     [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-
+    
     UIViewController *homePage = [self getViewControllerWithIdentifier:@"homePage" andStoryBoardName:@"Main"];
     [self.window setRootViewController:homePage];
     [self verifiedSessionToken];

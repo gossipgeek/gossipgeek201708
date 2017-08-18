@@ -293,7 +293,7 @@
         <!--注册-->
         <scene sceneID="OwR-Vh-ZXl">
             <objects>
-                <viewController storyboardIdentifier="signUpPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Zg0-KZ-kLw" userLabel="注册" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signUpPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Zg0-KZ-kLw" userLabel="注册" customClass="SignUpViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2XZ-7Z-QQw"/>
                         <viewControllerLayoutGuide type="bottom" id="wZg-Aq-zOm"/>
@@ -309,14 +309,17 @@
                                 <state key="normal" title="注册">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="clickedSignUpButton:" destination="Zg0-KZ-kLw" eventType="touchUpInside" id="87z-2J-NQ2"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dFv-WT-cCV" userLabel="密码">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="dFv-WT-cCV" userLabel="密码">
                                 <rect key="frame" x="16" y="178" width="343" height="50"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="邮箱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A1S-7H-7ZK" userLabel="邮箱">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="邮箱" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="A1S-7H-7ZK" userLabel="邮箱">
                                 <rect key="frame" x="16" y="108" width="343" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="1Gd-6f-md7"/>
@@ -341,6 +344,11 @@
                             <constraint firstItem="A1S-7H-7ZK" firstAttribute="leading" secondItem="xlk-TG-gtQ" secondAttribute="leadingMargin" id="tCJ-xO-Zrk"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="A1S-7H-7ZK" id="rgO-Ju-530"/>
+                        <outlet property="passwordTextField" destination="dFv-WT-cCV" id="2HK-Po-4WV"/>
+                        <outlet property="signUpButton" destination="uYe-6r-hSl" id="D71-Xc-Mxc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NhX-JN-DZx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -520,7 +528,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Zg0-KZ-kLw" kind="show" id="caX-AE-W4s"/>
+                                    <segue destination="Zg0-KZ-kLw" kind="show" identifier="fromSignInToSignUp" id="caX-AE-W4s"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -548,8 +556,10 @@
                     <navigationItem key="navigationItem" title="登录" id="HvX-cR-gQf"/>
                     <connections>
                         <outlet property="emailTextField" destination="Jmd-Dc-uNQ" id="9CR-zm-DVJ"/>
+                        <outlet property="forgotPasswordButton" destination="lZe-qE-SSm" id="hox-WH-6Kv"/>
                         <outlet property="passwordTextField" destination="dBS-h7-XV5" id="P68-if-AJN"/>
                         <outlet property="signInButton" destination="qd1-gM-fPh" id="bSy-QB-GZC"/>
+                        <outlet property="signUpButton" destination="DIr-we-bJA" id="C4z-5d-vhu"/>
                         <segue destination="7DA-4L-get" kind="presentation" identifier="fromSignInToHomePage" id="fGA-T7-Hh6"/>
                     </connections>
                 </viewController>
