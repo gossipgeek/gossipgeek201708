@@ -36,7 +36,6 @@
         }else {
             block(newMagazineCount,error);
         }
-
     }];
 }
 
