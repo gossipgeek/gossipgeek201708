@@ -100,6 +100,7 @@
             [self errorTips:error];
         } else {
             NSLog(@"Sign In Success");
+            [self.delegate signInDidSuccess];
             [self dismissViewControllerAnimated:YES completion:nil];
         }
     }];

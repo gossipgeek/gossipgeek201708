@@ -47,20 +47,24 @@
     [[self.errorLabel heightAnchor] constraintEqualToConstant:44].active = YES;
     [[self.errorLabel centerYAnchor] constraintEqualToAnchor:self.centerYAnchor constant:80].active = YES;
     self.errorLabel.textAlignment = NSTextAlignmentCenter;
-    self.errorLabel.text = NSLocalizedString(@"Magazine_networkConnectionFailed", nil);
+    self.errorLabel.text = NSLocalizedString(@"promptNetworkConnectionFailed", nil);
+}
+
+- (void)setErrorLabelText:(NSString *)text {
+    self.errorLabel.text = text;
 }
 
 - (void)viewClick {
     [self.delegate errorViewDidClick];
 }
 
-+ (void)createErrorView:(UIView *)superView errorView:(ErrorView *)view {
-    view.hidden = YES;
-    [superView addSubview:view];
-    view.translatesAutoresizingMaskIntoConstraints = NO;
-    [[view leadingAnchor] constraintEqualToAnchor:superView.leadingAnchor constant:0].active = YES;
-    [[view trailingAnchor] constraintEqualToAnchor:superView.trailingAnchor constant:0].active = YES;
-    [[view heightAnchor] constraintEqualToAnchor:superView.heightAnchor constant:0].active = YES;
-    [[view centerYAnchor] constraintEqualToAnchor:superView.centerYAnchor].active = YES;
+- (void)createErrorView:(UIView *)superView {
+    self.hidden = YES;
+    [superView addSubview:self];
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+    [[self leadingAnchor] constraintEqualToAnchor:superView.leadingAnchor constant:0].active = YES;
+    [[self trailingAnchor] constraintEqualToAnchor:superView.trailingAnchor constant:0].active = YES;
+    [[self heightAnchor] constraintEqualToAnchor:superView.heightAnchor constant:0].active = YES;
+    [[self centerYAnchor] constraintEqualToAnchor:superView.centerYAnchor].active = YES;
 }
 @end

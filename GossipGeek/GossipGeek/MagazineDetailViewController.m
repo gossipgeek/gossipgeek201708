@@ -19,15 +19,19 @@
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
 @property (weak, nonatomic) IBOutlet UIWebView *magazineWebView;
 @property (weak, nonatomic) IBOutlet UILabel *likeNumberLabel;
+@property (weak, nonatomic) IBOutlet UIView *toolView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *closeButton;
 @property (strong, nonatomic) MBProgressHUD *waitUpdateHud;
 @property (strong, nonatomic) ErrorView *errorView;
-@property (weak, nonatomic) IBOutlet UIView *toolView;
 @end
 
 @implementation MagazineDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = NSLocalizedString(@"titleMagazineDetailTitle", nil);
+    self.tabBarItem.title = NSLocalizedString(@"titleMagazineDetailTitle", nil);
+    [self.closeButton setTitle:NSLocalizedString(@"titleMagazineDetailCloseButton", nil)];
     self.magazineWebView.delegate = self;
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self initConnectFailUI];
@@ -52,7 +56,7 @@
 
 - (IBAction)likeButtonDidClick:(id)sender {
     if ([Reachability internetStatus] == GossipGeekStatusNotReachable) {
-        [MBProgressHUD showTextHUD:self.view hudText:NSLocalizedString(@"Magazine_connectFailed", nil)];
+        [MBProgressHUD showTextHUD:self.view hudText:NSLocalizedString(@"promptConnectFailed", nil)];
         return;
     }
     self.magazine.likenumber =[NSString stringWithFormat:@"%d",(self.magazine.likenumber).intValue + LIKE_NUMBER_ADD_ONE];
@@ -65,7 +69,7 @@
 }
 
 - (IBAction)commentButtonDidClick:(id)sender {
-    [MBProgressHUD showTextHUD:self.view hudText:NSLocalizedString(@"Magazine_waitUpdate", nil)];
+    [MBProgressHUD showTextHUD:self.view hudText:NSLocalizedString(@"promptHaveNothing", nil)];
 }
 
 - (void)errorViewDidClick {
@@ -105,7 +109,7 @@
         self.toolView.hidden = YES;
     }else {
         if (self.errorView.hidden == YES) {
-            [MBProgressHUD showTextHUD:self.view hudText:NSLocalizedString(@"Magazine_connectFailed", nil)];
+            [MBProgressHUD showTextHUD:self.view hudText:NSLocalizedString(@"promptConnectFailed", nil)];
         }
     }
 }
@@ -119,6 +123,6 @@
 - (void)initConnectFailUI {
     self.errorView = [[ErrorView alloc]init];
     self.errorView.delegate = self;
-    [ErrorView createErrorView:self.view errorView:self.errorView];
+    [self.errorView createErrorView:self.view];
 }
 @end

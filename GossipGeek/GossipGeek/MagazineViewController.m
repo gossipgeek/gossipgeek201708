@@ -15,8 +15,8 @@
 #import "MagazineDetailViewController.h"
 #import "UserMagazineLikeViewModel.h"
 #import "MBProgressHUD+ShowTextHud.h"
-
-@interface MagazineViewController ()<UITableViewDelegate,UITableViewDataSource,ErrorViewDelegate,UpdateLikeNumerDelegate>
+#import "SignInViewController.h"
+@interface MagazineViewController ()<UITableViewDelegate,UITableViewDataSource,ErrorViewDelegate,UpdateLikeNumerDelegate,SignInDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *magazineTableView;
 @property (strong, nonatomic) MagazineViewModel *magazineViewModel;
 @property (strong, nonatomic) ErrorView *errorView;
@@ -28,15 +28,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.magazineViewModel = [[MagazineViewModel alloc]init];
-    
+    self.navigationItem.title = NSLocalizedString(@"titleMagazineTitle", nil);
+    self.tabBarItem.title = NSLocalizedString(@"titleMagazineTitle", nil);
     [self createErrorInfoUI];
     [self initMagazineTableView];
     self.automaticallyAdjustsScrollViewInsets = NO;
     
+    self.magazineViewModel = [[MagazineViewModel alloc]init];
+
     [MBProgressHUD showHUDAddedTo:self.tabBarController.view animated:YES];
-    [self pullDownSetupDate];
+    [self pullDownSetupData];
 }
 
 - (void)likeNumberDidUpdate {
@@ -50,33 +51,36 @@
     self.magazineTableView.estimatedRowHeight = 360;
     self.magazineTableView.showsVerticalScrollIndicator = NO;
     self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.refreshControl addTarget:self action:@selector(pullDownSetupDate) forControlEvents:UIControlEventValueChanged];
-    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"Magazine_putDownToUpdate", nil)];
+    [self.refreshControl addTarget:self action:@selector(pullDownSetupData) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"promptPutDownToUpdate", nil)];
     [self.magazineTableView addSubview:self.refreshControl];
     self.magazineTableView.tableFooterView = [[UIView alloc]initWithFrame:(CGRectZero)];
 }
 
-- (void)pullDownSetupDate {
+- (void)pullDownSetupData {
     [self.refreshControl beginRefreshing];
     [self.magazineViewModel fetchAVObjectData:^(int newMagazineCount, NSError *error) {
-        [UIView animateWithDuration:0.25 animations:^{
-            [self.refreshControl endRefreshing];
-            [MBProgressHUD hideHUDForView:self.tabBarController.view animated:YES];
-            [self.magazineTableView reloadData];
-            if (error) {
-                if (self.magazineViewModel.magazines.count != 0) {
-                    [MBProgressHUD showTextHUD:self.view hudText:NSLocalizedString(@"Magazine_connectFailed", nil)];
-                }else {
-                    [self showErrorInfoUI:YES];
-                }
+        [self.refreshControl endRefreshing];
+        [MBProgressHUD hideHUDForView:self.tabBarController.view animated:YES];
+        [self.magazineTableView reloadData];
+        if (error) {
+            if (self.magazineViewModel.magazines.count != 0) {
+                [MBProgressHUD showTextHUD:self.view hudText:NSLocalizedString(@"promptConnectFailed", nil)];
             }else {
-                [self showErrorInfoUI:NO];
-                if (newMagazineCount == 0) {
-                    [MBProgressHUD showTextHUD:self.view hudText:NSLocalizedString(@"Magazine_notMoreMagazineDate", nil)];
-                }
+                [self showErrorInfoUI:YES];
             }
-        }];
+        }else {
+            [self showErrorInfoUI:NO];
+            if (newMagazineCount == 0) {
+                [MBProgressHUD showTextHUD:self.view hudText:NSLocalizedString(@"promptNotMoreMagazineDate", nil)];
+            }
+        }
     }];
+}
+
+- (void)signInDidSuccess {
+    [MBProgressHUD showHUDAddedTo:self.tabBarController.view animated:YES];
+    [self pullDownSetupData];
 }
 
 - (void)showErrorInfoUI:(BOOL)flag {
@@ -86,12 +90,12 @@
 - (void)createErrorInfoUI {
     self.errorView = [[ErrorView alloc]init];
     self.errorView.delegate = self;
-    [ErrorView createErrorView:self.view errorView:self.errorView];
+    [self.errorView createErrorView:self.view];
 }
 
 - (void)errorViewDidClick {
     [MBProgressHUD showHUDAddedTo:self.tabBarController.view animated:YES];
-    [self pullDownSetupDate];
+    [self pullDownSetupData];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -108,7 +112,7 @@
     cell.titleLabel.text = currentMagazine.title;
     cell.contantLabel.text = currentMagazine.content;
     cell.timeLabel.text = currentMagazine.time;
-    cell.likeNumberLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Magazine_likeTotalNumber", nil),currentMagazine.likenumber];
+    cell.likeNumberLabel.text = [NSString stringWithFormat:NSLocalizedString(@"promptLikeTotalNumber", nil),currentMagazine.likenumber];
     if (currentMagazine.image == nil) {
         cell.logoImageView.image = [UIImage imageNamed:@"default.jpg"];
     }else {
