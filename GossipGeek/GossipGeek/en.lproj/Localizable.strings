@@ -3,6 +3,8 @@
 "promptLikeTotalNumber"="%@ people like";
 "promptNotMoreMagazineDate"="No more to show";
 "promptConnectFailed"="Connect failed";
+"promptHavaNothingOfMagazine"="Have no Magazine";
+"promptHaveNothingOfGossip"="Have no Gossip";
 "promptHaveNothing"="Coming soon";
 "titleMagazineTitle"="Magazine";
 "titleMagazineDetailTitle"="Magazine Detail";
@@ -30,3 +32,9 @@
 "promptEmailAlreadyOccupied" = "This email has been occupied";
 "promptHaveNothingOfActivity"="There is no activity yet, you can check later";
 "promptNoMoreData"="No more data";
+"promptInputPlaceholder"="Plase input content";
+"promptSendMessageSuccess"="Send success";
+"promptSendMessageFailed"="Send failed";
+"titleAddGossip"="Add Gossip";
+"promptGossipTitleNil"="Title is not Null";
+"titleAddGossipButton"="Release";

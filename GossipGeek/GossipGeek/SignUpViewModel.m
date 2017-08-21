@@ -48,7 +48,8 @@ typedef enum {
 }
 
 - (NSString *)getEmailTextFieldPlaceHolder {
-    NSString *placeHolder =  self.onlyTWEmailEnable ? NSLocalizedString(@"titleInputTWEmail", nil) : NSLocalizedString(@"titleEmail", nil);
+    NSString *placeHolder =  self.onlyTWEmailEnable ?
+                             NSLocalizedString(@"titleInputTWEmail", nil) : NSLocalizedString(@"titleEmail", nil);
     return placeHolder;
 }
 

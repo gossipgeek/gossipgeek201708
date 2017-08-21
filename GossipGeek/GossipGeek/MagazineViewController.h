@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MagazineViewModel.h"
 @interface MagazineViewController : UIViewController
-
+- (void)pullDownSetupData;
+@property (strong, nonatomic) MagazineViewModel *magazineViewModel;
 @end

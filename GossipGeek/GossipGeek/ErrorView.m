@@ -14,13 +14,21 @@
 @end
 @implementation ErrorView
 
-- (instancetype)init {
+- (instancetype)initWithSuperview:(UIView *)superView {
     self = [super init];
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
+        self.hidden = YES;
+        [superView addSubview:self];
+        self.translatesAutoresizingMaskIntoConstraints = NO;
+        [[self leadingAnchor] constraintEqualToAnchor:superView.leadingAnchor constant:0].active = YES;
+        [[self trailingAnchor] constraintEqualToAnchor:superView.trailingAnchor constant:0].active = YES;
+        [[self heightAnchor] constraintEqualToAnchor:superView.heightAnchor constant:0].active = YES;
+        [[self centerYAnchor] constraintEqualToAnchor:superView.centerYAnchor].active = YES;
         [self initErrorLabel];
         [self initErrorImageView];
-        UITapGestureRecognizer *tapGestuerRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(viewClick)];
+        UITapGestureRecognizer *tapGestuerRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self
+                                                                                              action:@selector(viewClick)];
         [self addGestureRecognizer:tapGestuerRecognizer];
     }
     return self;
@@ -33,7 +41,8 @@
     [[self.errorImageView bottomAnchor] constraintEqualToAnchor:self.errorLabel.topAnchor constant:15].active = YES;
     [[self.errorImageView centerXAnchor] constraintEqualToAnchor:self.errorLabel.centerXAnchor].active = YES;
     [[self.errorImageView widthAnchor] constraintEqualToAnchor:self.widthAnchor constant:-100].active = YES;
-    [[self.errorImageView heightAnchor] constraintEqualToAnchor:self.errorImageView.widthAnchor multiplier:0.8125 constant:0].active = YES;
+    [[self.errorImageView heightAnchor] constraintEqualToAnchor:self.errorImageView.widthAnchor
+                                                     multiplier:0.8125 constant:0].active = YES;
 }
 
 - (void)initErrorLabel {
@@ -58,13 +67,4 @@
     [self.delegate errorViewDidClick];
 }
 
-- (void)createErrorView:(UIView *)superView {
-    self.hidden = YES;
-    [superView addSubview:self];
-    self.translatesAutoresizingMaskIntoConstraints = NO;
-    [[self leadingAnchor] constraintEqualToAnchor:superView.leadingAnchor constant:0].active = YES;
-    [[self trailingAnchor] constraintEqualToAnchor:superView.trailingAnchor constant:0].active = YES;
-    [[self heightAnchor] constraintEqualToAnchor:superView.heightAnchor constant:0].active = YES;
-    [[self centerYAnchor] constraintEqualToAnchor:superView.centerYAnchor].active = YES;
-}
 @end

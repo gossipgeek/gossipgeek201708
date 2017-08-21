@@ -94,15 +94,15 @@
     return YES;
 }
 
--(void)webViewDidStartLoad:(UIWebView *)webView {
+- (void)webViewDidStartLoad:(UIWebView *)webView {
     [MBProgressHUD showHUDAddedTo:self.tabBarController.view animated:YES];
 }
 
--(void)webViewDidFinishLoad:(UIWebView *)webView {
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
     [MBProgressHUD hideHUDForView:self.tabBarController.view animated:YES];
 }
 
--(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     [MBProgressHUD hideHUDForView:self.tabBarController.view animated:YES];
     if ([webView.request.URL isEqual:self.magazine.url]) {
         self.errorView.hidden = NO;
@@ -121,8 +121,7 @@
 }
 
 - (void)initConnectFailUI {
-    self.errorView = [[ErrorView alloc]init];
+    self.errorView = [[ErrorView alloc]initWithSuperview:self.view];
     self.errorView.delegate = self;
-    [self.errorView createErrorView:self.view];
 }
 @end

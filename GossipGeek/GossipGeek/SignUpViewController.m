@@ -80,7 +80,8 @@
     [self.signUpViewModel signUp:self response:^(BOOL succeeded, NSError *error) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         if(succeeded) {
-            [self showAlertWithTitle:NSLocalizedString(@"promptSignUpSucceeded", nil) andMessage:NSLocalizedString(@"promptGoEmailVerified", nil)];
+            [self showAlertWithTitle:NSLocalizedString(@"promptSignUpSucceeded", nil)
+                          andMessage:NSLocalizedString(@"promptGoEmailVerified", nil)];
         } else {
             [self errorTips:error];
         }
@@ -103,8 +104,12 @@
 }
 
 - (void)showAlertWithTitle:(NSString *)title andMessage:(NSString *)message {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"titleOk", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
+                                                                   message:message
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"titleOk", nil)
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction *action){
         [self goSignInPage];
     }];
     [alert addAction:okAction];
@@ -128,7 +133,10 @@
     [self setSignUpButtonEnable:NO];
     
     self.navigationItem.title = NSLocalizedString(@"titleSignUp", nil);
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"titleBack", nil) style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"titleBack", nil)
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:nil
+                                                                            action:nil];
     self.emailTextField.placeholder = [self.signUpViewModel getEmailTextFieldPlaceHolder];
     self.passwordTextField.placeholder = NSLocalizedString(@"titlePassword", nil);
     [self.signUpButton setTitle:NSLocalizedString(@"titleSignUp", nil) forState:UIControlStateNormal];    

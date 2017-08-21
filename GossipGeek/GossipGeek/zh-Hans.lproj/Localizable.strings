@@ -1,6 +1,7 @@
 "promptNetworkConnectionFailed"="网络连接失败，检查网络后点击该界面刷新";
 "promptConnectFailed"="网络连接失败";
-"promptHaveNothing"="什么爆料都没有啦，点击图片可以继续刷新";
+"promptHaveNothingOfGossip"="什么爆料都没有啦，点击图片可以继续刷新";
+"promptHavaNothingOfMagazine"="什么杂志都没有啦，点击图片可以继续刷新";
 "promptHaveNothing"="敬请期待";
 "promptPutDownToUpdate"="下拉后刷新数据";
 "promptLikeTotalNumber"="共有%@人点赞";
@@ -20,6 +21,7 @@
 "titleSignUp"="注册";
 "titleActivity"="活动";
 "promptError"="错误";
+"titleAddGossip"="添加爆料";
 "promptGoEmailVerified"="请前往邮箱验证";
 "promptNetworkError"="网络开小差了";
 "promptEamilMismatchPassword"="邮箱与密码不匹配";
@@ -31,3 +33,8 @@
 "promptEmailAlreadyOccupied"="此电子邮箱已被占用";
 "promptHaveNothingOfActivity"="还没有活动，您可以稍后点击图片查看";
 "promptNoMoreData"="没有更多数据";
+"promptInputPlaceholder"="请输入内容";
+"promptSendMessageSuccess"="发布成功";
+"promptSendMessageFailed"="发布失败";
+"promptGossipTitleNil"="标题不能为空";
+"titleAddGossipButton"="发布";
