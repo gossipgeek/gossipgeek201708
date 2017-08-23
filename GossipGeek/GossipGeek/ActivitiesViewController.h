@@ -9,5 +9,4 @@
 #import <UIKit/UIKit.h>
 
 @interface ActivitiesViewController : UIViewController
-
 @end

@@ -23,7 +23,7 @@ describe(@"GGActivityViewModel Specs", ^{
         __block Activity *activity = nil;
         
         beforeEach(^{
-            activityViewModel = [ActivityViewModel defaultViewModel];
+            activityViewModel = [[ActivityViewModel alloc] init];
             activity = [[Activity alloc] init];
         });
         

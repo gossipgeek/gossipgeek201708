@@ -18,6 +18,5 @@
 - (BOOL)hasHistoryData;
 - (BOOL)isNetWorkError:(NSError *)error;
 - (BOOL)isItemExist:(Activity *)activity inActivities:(NSArray *)activities;
-+ (ActivityViewModel *)defaultViewModel;
 
 @end

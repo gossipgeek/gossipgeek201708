@@ -49,8 +49,12 @@
 		BFDB4E261F4D8B5100DA50A5 /* GGPush.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDB4E251F4D8B5100DA50A5 /* GGPush.m */; };
 		F61288191F3C4B5C0095075A /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF21F6C31F38742B00A64945 /* MBProgressHUD.framework */; };
 		F612881A1F3C4B5C0095075A /* MBProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF21F6C31F38742B00A64945 /* MBProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F620A2441F4D37C0009BD0C1 /* ActivityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F620A2431F4D37C0009BD0C1 /* ActivityDetailViewController.m */; };
+		F620A24A1F4D5E84009BD0C1 /* ActivityDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F620A2491F4D5E84009BD0C1 /* ActivityDetailViewModel.m */; };
+		F62124481F4E47A800739AC2 /* UIWebView+DetailWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = F62124471F4E47A800739AC2 /* UIWebView+DetailWebView.m */; };
 		F62E6E761F4BD1D4006C1120 /* activity.png in Resources */ = {isa = PBXBuildFile; fileRef = F62E6E751F4BD1D4006C1120 /* activity.png */; };
 		F62E6E781F4C2878006C1120 /* GGActivitiesCollectionViewCellSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = F62E6E771F4C2878006C1120 /* GGActivitiesCollectionViewCellSpecs.m */; };
+		F632FDC21F4EF669004BD18E /* GGActivityDetailViewModelSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = F632FDC11F4EF669004BD18E /* GGActivityDetailViewModelSpecs.m */; };
 		F6390D8B1F49D39800021867 /* GGActivityViewModelSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = F6390D8A1F49D39800021867 /* GGActivityViewModelSpecs.m */; };
 		F64234101F45687E00907CA2 /* NSString+EmailFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = F642340F1F45687E00907CA2 /* NSString+EmailFormat.m */; };
 		F64234121F456FB200907CA2 /* GGNSStringAndEmailFormatSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = F64234111F456FB200907CA2 /* GGNSStringAndEmailFormatSpecs.m */; };
@@ -175,8 +179,15 @@
 		BFDB4E251F4D8B5100DA50A5 /* GGPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGPush.m; sourceTree = "<group>"; };
 		F6112D5E1F444F6D00DA51B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F614DD721F32B8AC0075E9F5 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cartfile; path = ../Cartfile; sourceTree = "<group>"; };
+		F620A2421F4D37C0009BD0C1 /* ActivityDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityDetailViewController.h; sourceTree = "<group>"; };
+		F620A2431F4D37C0009BD0C1 /* ActivityDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityDetailViewController.m; sourceTree = "<group>"; };
+		F620A2481F4D5E84009BD0C1 /* ActivityDetailViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityDetailViewModel.h; sourceTree = "<group>"; };
+		F620A2491F4D5E84009BD0C1 /* ActivityDetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityDetailViewModel.m; sourceTree = "<group>"; };
+		F62124461F4E47A800739AC2 /* UIWebView+DetailWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+DetailWebView.h"; sourceTree = "<group>"; };
+		F62124471F4E47A800739AC2 /* UIWebView+DetailWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+DetailWebView.m"; sourceTree = "<group>"; };
 		F62E6E751F4BD1D4006C1120 /* activity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activity.png; sourceTree = "<group>"; };
 		F62E6E771F4C2878006C1120 /* GGActivitiesCollectionViewCellSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGActivitiesCollectionViewCellSpecs.m; sourceTree = "<group>"; };
+		F632FDC11F4EF669004BD18E /* GGActivityDetailViewModelSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGActivityDetailViewModelSpecs.m; sourceTree = "<group>"; };
 		F6390D8A1F49D39800021867 /* GGActivityViewModelSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGActivityViewModelSpecs.m; sourceTree = "<group>"; };
 		F642340E1F45687E00907CA2 /* NSString+EmailFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+EmailFormat.h"; sourceTree = "<group>"; };
 		F642340F1F45687E00907CA2 /* NSString+EmailFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+EmailFormat.m"; sourceTree = "<group>"; };
@@ -305,6 +316,7 @@
 				BF278BE81F46AF9300969CD8 /* GGNSDateGGTimeSpecs.m */,
 				F6390D8A1F49D39800021867 /* GGActivityViewModelSpecs.m */,
 				F62E6E771F4C2878006C1120 /* GGActivitiesCollectionViewCellSpecs.m */,
+				F632FDC11F4EF669004BD18E /* GGActivityDetailViewModelSpecs.m */,
 			);
 			path = GossipGeekTests;
 			sourceTree = "<group>";
@@ -371,6 +383,8 @@
 				F6FE96F31F3DA1D80086F878 /* SignUpViewController.m */,
 				BF28F0B21F46C49E004DB671 /* GGAddGossipViewController.h */,
 				BF28F0B31F46C49E004DB671 /* GGAddGossipViewController.m */,
+				F620A2421F4D37C0009BD0C1 /* ActivityDetailViewController.h */,
+				F620A2431F4D37C0009BD0C1 /* ActivityDetailViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -390,6 +404,8 @@
 				F6FE96F61F3DA36D0086F878 /* SignUpViewModel.m */,
 				F64234131F459D1600907CA2 /* ActivityViewModel.h */,
 				F64234141F459D1600907CA2 /* ActivityViewModel.m */,
+				F620A2481F4D5E84009BD0C1 /* ActivityDetailViewModel.h */,
+				F620A2491F4D5E84009BD0C1 /* ActivityDetailViewModel.m */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -436,6 +452,8 @@
 				BF278BE41F4555CD00969CD8 /* NSDate+GGTime.m */,
 				BFDB4E241F4D8B5100DA50A5 /* GGPush.h */,
 				BFDB4E251F4D8B5100DA50A5 /* GGPush.m */,
+				F62124461F4E47A800739AC2 /* UIWebView+DetailWebView.h */,
+				F62124471F4E47A800739AC2 /* UIWebView+DetailWebView.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -563,6 +581,7 @@
 				BFDB4E261F4D8B5100DA50A5 /* GGPush.m in Sources */,
 				BF0F37651F31D672009CA6BA /* Magazine.m in Sources */,
 				BF0F37B61F32FC36009CA6BA /* MagazineViewModel.m in Sources */,
+				F620A24A1F4D5E84009BD0C1 /* ActivityDetailViewModel.m in Sources */,
 				BF0F375E1F30E1E1009CA6BA /* MagazineViewController.m in Sources */,
 				F6FE96F71F3DA36D0086F878 /* SignUpViewModel.m in Sources */,
 				BF278BE51F4555CD00969CD8 /* NSDate+GGTime.m in Sources */,
@@ -579,8 +598,10 @@
 				BF278BDF1F44741A00969CD8 /* GGUserGossipLike.m in Sources */,
 				BF21F78E1F42EE9700A64945 /* MBProgressHUD+ShowTextHud.m in Sources */,
 				BF21F78B1F42EA1F00A64945 /* Reachability+CheckNetwork.m in Sources */,
+				F620A2441F4D37C0009BD0C1 /* ActivityDetailViewController.m in Sources */,
 				BF0F37C71F345CFA009CA6BA /* ErrorView.m in Sources */,
 				BF278BD61F4449B300969CD8 /* GossipViewModel.m in Sources */,
+				F62124481F4E47A800739AC2 /* UIWebView+DetailWebView.m in Sources */,
 				BF278BD31F44499B00969CD8 /* GossipViewController.m in Sources */,
 				F6E76ACD1F3ABA6400D43A2C /* SignInViewModel.m in Sources */,
 				F64234181F459E2800907CA2 /* Activity.m in Sources */,
@@ -593,6 +614,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F632FDC21F4EF669004BD18E /* GGActivityDetailViewModelSpecs.m in Sources */,
 				F62E6E781F4C2878006C1120 /* GGActivitiesCollectionViewCellSpecs.m in Sources */,
 				F6390D8B1F49D39800021867 /* GGActivityViewModelSpecs.m in Sources */,
 				BE2FBCD81F38008700C80A5A /* SwiftSpecs.swift in Sources */,

@@ -15,16 +15,7 @@ typedef enum {
 
 @implementation ActivityViewModel
 
-+ (ActivityViewModel *)defaultViewModel {
-    static ActivityViewModel *singleton;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        singleton = [[ActivityViewModel alloc] initSingleton];
-    });
-    return singleton;
-}
-
-- (instancetype)initSingleton {
+- ()init {
     if (self = [super init]) {
         self.activities = [[NSMutableArray alloc] init];
     }

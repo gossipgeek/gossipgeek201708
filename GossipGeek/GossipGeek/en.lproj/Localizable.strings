@@ -20,6 +20,8 @@
 "titleForgotPassword"="Forgot Password ? ";
 "titleSignUp"="Sign Up";
 "titleActivity"="Activity";
+"titleActivityDetail"="Activity Detail";
+"titleClose"="close";
 "promptError"="Error";
 "promptGoEmailVerified"="Please check your email and verify";
 "promptNetworkError"="Network issue";
@@ -38,3 +40,4 @@
 "titleAddGossip"="Add Gossip";
 "promptGossipTitleNil"="Title is not Null";
 "titleAddGossipButton"="Release";
+"promptFailedToConnectToServer"="Failed to connect to server";

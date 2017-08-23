@@ -20,6 +20,8 @@
 "titleForgotPassword"="忘记密码？";
 "titleSignUp"="注册";
 "titleActivity"="活动";
+"titleActivityDetail"="活动详情";
+"titleClose"="关闭";
 "promptError"="错误";
 "titleAddGossip"="添加爆料";
 "promptGoEmailVerified"="请前往邮箱验证";
@@ -38,3 +40,4 @@
 "promptSendMessageFailed"="发布失败";
 "promptGossipTitleNil"="标题不能为空";
 "titleAddGossipButton"="发布";
+"promptFailedToConnectToServer"="未能连接到服务器";

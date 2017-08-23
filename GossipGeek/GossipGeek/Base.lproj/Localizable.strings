@@ -21,6 +21,8 @@
 "titleSignUp"="注册";
 "titleActivity"="活动";
 "titleAddGossip"="添加爆料";
+"titleActivityDetail"="活动详情";
+"titleClose"="关闭";
 "promptError"="错误";
 "promptGoEmailVerified"="请前往邮箱验证";
 "promptNetworkError"="网络开小差了";
@@ -38,3 +40,4 @@
 "promptSendMessageFailed"="发布失败";
 "promptGossipTitleNil"="标题不能为空";
 "titleAddGossipButton"="发布";
+"promptFailedToConnectToServer"="未能连接到服务器";
