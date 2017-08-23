@@ -50,7 +50,8 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"fromSignInToSignUp"]) {
+    static NSString *segueIdentifier = @"fromSignInToSignUp";
+    if ([segue.identifier isEqualToString:segueIdentifier]) {
         SignUpViewController *signUpVC = segue.destinationViewController;
         signUpVC.setEmailDelegate = self;
     }

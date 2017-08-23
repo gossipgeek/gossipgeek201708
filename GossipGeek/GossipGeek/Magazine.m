@@ -7,7 +7,6 @@
 //
 
 #import "Magazine.h"
-#import <AVOSCloud/AVOSCloud.h>
 
 @implementation Magazine
 @dynamic objectId;

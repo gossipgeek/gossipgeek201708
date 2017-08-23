@@ -16,7 +16,8 @@
 #import "UserMagazineLikeViewModel.h"
 #import "MBProgressHUD+ShowTextHud.h"
 #import "SignInViewController.h"
-@interface MagazineViewController ()<UITableViewDelegate,UITableViewDataSource,ErrorViewDelegate,UpdateLikeNumerDelegate,SignInDelegate>
+@interface MagazineViewController ()<UITableViewDelegate,UITableViewDataSource,
+                                    ErrorViewDelegate,UpdateLikeNumerDelegate,SignInDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *magazineTableView;
 @property (strong, nonatomic) MagazineViewModel *magazineViewModel;
 @property (strong, nonatomic) ErrorView *errorView;
@@ -35,7 +36,7 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     self.magazineViewModel = [[MagazineViewModel alloc]init];
-
+    
     [MBProgressHUD showHUDAddedTo:self.tabBarController.view animated:YES];
     [self pullDownSetupData];
 }

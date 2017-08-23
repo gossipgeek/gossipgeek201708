@@ -52,6 +52,34 @@ describe(@"GGCategory Specs", ^{
         });
         
     });
+    
+    context(@"convertToStringOfYearMonthDay", ^{
+        
+        __block NSDateFormatter *dateFormatter = nil;
+        
+        beforeEach(^{
+            dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        });
+        
+        afterEach(^{
+            dateFormatter = nil;
+        });
+        
+        it(@"should be 2012-12-12", ^{
+            NSDate *date = [dateFormatter dateFromString:@"2012-12-12 12:12:12"];
+            NSString *result = [date convertToStringOfYearMonthDay];
+            expect(result).to(equal(@"2012-12-12"));
+        });
+        
+        it(@"should be null", ^{
+            NSDate *date = [dateFormatter dateFromString:@""];
+            NSString *result = [date convertToStringOfYearMonthDay];
+            expect(result).to(beNil());
+        });
+        
+    });
+
 });
 
 QuickSpecEnd

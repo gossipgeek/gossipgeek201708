@@ -17,6 +17,7 @@
 "titleSignIn"="Sign In";
 "titleForgotPassword"="Forgot Password ? ";
 "titleSignUp"="Sign Up";
+"titleActivity"="Activity";
 "promptError"="Error";
 "promptGoEmailVerified"="Please check your email and verify";
 "promptNetworkError"="Network issue";
@@ -27,3 +28,5 @@
 "promptOnlyTWEmailEnable"="Only support Thoughtworks email";
 "promptSignUpSucceeded" = "Sign Up Succeeded";
 "promptEmailAlreadyOccupied" = "This email has been occupied";
+"promptHaveNothingOfActivity"="There is no activity yet, you can check later";
+"promptNoMoreData"="No more data";

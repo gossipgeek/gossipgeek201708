@@ -13,4 +13,6 @@
 - (NSString *)formatGGTimeMonthDayHourMin;
 - (NSComparisonResult)compareYear:(NSDate *)other;
 - (NSString *)formatGGTimeYearMonthDay;
+- (NSString *)convertToStringOfYearMonthDay;
+
 @end

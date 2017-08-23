@@ -1,7 +1,7 @@
 "promptNetworkConnectionFailed"="网络连接失败，检查网络后点击该界面刷新";
-"promptHaveNothing"="什么爆料都没有啦，点击图片可以继续刷新";
 "promptConnectFailed"="网络连接失败";
-"promptWaitUpdate"="敬请期待";
+"promptHaveNothing"="什么爆料都没有啦，点击图片可以继续刷新";
+"promptHaveNothing"="敬请期待";
 "promptPutDownToUpdate"="下拉后刷新数据";
 "promptLikeTotalNumber"="共有%@人点赞";
 "promptNotMoreMagazineDate"="没有更多数据";
@@ -18,6 +18,7 @@
 "titleSignIn"="登录";
 "titleForgotPassword"="忘记密码？";
 "titleSignUp"="注册";
+"titleActivity"="活动";
 "promptError"="错误";
 "promptGoEmailVerified"="请前往邮箱验证";
 "promptNetworkError"="网络开小差了";
@@ -26,5 +27,7 @@
 "promptSignInLimit"="登录失败次数超过限制，请稍候再试";
 "promptNotEmail"="邮箱格式不正确";
 "promptOnlyTWEmailEnable"="仅支持thoughtworks邮箱";
-"promptSignUpSucceeded" = "注册成功";
-"promptEmailAlreadyOccupied" = "此电子邮箱已被占用";
+"promptSignUpSucceeded"="注册成功";
+"promptEmailAlreadyOccupied"="此电子邮箱已被占用";
+"promptHaveNothingOfActivity"="还没有活动，您可以稍后点击图片查看";
+"promptNoMoreData"="没有更多数据";

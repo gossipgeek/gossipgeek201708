@@ -14,6 +14,8 @@
 #import "UserMagazineLike.h"
 #import "GGUserGossipLike.h"
 #import "Gossip.h"
+#import "Activity.h"
+
 #define APP_ID @"NvYIsxK8CR8DPgETCjsW8bTH-gzGzoHsz"
 #define APP_KEY @"0hfEA0BynwXUi2Couw2gPnks"
 @interface AppDelegate ()
@@ -27,13 +29,18 @@
     [UserMagazineLike registerSubclass];
     [Gossip registerSubclass];
     [GGUserGossipLike registerSubclass];
+    [Activity registerSubclass];
+    
     [AVOSCloud setApplicationId:APP_ID clientKey:APP_KEY];
     //开启 SDK 的调试日志（debug log）,方便追踪问题。调试日志开启后，SDK 会把网络请求、错误消息等信息输出到 IDE 的日志窗口
     [AVOSCloud setAllLogsEnabled:YES];
     //跟踪统计应用的打开情况
     [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
-    UIViewController *homePage = [self getViewControllerWithIdentifier:@"homePage" andStoryBoardName:@"Main"];
+    static NSString *homePageIdentifier = @"homePage";
+    static NSString *storyBoardIdentifier = @"Main";
+    UIViewController *homePage = [self getViewControllerWithIdentifier:homePageIdentifier
+                                                     andStoryBoardName:storyBoardIdentifier];
     [self.window setRootViewController:homePage];
     [self verifiedSessionToken];
     return YES;

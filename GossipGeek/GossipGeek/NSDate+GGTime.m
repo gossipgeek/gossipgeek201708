@@ -50,4 +50,10 @@ static NSDateFormatter *formatterMonthDayHourMin;
     NSDateComponents *components = [calendar components:NSCalendarUnitYear fromDate:self];
     return [components year];
 }
+
+- (NSString *)convertToStringOfYearMonthDay {
+    [self initDateFormatter];
+    return [formatterYearMonthDay stringFromDate:self];
+}
+
 @end
