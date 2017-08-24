@@ -12,4 +12,5 @@
 @interface GossipViewModel : NSObject
 @property(strong, nonatomic) NSMutableArray<Gossip*> *gossips;
 -(void)fetchAVObjectData:(void (^)(int newGossipCount,NSError *error))block;
++ (void)saveGossip:(NSString *)title gossipContent:(NSString *) content saveBlock:(AVBooleanResultBlock)block;
 @end

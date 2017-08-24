@@ -57,7 +57,8 @@
     return newGossipCount;
 }
 
-- (void)updateGossipsLikeNumber:(NSMutableArray *) gossips newGossipCount:(int) newGossipCount fetchAVObject:(void (^)(int newGossipCount,NSError *error))block {
+- (void)updateGossipsLikeNumber:(NSMutableArray *) gossips newGossipCount:(int) newGossipCount
+                  fetchAVObject:(void (^)(int newGossipCount,NSError *error))block {
     for (Gossip *item in gossips) {
         [self fetchOneGossipLikeNumber:item getLikeNumberBlock:^(int likeNumber, NSError *error) {
             item.likenumber = [NSString stringWithFormat:@"%d",likeNumber];
@@ -77,7 +78,8 @@
     return isContain;
 }
 
-- (void)fetchOneGossipLikeNumber:(Gossip *)currentGossip getLikeNumberBlock:(void (^)(int likeNumber,NSError *error))block {
+- (void)fetchOneGossipLikeNumber:(Gossip *)currentGossip
+              getLikeNumberBlock:(void (^)(int likeNumber,NSError *error))block {
     AVQuery *gossipQuery = [AVQuery queryWithClassName:@"GGUserGossipLike"];
     [gossipQuery whereKey:@"gossips" equalTo:currentGossip];
     [gossipQuery findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
@@ -89,6 +91,14 @@
         }
         block(likeNumber,error);
     }];
+}
+
++ (void)saveGossip:(NSString *)title gossipContent:(NSString *) content saveBlock:(AVBooleanResultBlock)block{
+    Gossip *gossip = [[Gossip alloc]initWithClassName:@"Gossip"];
+    gossip.title = title;
+    gossip.content = content;
+    [gossip setObject:[AVUser currentUser] forKey:@"userId"];
+    [gossip saveInBackgroundWithBlock:block];
 }
 
 @end

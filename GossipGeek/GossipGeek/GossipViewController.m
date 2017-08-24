@@ -14,13 +14,14 @@
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "GossipTableViewCell.h"
 #import "MBProgressHUD+ShowTextHud.h"
+#import "GGAddGossipViewController.h"
 
-@interface GossipViewController ()<UITableViewDelegate,UITableViewDataSource,ErrorViewDelegate>
+@interface GossipViewController ()<UITableViewDelegate,UITableViewDataSource,ErrorViewDelegate,AddGossipDelegate>
 @property (strong, nonatomic) GossipViewModel *gossipViewModel;
 @property (strong, nonatomic) ErrorView *errorView;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) IBOutlet UITableView *gossipTableView;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *addGossip;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addGossipBarItem;
 @end
 
 @implementation GossipViewController
@@ -29,7 +30,7 @@
     [super viewDidLoad];
     self.navigationItem.title = NSLocalizedString(@"titleGossipTitle", nil);
     self.tabBarItem.title = NSLocalizedString(@"titleGossipTitle", nil);
-    
+    self.addGossipBarItem.title = NSLocalizedString(@"titleAddGossipButton", nil);
     [self createErrorInfoUI];
     [self initGossipTableView];
     
@@ -47,7 +48,7 @@
     self.gossipTableView.showsVerticalScrollIndicator = NO;
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(pullDownSetupData) forControlEvents:UIControlEventValueChanged];
-    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"promptPutDownToUpdate", nil)];
+    self.refreshControl.attributedTitle = [[NSAttributedString alloc]initWithString:NSLocalizedString(@"promptPutDownToUpdate", nil)];
     [self.gossipTableView addSubview:self.refreshControl];
     self.gossipTableView.tableFooterView = [[UIView alloc]initWithFrame:(CGRectZero)];
 }
@@ -69,7 +70,7 @@
             }
             [self showErrorInfoUI:NO errorText:@""];
             if (self.gossipViewModel.gossips.count == 0) {
-                [self showErrorInfoUI:YES errorText:NSLocalizedString(@"promptHaveNothing", nil)];
+                [self showErrorInfoUI:YES errorText:NSLocalizedString(@"promptHaveNothingOfGossip", nil)];
                 return;
             }
             if (newGossipCount == 0) {
@@ -85,9 +86,12 @@
 }
 
 - (void)createErrorInfoUI {
-    self.errorView = [[ErrorView alloc]init];
+    self.errorView = [[ErrorView alloc] initWithSuperview:self.view];
     self.errorView.delegate = self;
-    [self.errorView createErrorView:self.view];
+}
+
+- (void)gossipDidAdd {
+    [self pullDownSetupData];
 }
 
 - (void)errorViewDidClick {
@@ -104,6 +108,13 @@
     Gossip* currentGossip = self.gossipViewModel.gossips[indexPath.row];
     [cell updateGossipCell:currentGossip];
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"addGossipSegue"]) {
+        GGAddGossipViewController *viewController = segue.destinationViewController;
+        viewController.delegate = self;
+    }
 }
 
 @end

@@ -47,14 +47,19 @@
     int newMagazineCount = 0;
     for (Magazine *item in magazineAVObjects) {
         if (![self isContainSameMagazine:item]) {
-            [self addMagezineModel:item];
             newMagazineCount++;
         }
+    }
+    [self.magazines removeAllObjects];
+    for (Magazine* item in magazineAVObjects) {
+        [self addMagezineModel:item];
     }
     return newMagazineCount;
 }
 
-- (void)updateMagazinesLikeNumber:(NSMutableArray *) magazines newMagazineCount:(int) newMagazineCount fetchAVObject:(void (^)(int newMagazineCount,NSError *error))block {
+- (void)updateMagazinesLikeNumber:(NSMutableArray *) magazines
+                 newMagazineCount:(int) newMagazineCount
+                    fetchAVObject:(void (^)(int newMagazineCount,NSError *error))block {
     for (Magazine *item in magazines) {
         [self fetchOneMagazineLikeNumber:^(int likeNumber, NSError *error) {
             item.likenumber = [NSString stringWithFormat:@"%d",likeNumber];
@@ -72,7 +77,8 @@
     return NO;
 }
 
-- (void)fetchOneMagazineLikeNumber:(void (^)(int likeNumber,NSError *error))block currentMagazine:(Magazine *)currentMagazine {
+- (void)fetchOneMagazineLikeNumber:(void (^)(int likeNumber,NSError *error))block
+                   currentMagazine:(Magazine *)currentMagazine {
     AVQuery *magazineQuery = [AVQuery queryWithClassName:@"UserMagazineLike"];
     [magazineQuery whereKey:@"magazines" equalTo:currentMagazine];
     [magazineQuery findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {

@@ -85,9 +85,8 @@
 }
 
 - (void)createErrorView {
-    self.errorView = [[ErrorView alloc]init];
+    self.errorView = [[ErrorView alloc]initWithSuperview:self.view];
     self.errorView.delegate = self;
-    [self.errorView createErrorView:self.view];
 }
 
 - (void)errorViewDidClick {

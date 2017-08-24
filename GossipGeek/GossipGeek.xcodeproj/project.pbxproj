@@ -45,6 +45,8 @@
 		BF278BE51F4555CD00969CD8 /* NSDate+GGTime.m in Sources */ = {isa = PBXBuildFile; fileRef = BF278BE41F4555CD00969CD8 /* NSDate+GGTime.m */; };
 		BF278BE71F46ADA500969CD8 /* GGGossipViewModelSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = BF278BE61F46ADA500969CD8 /* GGGossipViewModelSpecs.m */; };
 		BF278BE91F46AF9300969CD8 /* GGNSDateGGTimeSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = BF278BE81F46AF9300969CD8 /* GGNSDateGGTimeSpecs.m */; };
+		BF28F0B41F46C49E004DB671 /* GGAddGossipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF28F0B31F46C49E004DB671 /* GGAddGossipViewController.m */; };
+		BFDB4E261F4D8B5100DA50A5 /* GGPush.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDB4E251F4D8B5100DA50A5 /* GGPush.m */; };
 		F61288191F3C4B5C0095075A /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF21F6C31F38742B00A64945 /* MBProgressHUD.framework */; };
 		F612881A1F3C4B5C0095075A /* MBProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF21F6C31F38742B00A64945 /* MBProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F62E6E761F4BD1D4006C1120 /* activity.png in Resources */ = {isa = PBXBuildFile; fileRef = F62E6E751F4BD1D4006C1120 /* activity.png */; };
@@ -166,6 +168,11 @@
 		BF278BE41F4555CD00969CD8 /* NSDate+GGTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+GGTime.m"; sourceTree = "<group>"; };
 		BF278BE61F46ADA500969CD8 /* GGGossipViewModelSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGGossipViewModelSpecs.m; sourceTree = "<group>"; };
 		BF278BE81F46AF9300969CD8 /* GGNSDateGGTimeSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGNSDateGGTimeSpecs.m; sourceTree = "<group>"; };
+		BF28F0B21F46C49E004DB671 /* GGAddGossipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGAddGossipViewController.h; sourceTree = "<group>"; };
+		BF28F0B31F46C49E004DB671 /* GGAddGossipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGAddGossipViewController.m; sourceTree = "<group>"; };
+		BF28F0E11F4A9070004DB671 /* GossipGeek.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GossipGeek.entitlements; sourceTree = "<group>"; };
+		BFDB4E241F4D8B5100DA50A5 /* GGPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGPush.h; sourceTree = "<group>"; };
+		BFDB4E251F4D8B5100DA50A5 /* GGPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGPush.m; sourceTree = "<group>"; };
 		F6112D5E1F444F6D00DA51B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F614DD721F32B8AC0075E9F5 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cartfile; path = ../Cartfile; sourceTree = "<group>"; };
 		F62E6E751F4BD1D4006C1120 /* activity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activity.png; sourceTree = "<group>"; };
@@ -252,6 +259,7 @@
 		BF0F36EB1F305B34009CA6BA /* GossipGeek */ = {
 			isa = PBXGroup;
 			children = (
+				BF28F0E11F4A9070004DB671 /* GossipGeek.entitlements */,
 				BF21F7851F42E9E600A64945 /* Common */,
 				BF0F37C41F345CCE009CA6BA /* View */,
 				BF0F37B71F330757009CA6BA /* Vender */,
@@ -361,6 +369,8 @@
 				BF21F7761F3C35AD00A64945 /* MagazineDetailViewController.m */,
 				F6FE96F21F3DA1D80086F878 /* SignUpViewController.h */,
 				F6FE96F31F3DA1D80086F878 /* SignUpViewController.m */,
+				BF28F0B21F46C49E004DB671 /* GGAddGossipViewController.h */,
+				BF28F0B31F46C49E004DB671 /* GGAddGossipViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -424,6 +434,8 @@
 				F642340F1F45687E00907CA2 /* NSString+EmailFormat.m */,
 				BF278BE31F4555CD00969CD8 /* NSDate+GGTime.h */,
 				BF278BE41F4555CD00969CD8 /* NSDate+GGTime.m */,
+				BFDB4E241F4D8B5100DA50A5 /* GGPush.h */,
+				BFDB4E251F4D8B5100DA50A5 /* GGPush.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -481,6 +493,11 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 25EZUPR5QA;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					BF0F37011F305B34009CA6BA = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -541,7 +558,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF21F77D1F3D50DE00A64945 /* UserMagazineLike.m in Sources */,
+				BF28F0B41F46C49E004DB671 /* GGAddGossipViewController.m in Sources */,
 				BF21F7771F3C35AD00A64945 /* MagazineDetailViewController.m in Sources */,
+				BFDB4E261F4D8B5100DA50A5 /* GGPush.m in Sources */,
 				BF0F37651F31D672009CA6BA /* Magazine.m in Sources */,
 				BF0F37B61F32FC36009CA6BA /* MagazineViewModel.m in Sources */,
 				BF0F375E1F30E1E1009CA6BA /* MagazineViewController.m in Sources */,
@@ -724,6 +743,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GossipGeek/GossipGeek.entitlements;
 				DEVELOPMENT_TEAM = 25EZUPR5QA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -735,7 +755,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tw.GossipGeek;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtworks.gossipgeek;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -744,6 +764,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GossipGeek/GossipGeek.entitlements;
 				DEVELOPMENT_TEAM = 25EZUPR5QA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -755,7 +776,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tw.GossipGeek;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtworks.gossipgeek;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

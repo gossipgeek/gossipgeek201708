@@ -14,7 +14,7 @@
 
 @interface ErrorView : UIView
 @property (weak, nonatomic) id<ErrorViewDelegate> delegate;
-- (void)createErrorView:(UIView *)superView;
+- (instancetype)initWithSuperview:(UIView *)superView;
 - (void)viewClick;
 - (void)setErrorLabelText:(NSString *)text;
 @end

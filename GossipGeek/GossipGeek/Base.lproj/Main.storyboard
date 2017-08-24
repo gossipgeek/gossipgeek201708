@@ -742,16 +742,96 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="爆料台" id="Re9-hc-G33">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="aHB-XD-U9y"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="aHB-XD-U9y">
+                            <connections>
+                                <segue destination="oZa-pe-qn1" kind="show" identifier="addGossipSegue" id="Xz1-dZ-YTi"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addGossip" destination="aHB-XD-U9y" id="nZX-y7-Tbm"/>
+                        <outlet property="addGossipBarItem" destination="aHB-XD-U9y" id="OGf-sE-JrN"/>
                         <outlet property="gossipTableView" destination="kgL-3g-5gE" id="iGm-4v-RgN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pw8-1L-hA4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1809" y="-72"/>
+        </scene>
+        <!--添加爆料-->
+        <scene sceneID="DWx-VY-zMS">
+            <objects>
+                <viewController id="oZa-pe-qn1" customClass="GGAddGossipViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RmM-LA-eOI"/>
+                        <viewControllerLayoutGuide type="bottom" id="gTj-sY-yLh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ToA-dq-NCV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="标题" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="34S-aB-xDe">
+                                <rect key="frame" x="15" y="89" width="345" height="46.5"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Wtp-cB-Byw">
+                                <rect key="frame" x="15" y="155.5" width="345" height="213.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/1024" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aL2-SR-6ZV">
+                                <rect key="frame" x="15" y="379" width="345" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.69560993020304562" green="0.69560993020304562" blue="0.69560993020304562" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jo8-KD-Acg">
+                                <rect key="frame" x="23" y="163.5" width="329" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.9370916485786438" green="0.93694382905960083" blue="0.95754462480545044" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="aL2-SR-6ZV" secondAttribute="trailing" constant="15" id="7P2-ki-ree"/>
+                            <constraint firstItem="Wtp-cB-Byw" firstAttribute="top" secondItem="34S-aB-xDe" secondAttribute="bottom" constant="20" id="9Gj-Ep-mtI"/>
+                            <constraint firstItem="Wtp-cB-Byw" firstAttribute="height" secondItem="ToA-dq-NCV" secondAttribute="height" multiplier="0.32" id="9fR-WZ-Xma"/>
+                            <constraint firstItem="jo8-KD-Acg" firstAttribute="top" secondItem="Wtp-cB-Byw" secondAttribute="top" constant="8" id="BK6-Al-0zB"/>
+                            <constraint firstItem="jo8-KD-Acg" firstAttribute="leading" secondItem="Wtp-cB-Byw" secondAttribute="leading" constant="8" id="EKf-H0-P43"/>
+                            <constraint firstItem="Wtp-cB-Byw" firstAttribute="leading" secondItem="34S-aB-xDe" secondAttribute="leading" id="ILf-hT-VIO"/>
+                            <constraint firstItem="34S-aB-xDe" firstAttribute="top" secondItem="RmM-LA-eOI" secondAttribute="bottom" constant="25" id="IrC-9B-zbA"/>
+                            <constraint firstItem="34S-aB-xDe" firstAttribute="height" secondItem="ToA-dq-NCV" secondAttribute="height" multiplier="0.07" id="LBE-x8-JFP"/>
+                            <constraint firstItem="aL2-SR-6ZV" firstAttribute="height" secondItem="ToA-dq-NCV" secondAttribute="height" multiplier="0.04" id="Rbl-OI-KXI"/>
+                            <constraint firstItem="34S-aB-xDe" firstAttribute="leading" secondItem="ToA-dq-NCV" secondAttribute="leading" constant="15" id="Syf-NO-YMy"/>
+                            <constraint firstAttribute="trailing" secondItem="34S-aB-xDe" secondAttribute="trailing" constant="15" id="XdH-nV-ibs"/>
+                            <constraint firstItem="aL2-SR-6ZV" firstAttribute="width" secondItem="Wtp-cB-Byw" secondAttribute="width" id="dmZ-E8-Awv"/>
+                            <constraint firstItem="jo8-KD-Acg" firstAttribute="trailing" secondItem="Wtp-cB-Byw" secondAttribute="trailing" constant="-8" id="hpN-Bk-35G"/>
+                            <constraint firstItem="aL2-SR-6ZV" firstAttribute="top" secondItem="Wtp-cB-Byw" secondAttribute="bottom" constant="10" id="ikq-Df-cJv"/>
+                            <constraint firstItem="aL2-SR-6ZV" firstAttribute="leading" secondItem="ToA-dq-NCV" secondAttribute="leading" constant="15" id="m7G-f9-Pfv"/>
+                            <constraint firstItem="Wtp-cB-Byw" firstAttribute="trailing" secondItem="34S-aB-xDe" secondAttribute="trailing" id="mvY-3C-qJD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="添加爆料" id="v5N-0Y-THm">
+                        <barButtonItem key="rightBarButtonItem" title="发布" id="1Gt-yJ-2ym">
+                            <connections>
+                                <action selector="sendGossipClick:" destination="oZa-pe-qn1" id="Vv0-eu-7kY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="contentTextView" destination="Wtp-cB-Byw" id="cSo-nf-m6S"/>
+                        <outlet property="gossipTitleTextField" destination="34S-aB-xDe" id="p51-El-Oa3"/>
+                        <outlet property="maxWord" destination="aL2-SR-6ZV" id="8ey-2Z-DUg"/>
+                        <outlet property="placeholder" destination="jo8-KD-Acg" id="k8h-Kk-YKw"/>
+                        <outlet property="releaseButton" destination="1Gt-yJ-2ym" id="wwh-ce-855"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0ro-xd-ZRZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2692" y="-72"/>
         </scene>
     </scenes>
     <resources>

@@ -7,12 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@protocol SignInDelegate <NSObject>
-@required
-- (void)signInDidSuccess;
-@end
 @interface SignInViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
-@property (weak, nonatomic) id<SignInDelegate> delegate;
 @end

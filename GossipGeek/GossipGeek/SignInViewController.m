@@ -17,7 +17,7 @@
 #import "SignUpViewController.h"
 #import "MBProgressHUD+ShowTextHud.h"
 #import "NSString+EmailFormat.h"
-
+#import "MagazineViewController.h"
 @interface SignInViewController ()<UITextFieldDelegate,UIGestureRecognizerDelegate,SetSignUpEmailToSignInEmailDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *signInButton;
@@ -101,7 +101,12 @@
             [self errorTips:error];
         } else {
             NSLog(@"Sign In Success");
-            [self.delegate signInDidSuccess];
+            UITabBarController* mainPage = (UITabBarController *)([UIApplication sharedApplication].keyWindow.rootViewController);
+            UINavigationController *navigationController = (UINavigationController *)(mainPage.selectedViewController);
+            MagazineViewController *viewController = (MagazineViewController *)navigationController.topViewController;
+            if (viewController.magazineViewModel.magazines.count == 0) {
+                [viewController pullDownSetupData];
+            }
             [self dismissViewControllerAnimated:YES completion:nil];
         }
     }];

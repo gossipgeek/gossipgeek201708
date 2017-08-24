@@ -7,7 +7,6 @@
 //
 #import "MagazineViewController.h"
 #import "MagazineTableViewCell.h"
-#import "MagazineViewModel.h"
 #import "Magazine.h"
 #import "ErrorView.h"
 #import <AVOSCloud/AVOSCloud.h>
@@ -15,11 +14,8 @@
 #import "MagazineDetailViewController.h"
 #import "UserMagazineLikeViewModel.h"
 #import "MBProgressHUD+ShowTextHud.h"
-#import "SignInViewController.h"
-@interface MagazineViewController ()<UITableViewDelegate,UITableViewDataSource,
-                                    ErrorViewDelegate,UpdateLikeNumerDelegate,SignInDelegate>
+@interface MagazineViewController ()<UITableViewDelegate,UITableViewDataSource,ErrorViewDelegate,UpdateLikeNumerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *magazineTableView;
-@property (strong, nonatomic) MagazineViewModel *magazineViewModel;
 @property (strong, nonatomic) ErrorView *errorView;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 @property (strong, nonatomic) NSIndexPath *selectIndexPath;
@@ -34,7 +30,6 @@
     [self createErrorInfoUI];
     [self initMagazineTableView];
     self.automaticallyAdjustsScrollViewInsets = NO;
-    
     self.magazineViewModel = [[MagazineViewModel alloc]init];
     
     [MBProgressHUD showHUDAddedTo:self.tabBarController.view animated:YES];
@@ -42,7 +37,10 @@
 }
 
 - (void)likeNumberDidUpdate {
-    [self.magazineTableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:self.selectIndexPath.row inSection:self.selectIndexPath.section], nil] withRowAnimation:UITableViewRowAnimationNone];
+    [self.magazineTableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:
+                                                    [NSIndexPath indexPathForRow:self.selectIndexPath.row
+                                                                       inSection:self.selectIndexPath.section], nil]
+                                  withRowAnimation:UITableViewRowAnimationNone];
 }
 
 - (void)initMagazineTableView {
@@ -68,30 +66,29 @@
             if (self.magazineViewModel.magazines.count != 0) {
                 [MBProgressHUD showTextHUD:self.view hudText:NSLocalizedString(@"promptConnectFailed", nil)];
             }else {
-                [self showErrorInfoUI:YES];
+                 [self showErrorInfoUI:YES errorText:NSLocalizedString(@"promptNetworkConnectionFailed", nil)];
             }
-        }else {
-            [self showErrorInfoUI:NO];
-            if (newMagazineCount == 0) {
-                [MBProgressHUD showTextHUD:self.view hudText:NSLocalizedString(@"promptNotMoreMagazineDate", nil)];
-            }
+            return;
+        }
+        [self showErrorInfoUI:NO errorText:@""];
+        if (self.magazineViewModel.magazines.count == 0) {
+            [self showErrorInfoUI:YES errorText:NSLocalizedString(@"promptHavaNothingOfMagazine", nil)];
+            return;
+        }
+        if (newMagazineCount == 0) {
+            [MBProgressHUD showTextHUD:self.view hudText:NSLocalizedString(@"promptNotMoreMagazineDate", nil)];
         }
     }];
 }
 
-- (void)signInDidSuccess {
-    [MBProgressHUD showHUDAddedTo:self.tabBarController.view animated:YES];
-    [self pullDownSetupData];
-}
-
-- (void)showErrorInfoUI:(BOOL)flag {
+- (void)showErrorInfoUI:(BOOL)flag errorText:(NSString *)text {
+    [self.errorView setErrorLabelText:text];
     self.errorView.hidden = !flag;
 }
 
 - (void)createErrorInfoUI {
-    self.errorView = [[ErrorView alloc]init];
+    self.errorView = [[ErrorView alloc]initWithSuperview:self.view];
     self.errorView.delegate = self;
-    [self.errorView createErrorView:self.view];
 }
 
 - (void)errorViewDidClick {
