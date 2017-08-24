@@ -13,6 +13,7 @@
 #import "ErrorView.h"
 #import "Reachability+CheckNetwork.h"
 #import "MBProgressHUD+ShowTextHud.h"
+#import "UIWebView+DetailWebView.h"
 
 #define LIKE_NUMBER_ADD_ONE 1
 @interface MagazineDetailViewController ()<UIWebViewDelegate,ErrorViewDelegate>
@@ -38,7 +39,14 @@
     self.toolView.hidden = YES;
     
     [self updateLikeUI];
+    //[self.magazineWebView loadRootURL:self.magazine.url];
     [self updateWebview];
+}
+
+- (void)updateWebview {
+    NSURL *magazineUrl = [NSURL URLWithString:self.magazine.url];
+    NSURLRequest *request = [NSURLRequest requestWithURL:magazineUrl];
+    [self.magazineWebView loadRequest:request];
 }
 
 - (void)updateLikeUI {
@@ -79,15 +87,11 @@
 }
 
 - (IBAction)goBackList:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.magazineWebView clickedCloseButton:self];
 }
 
 - (IBAction)goBackClick:(id)sender {
-    if ([self.magazineWebView canGoBack]) {
-        [self.magazineWebView goBack];
-    }else {
-        [self.navigationController popViewControllerAnimated:YES];
-    }
+    [self.magazineWebView clickedBackButton:self];
 }
 
 - (BOOL)hidesBottomBarWhenPushed {
@@ -112,12 +116,6 @@
             [MBProgressHUD showTextHUD:self.view hudText:NSLocalizedString(@"promptConnectFailed", nil)];
         }
     }
-}
-
-- (void)updateWebview {
-    NSURL *magazineUrl = [NSURL URLWithString:self.magazine.url];
-    NSURLRequest *request = [NSURLRequest requestWithURL:magazineUrl];
-    [self.magazineWebView loadRequest:request];
 }
 
 - (void)initConnectFailUI {

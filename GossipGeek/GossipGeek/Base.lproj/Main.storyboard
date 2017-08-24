@@ -472,11 +472,62 @@
                     <navigationItem key="navigationItem" id="aIg-iH-8N3"/>
                     <connections>
                         <outlet property="collectionView" destination="Bwo-sN-Ols" id="yid-Eb-5QY"/>
+                        <segue destination="2w8-im-3XX" kind="show" identifier="fromActivityListToDetail" id="nde-w4-M7F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fMm-2s-3WG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1541.5999999999999" y="634.632683658171"/>
+        </scene>
+        <!--ActivityDetail View Controller-->
+        <scene sceneID="dTW-4Z-Whh">
+            <objects>
+                <viewController id="2w8-im-3XX" userLabel="ActivityDetail View Controller" customClass="ActivityDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nzc-NW-Gzv"/>
+                        <viewControllerLayoutGuide type="bottom" id="leZ-oM-uGj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fot-7J-hbf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xnu-qS-nyP">
+                                <rect key="frame" x="0.0" y="64" width="375" height="608"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="xnu-qS-nyP" secondAttribute="trailing" id="NgK-RB-wu9"/>
+                            <constraint firstItem="xnu-qS-nyP" firstAttribute="top" secondItem="nzc-NW-Gzv" secondAttribute="bottom" id="ccJ-uS-VvN"/>
+                            <constraint firstItem="xnu-qS-nyP" firstAttribute="leading" secondItem="fot-7J-hbf" secondAttribute="leading" id="lcs-Jn-65K"/>
+                            <constraint firstItem="leZ-oM-uGj" firstAttribute="top" secondItem="xnu-qS-nyP" secondAttribute="bottom" constant="-49" id="wu5-WJ-Lor"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="lnX-nm-87h" userLabel="Navigation Item">
+                        <leftBarButtonItems>
+                            <barButtonItem image="back-icon" id="9CD-nI-3dE">
+                                <connections>
+                                    <action selector="clickedBackButton:" destination="2w8-im-3XX" id="Yyt-wQ-mWs"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="关闭" id="VC2-5b-NdQ">
+                                <connections>
+                                    <action selector="clickedCloseButton:" destination="2w8-im-3XX" id="xsZ-7x-PkO"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="closeButton" destination="VC2-5b-NdQ" id="tAe-oX-j0G"/>
+                        <outlet property="webView" destination="xnu-qS-nyP" id="0Zq-rX-PVS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1bo-WT-qv7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2327.1999999999998" y="633.73313343328346"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Cc2-sw-6VE">

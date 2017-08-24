@@ -13,27 +13,36 @@
 #import <AVOSCloud/AVOSCloud.h>
 #import "MBProgressHUD+ShowTextHud.h"
 #import "ErrorView.h"
+#import "ActivityDetailViewController.h"
+#import "ActivityDetailViewModel.h"
 
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define NUMBER_OF_SECTION 1
 #define CELL_NUMBER_PER_LINE 3
 #define FLOAT_PRECISION  0.00001
 
+static NSString *segueIdentifierOfFromActivityListToDetail = @"fromActivityListToDetail";
+
 @interface ActivitiesViewController () <ErrorViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) ActivityViewModel *activityViewModel;
 @property (strong, nonatomic) ErrorView *errorView;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
-
 @end
 
 @implementation ActivitiesViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.activityViewModel = [ActivityViewModel defaultViewModel];
     [self initCurrentPage];
     [self updateActivitiesList];
+}
+
+- (ActivityViewModel *)activityViewModel{
+    if (_activityViewModel == nil) {
+        _activityViewModel = [[ActivityViewModel alloc] init];
+    }
+    return _activityViewModel;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -99,6 +108,18 @@
     collectionViewFlowLayout.sectionInset.left+collectionViewFlowLayout.sectionInset.right;
     float cellWeightAndHeight = (SCREEN_WIDTH-spacing)/CELL_NUMBER_PER_LINE - FLOAT_PRECISION;
     return CGSizeMake(cellWeightAndHeight, cellWeightAndHeight);
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:segueIdentifierOfFromActivityListToDetail sender:indexPath];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:segueIdentifierOfFromActivityListToDetail]) {
+        NSIndexPath *indexPath = sender;
+        ActivityDetailViewController *activityDetailVC = segue.destinationViewController;
+        [activityDetailVC setRootUrl:self.activityViewModel.activities[indexPath.row].url];
+    }
 }
 
 - (void)initCurrentPage {
