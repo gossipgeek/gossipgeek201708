@@ -15,12 +15,7 @@
 #import "ErrorView.h"
 #import "ActivityDetailViewController.h"
 #import "ActivityDetailViewModel.h"
-
-#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
-#define NUMBER_OF_SECTION 1
-#define CELL_NUMBER_PER_LINE 3
-#define FLOAT_PRECISION  0.00001
-
+#import "DefineHeader.h"
 static NSString *segueIdentifierOfFromActivityListToDetail = @"fromActivityListToDetail";
 
 @interface ActivitiesViewController () <ErrorViewDelegate>
@@ -35,6 +30,12 @@ static NSString *segueIdentifierOfFromActivityListToDetail = @"fromActivityListT
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initCurrentPage];
+    [self updateActivitiesList];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(reloadActivity) name:UPDATA_ALL_VIEWCONTROLLER object:nil];
+}
+
+- (void)reloadActivity {
+    [self.activityViewModel.activities removeAllObjects];
     [self updateActivitiesList];
 }
 

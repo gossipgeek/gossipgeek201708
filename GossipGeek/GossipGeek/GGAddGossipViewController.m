@@ -10,10 +10,7 @@
 #import "GossipViewModel.h"
 #import "MBProgressHUD+ShowTextHud.h"
 #import "GGPush.h"
-#define PUSH_EXPIRE_TIME 604800
-#define TEXT_WROD_NUMBER 1
-#define CONTENT_MAX_WORD 1024
-#define POP_DELAY 0.5
+#import "DefineHeader.h"
 @interface GGAddGossipViewController ()<UITextFieldDelegate,UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *gossipTitleTextField;
 @property (weak, nonatomic) IBOutlet UITextView *contentTextView;

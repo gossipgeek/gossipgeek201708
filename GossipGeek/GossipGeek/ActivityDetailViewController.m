@@ -11,7 +11,6 @@
 #import "MBProgressHUD+ShowTextHud.h"
 #import "ActivityDetailViewModel.h"
 #import "UIWebView+DetailWebView.h"
-
 @interface ActivityDetailViewController () <UIWebViewDelegate,ErrorViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;

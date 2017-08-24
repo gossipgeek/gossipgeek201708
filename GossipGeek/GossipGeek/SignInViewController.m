@@ -6,11 +6,6 @@
 //  Copyright © 2017 cozhang . All rights reserved.
 //
 
-#define SIGNIN_BUTTON_ALPHA_WHEN_DISABLED 0.4
-#define SIGNIN_BUTTON_ALPHA_WHEN_ENABLED  1
-#define HUD_SHOW_TIME 2.f
-
-
 #import "SignInViewController.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import "SignInViewModel.h"
@@ -18,13 +13,13 @@
 #import "MBProgressHUD+ShowTextHud.h"
 #import "NSString+EmailFormat.h"
 #import "MagazineViewController.h"
+#import "DefineHeader.h"
 @interface SignInViewController ()<UITextFieldDelegate,UIGestureRecognizerDelegate,SetSignUpEmailToSignInEmailDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *signInButton;
 @property (weak, nonatomic) IBOutlet UIButton *forgotPasswordButton;
 @property (weak, nonatomic) IBOutlet UIButton *signUpButton;
 @property (strong, nonatomic) SignInViewModel *signInViewModel;
-
 @end
 
 @implementation SignInViewController
@@ -106,6 +101,11 @@
             MagazineViewController *viewController = (MagazineViewController *)navigationController.topViewController;
             if (viewController.magazineViewModel.magazines.count == 0) {
                 [viewController pullDownSetupData];
+            }
+            if (self.changeUser) {
+                self.changeUser = NO;
+                [[NSNotificationCenter defaultCenter] postNotificationName:UPDATA_ALL_VIEWCONTROLLER object:nil];
+                
             }
             [self dismissViewControllerAnimated:YES completion:nil];
         }

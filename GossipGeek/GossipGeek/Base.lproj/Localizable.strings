@@ -23,6 +23,8 @@
 "titleAddGossip"="添加爆料";
 "titleActivityDetail"="活动详情";
 "titleClose"="关闭";
+"titleSignOut"="退出登录";
+"titleMoreTitle"="更多";
 "promptError"="错误";
 "promptGoEmailVerified"="请前往邮箱验证";
 "promptNetworkError"="网络开小差了";

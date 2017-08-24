@@ -15,7 +15,7 @@
 #import "GossipTableViewCell.h"
 #import "MBProgressHUD+ShowTextHud.h"
 #import "GGAddGossipViewController.h"
-
+#import "DefineHeader.h"
 @interface GossipViewController ()<UITableViewDelegate,UITableViewDataSource,ErrorViewDelegate,AddGossipDelegate>
 @property (strong, nonatomic) GossipViewModel *gossipViewModel;
 @property (strong, nonatomic) ErrorView *errorView;
@@ -35,7 +35,7 @@
     [self initGossipTableView];
     
     self.gossipViewModel = [[GossipViewModel alloc]init];
-
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(reloadGossip) name:UPDATA_ALL_VIEWCONTROLLER object:nil];
     [MBProgressHUD showHUDAddedTo:self.tabBarController.view animated:true];
     [self pullDownSetupData];
 }
@@ -51,6 +51,11 @@
     self.refreshControl.attributedTitle = [[NSAttributedString alloc]initWithString:NSLocalizedString(@"promptPutDownToUpdate", nil)];
     [self.gossipTableView addSubview:self.refreshControl];
     self.gossipTableView.tableFooterView = [[UIView alloc]initWithFrame:(CGRectZero)];
+}
+
+- (void)reloadGossip {
+    [self.gossipViewModel.gossips removeAllObjects];
+    [self pullDownSetupData];
 }
 
 -(void)pullDownSetupData {

@@ -14,8 +14,7 @@
 #import "Reachability+CheckNetwork.h"
 #import "MBProgressHUD+ShowTextHud.h"
 #import "UIWebView+DetailWebView.h"
-
-#define LIKE_NUMBER_ADD_ONE 1
+#import "DefineHeader.h"
 @interface MagazineDetailViewController ()<UIWebViewDelegate,ErrorViewDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
 @property (weak, nonatomic) IBOutlet UIWebView *magazineWebView;

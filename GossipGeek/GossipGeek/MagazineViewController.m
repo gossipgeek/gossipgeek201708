@@ -14,6 +14,7 @@
 #import "MagazineDetailViewController.h"
 #import "UserMagazineLikeViewModel.h"
 #import "MBProgressHUD+ShowTextHud.h"
+#import "DefineHeader.h"
 @interface MagazineViewController ()<UITableViewDelegate,UITableViewDataSource,ErrorViewDelegate,UpdateLikeNumerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *magazineTableView;
 @property (strong, nonatomic) ErrorView *errorView;
@@ -31,8 +32,13 @@
     [self initMagazineTableView];
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.magazineViewModel = [[MagazineViewModel alloc]init];
-    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(reloadMagazine) name:UPDATA_ALL_VIEWCONTROLLER object:nil];
     [MBProgressHUD showHUDAddedTo:self.tabBarController.view animated:YES];
+    [self pullDownSetupData];
+}
+
+- (void)reloadMagazine {
+    [self.magazineViewModel.magazines removeAllObjects];
     [self pullDownSetupData];
 }
 

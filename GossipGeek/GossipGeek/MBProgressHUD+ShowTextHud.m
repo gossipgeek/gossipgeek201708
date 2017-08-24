@@ -7,7 +7,7 @@
 //
 
 #import "MBProgressHUD+ShowTextHud.h"
-#define HUD_TEXT_DELAY 1.0
+#import "DefineHeader.h"
 
 @implementation MBProgressHUD (ShowTextHud)
 

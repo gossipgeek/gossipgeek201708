@@ -22,6 +22,8 @@
 "titleActivity"="Activity";
 "titleActivityDetail"="Activity Detail";
 "titleClose"="close";
+"titleSignOut"="Sign Out";
+"titleMoreTitle"="More";
 "promptError"="Error";
 "promptGoEmailVerified"="Please check your email and verify";
 "promptNetworkError"="Network issue";

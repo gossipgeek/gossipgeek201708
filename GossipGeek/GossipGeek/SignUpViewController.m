@@ -6,16 +6,14 @@
 //  Copyright © 2017 cozhang . All rights reserved.
 //
 
-#define SIGNUP_BUTTON_ALPHA_WHEN_DISABLED 0.4
-#define SIGNUP_BUTTON_ALPHA_WHEN_ENABLED  1
-#define HUD_SHOW_TIME 2.f
+
 
 #import "SignUpViewController.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import "SignUpViewModel.h"
 #import "MBProgressHUD+ShowTextHud.h"
 #import "NSString+EmailFormat.h"
-
+#import "DefineHeader.h"
 @interface SignUpViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *signUpButton;
 @property (strong, nonatomic) SignUpViewModel *signUpViewModel;
