@@ -418,7 +418,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVx-Zy-GZW" userLabel="日期">
-                                                            <rect key="frame" x="20" y="109.5" width="74" height="27.5"/>
+                                                            <rect key="frame" x="0.0" y="109.5" width="114" height="27.5"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -427,8 +427,8 @@
                                                     <constraints>
                                                         <constraint firstItem="7nr-RK-hjI" firstAttribute="top" secondItem="Ez1-hn-MYC" secondAttribute="top" constant="3" id="DMd-Qg-LKY"/>
                                                         <constraint firstAttribute="bottom" secondItem="hVx-Zy-GZW" secondAttribute="bottom" id="HrH-ZS-x87"/>
-                                                        <constraint firstItem="hVx-Zy-GZW" firstAttribute="leading" secondItem="Ez1-hn-MYC" secondAttribute="leading" constant="20" symbolic="YES" id="JSn-I7-Abg"/>
-                                                        <constraint firstAttribute="trailing" secondItem="hVx-Zy-GZW" secondAttribute="trailing" constant="20" symbolic="YES" id="RJ4-Ry-BKB"/>
+                                                        <constraint firstItem="hVx-Zy-GZW" firstAttribute="leading" secondItem="Ez1-hn-MYC" secondAttribute="leading" id="JSn-I7-Abg"/>
+                                                        <constraint firstAttribute="trailing" secondItem="hVx-Zy-GZW" secondAttribute="trailing" id="RJ4-Ry-BKB"/>
                                                         <constraint firstAttribute="trailing" secondItem="ma6-VG-p0o" secondAttribute="trailing" constant="5" id="WRU-qH-9jP"/>
                                                         <constraint firstItem="7nr-RK-hjI" firstAttribute="height" relation="greaterThanOrEqual" secondItem="Ez1-hn-MYC" secondAttribute="height" multiplier="0.2" id="cMw-L3-l8t"/>
                                                         <constraint firstItem="ma6-VG-p0o" firstAttribute="top" secondItem="7nr-RK-hjI" secondAttribute="bottom" constant="3" id="hbH-8o-Kqs"/>
